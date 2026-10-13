@@ -8,9 +8,9 @@ echo "1) Python venv + Day 1 podaci";            t "$R/scripts/setup.sh" >/dev/n
 echo "2) embedding model u HF keš (Day 10)";     t "$PY" -c "import sys; sys.path.insert(0,'$R/apps/api'); from app.recommenders.embeddings import ST_MODEL; from sentence_transformers import SentenceTransformer; SentenceTransformer(ST_MODEL)" >/dev/null 2>&1 || echo "   (nema mreže/ST: Day 10 koristi hash embedder)"
 echo "3) svi izvedeni podaci (Day 2–12)";        t "$R/scripts/regenerate_all.sh" >/dev/null
 echo "4) lokalna baza";                          t bash -c "'$R/db/start_local_db.sh' >/dev/null && '$R/db/load.sh' >/dev/null"
-echo "5) frontend zavisnosti + build";           t bash -c "cd '$R/apps/frontend' && bun install >/dev/null && bun run build >/dev/null"
+echo "5) frontend zavisnosti + build";           t bash -c "cd '$R/apps/frontend' && bun install >/dev/null 2>&1 && bun run build >/dev/null 2>&1"
 echo "6) zagrevanje API-ja (import + prvi pozivi)"
-t "$PY" - <<PY
+t "$PY" - 2>/dev/null <<PY
 import os, sys, tempfile; sys.path.insert(0, "$R/apps/api"); os.environ.setdefault("DM_LIVE_EVENTS", tempfile.mktemp())
 from fastapi.testclient import TestClient; from app.main import app; c = TestClient(app)
 for path in ["/analytics/summary", "/recommendations/popular", "/recommendations/content/1", "/recommendations/collaborative/1",

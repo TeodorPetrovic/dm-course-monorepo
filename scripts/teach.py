@@ -142,6 +142,9 @@ def cmd_verify(frontend=False):
         cmd_start(int(d[1:]), force=True, full=True)
         comp = subprocess.run([str(py), "-m", "compileall", "-q", "app"], cwd=ROOT / "apps/api", capture_output=True)
         imp = subprocess.run([str(py), "-c", probe], cwd=ROOT / "apps/api", capture_output=True, text=True)
+        exs = sorted((ROOT / "course" / f"Day {int(d[1:])}" / "examples").glob("demo_*.py"))
+        exr = subprocess.run([str(py), str(exs[0])], cwd=ROOT / "course", capture_output=True,
+                             env={**__import__("os").environ, "MPLBACKEND": "Agg"}).returncode if exs else 1
         todo = sum(len(re.findall(rf"(?m)^\s*(?:#|//) TODO {d}: ", p.read_text())) for p in files())
         fe = None
         if frontend:
@@ -149,9 +152,9 @@ def cmd_verify(frontend=False):
             fe = b.returncode == 0
         cmd_solution()
         clean = git("diff", "--quiet", "HEAD", "--", "apps", check=False).returncode == 0
-        good = comp.returncode == 0 and imp.returncode == 0 and todo > 0 and clean and fe is not False
+        good = comp.returncode == 0 and imp.returncode == 0 and todo > 0 and clean and fe is not False and exr != 0
         ok &= good
-        print(f"{'PASS' if good else 'FAIL'} {d}: compile={comp.returncode == 0} api_start={imp.stdout.strip() or imp.stderr[-200:]} todo_blokova={todo} frontend_build={fe} solution_čist={clean}")
+        print(f"{'PASS' if good else 'FAIL'} {d}: compile={comp.returncode == 0} api_start={imp.stdout.strip() or imp.stderr[-200:]} todo_blokova={todo} checkpoint_primer_pada_u_starteru={exr != 0} frontend_build={fe} solution_čist={clean}")
     sys.exit(0 if ok else 1)
 
 
