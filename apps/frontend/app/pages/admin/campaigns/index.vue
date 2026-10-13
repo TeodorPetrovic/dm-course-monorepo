@@ -36,8 +36,10 @@ const kCols = ['mode', 'size', 'expected_conversions', 'expected_profit', 'avg_p
 const audRows = computed(() => (aud.value?.audience || []).map((a: any) => ({ ...a, why: (a.reasons || []).join('; ') })))
 const cmpRows = computed(() => cmp.value?.metrics ? ['rule', 'ml'].map(m => ({ mode: m, ...cmp.value.metrics[m] })) : [])
 async function loadAudience() {
+  // TEACH d04: publika (ml|rule) + rule vs ML poređenje
   aud.value = await mlGet(`/campaigns/${cid.value}/recommended-audience?mode=${mode.value}&limit=10`)
   cmp.value = await mlGet(`/campaigns/${cid.value}/targeting-comparison`)
+  // /TEACH
 }
 onMounted(async () => {
   const c = await mlGet<any[]>('/campaigns')

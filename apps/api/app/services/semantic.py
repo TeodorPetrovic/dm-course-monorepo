@@ -43,6 +43,7 @@ class SemanticService:
         return _with_score(df, [round(sc, 4) for _, sc in hits])
 
     def semantic_search(self, q: str, limit: int = 5) -> dict:
+        # TEACH d10: SemanticService.semantic_search
         s = self._load()
         if not q or not q.strip():
             env = envelope(None, "fallback", recommend_popular(self.products, limit=limit), "empty_query")
@@ -52,16 +53,20 @@ class SemanticService:
         env["results"] = env.pop("recommendations"); env["query"] = q
         env["embedder"] = s["embedder_name"]; env["store"] = self.store_info()
         return env
+        # /TEACH
 
     def recommendations_for_product(self, product_id: int, limit: int = 5) -> dict:
+        # TEACH d10: SemanticService.recommendations_for_product
         s = self._load()
         if product_id not in s["product_ids"]:
             return envelope(product_id, "fallback", recommend_popular(self.products, limit=limit), "no_embedding")
         i = s["product_ids"].index(product_id)
         return envelope(product_id, "semantic",
                         self._rows(brute_force_nearest(s["matrix"], s["matrix"][i], limit, exclude_index=i)))
+        # /TEACH
 
     def build_comparison(self, queries, k: int = 3) -> list:
+        # TEACH d10: SemanticService.build_comparison
         from sklearn.metrics.pairwise import cosine_similarity
         from app.services.recommender import TFIDF_KWARGS
         tf, vec = build_tfidf_matrix(self.products, **TFIDF_KWARGS)
@@ -80,6 +85,7 @@ class SemanticService:
                 rows.append({"query": q, "method": "embedding", "rank": r,
                              **{c: rec[c] for c in ("product_id", "name", "category_id", "score")}})
         return rows
+        # /TEACH
 
     def comparison(self) -> dict:
         p = day_data(10, "comparison.csv")

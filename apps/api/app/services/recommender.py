@@ -35,9 +35,12 @@ class RecommenderService:
         return envelope(product_id, "category", recs)
 
     def content_recommendations(self, product_id: int, limit: int = 5) -> dict:
+        # TEACH d05: RecommenderService.content_recommendations
         return recommend_similar_products(self.products, product_id, self.matrix, limit)
+        # /TEACH
 
     def baseline_comparison(self, product_id: int, limit: int = 5) -> dict:
+        # TEACH d05: RecommenderService.baseline_comparison
         content = self.content_recommendations(product_id, limit)
         cat = self.category_recommendations(product_id, limit)
         pop = self.popular_recommendations(limit)
@@ -46,3 +49,4 @@ class RecommenderService:
         return {"product_id": product_id, "content": content, "category": cat, "popular": pop,
                 "overlap": {"content_vs_category": [x for x in c if x in set(ids(cat))],
                             "content_vs_popular": [x for x in c if x in set(ids(pop))]}}
+        # /TEACH

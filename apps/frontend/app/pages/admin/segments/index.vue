@@ -28,14 +28,18 @@ const segCols = ['segment', 'count', 'share', 'recency_days', 'frequency', 'mone
 const domCols = ['bucket', 'cluster', 'share', 'count'].map(x => ({ accessorKey: x, header: x }))
 const dominant = computed(() => Object.entries(meta.value?.comparison?.dominant_cluster || {}).map(([b, v]: any) => ({ bucket: b, ...v })))
 async function load() {
+  // TEACH d02: učitaj segmente (503 = model nije treniran)
   try { meta.value = await $fetch('/ml/segments'); down.value = false }
   catch (e: any) { meta.value = null; down.value = !(e?.statusCode === 503 || e?.status === 503) }
+  // /TEACH
 }
 async function train() {
+  // TEACH d02: POST /segments/train
   busy.value = true
   const r = await mlPost('/segments/train', { k: k.value })
   busy.value = false; err.value = r.error || ""
   if (r.data) meta.value = r.data
+  // /TEACH
 }
 onMounted(load)
 </script>

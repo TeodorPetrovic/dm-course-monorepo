@@ -14,5 +14,10 @@
 definePageMeta({ layout: 'admin' })
 const rep = ref<any>(null); const loaded = ref(false)
 const cols = ['method', 'precision_at_k', 'recall_at_k', 'hit_rate_at_k', 'ndcg_at_k', 'catalog_coverage'].map(x => ({ accessorKey: x, header: x }))
-onMounted(async () => { rep.value = await mlGet('/analytics/recommendations/hybrid'); loaded.value = true })
+onMounted(async () => {
+  // TEACH d08: user-based evaluacija hybrid vs izvori
+  rep.value = await mlGet('/analytics/recommendations/hybrid')
+  // /TEACH
+  loaded.value = true
+})
 </script>

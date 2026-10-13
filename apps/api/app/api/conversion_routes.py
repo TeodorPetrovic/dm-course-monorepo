@@ -18,11 +18,13 @@ class TrainConv(BaseModel):
 
 @router.post("/models/conversion/train")
 def conv_train(body: TrainConv = TrainConv()):
+    # TEACH d03: conv_train
     _events()
     try:
         return svc("conv").train(model_type=body.model_type, window_days=body.window_days)
     except ValueError as e:
         raise HTTPException(422, str(e))
+    # /TEACH
 
 
 @router.get("/models/conversion/status")
@@ -34,4 +36,6 @@ def conv_status():
 @router.get("/customers/{uid}/conversion-probability")
 @router.get("/models/conversion/probability/{uid}")
 def conv_prob(uid: int):
+    # TEACH d03: conv_prob
     return _seg_or_503(lambda: svc("conv").get_customer_probability(uid))
+    # /TEACH

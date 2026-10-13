@@ -59,19 +59,39 @@ onMounted(async () => {
             : (history.state?.back || "").startsWith("/search") ? "search_page" : "product_page"
   await trackProductView(P(), src)
   const cat = (await useCatalog()).value
-  const [c, cf, se, sm, pl] = await Promise.all([
-    mlGet<any>(`/recommendations/content/${data.product_id}?limit=5`),
-    mlGet<any>(`/recommendations/collaborative/${data.product_id}?limit=5`),
-    mlGet<any>(`/recommendations/session/${getOrGenerateSessionId()}?limit=5`),
-    mlGet<any>(`/recommendations/semantic/${data.product_id}?limit=5`),
-    mlGet<any>(`/platform/product/${data.product_id}`),
-  ])
-  if (c) { content.value = enrich(c.recommendations, cat); contentFallback.value = !!c.fallback }
-  if (cf) { collab.value = enrich(cf.recommendations, cat); collabFallback.value = !!cf.fallback }
-  if (se) { session.value = enrich(se.recommendations, cat); sessionFallback.value = !!se.fallback }
-  if (sm) semantic.value = enrich(sm.recommendations, cat)
-  platform.value = pl
+  // svaka sekcija je nezavisna: ako jedan modul padne, ostale se i dalje prikazuju
+  await Promise.all([loadContent(cat), loadCollab(cat), loadSession(cat), loadSemantic(cat), loadPlatform()])
 })
+
+async function loadContent(cat: Record<number, Product>) {
+  // TEACH d05: content-based preporuke (TF-IDF)
+  const c = await mlGet<any>(`/recommendations/content/${data.product_id}?limit=5`)
+  if (c) { content.value = enrich(c.recommendations, cat); contentFallback.value = !!c.fallback }
+  // /TEACH
+}
+async function loadCollab(cat: Record<number, Product>) {
+  // TEACH d06: collaborative preporuke (item-item)
+  const cf = await mlGet<any>(`/recommendations/collaborative/${data.product_id}?limit=5`)
+  if (cf) { collab.value = enrich(cf.recommendations, cat); collabFallback.value = !!cf.fallback }
+  // /TEACH
+}
+async function loadSession(cat: Record<number, Product>) {
+  // TEACH d09: preporuke na osnovu tekuće sesije
+  const se = await mlGet<any>(`/recommendations/session/${getOrGenerateSessionId()}?limit=5`)
+  if (se) { session.value = enrich(se.recommendations, cat); sessionFallback.value = !!se.fallback }
+  // /TEACH
+}
+async function loadSemantic(cat: Record<number, Product>) {
+  // TEACH d10: semantički slični proizvodi (embeddings)
+  const sm = await mlGet<any>(`/recommendations/semantic/${data.product_id}?limit=5`)
+  if (sm) semantic.value = enrich(sm.recommendations, cat)
+  // /TEACH
+}
+async function loadPlatform() {
+  // TEACH d12: platform payload (AI opis + module_class)
+  platform.value = await mlGet<any>(`/platform/product/${data.product_id}`)
+  // /TEACH
+}
 
 useSeoMeta({
   title: data.seo?.title,

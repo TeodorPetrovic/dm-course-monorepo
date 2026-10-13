@@ -27,6 +27,7 @@ class ConversionService:
 
     def train(self, model_type: str = "logistic_regression", window_days: int = 7,
               test_size: float = 0.3, random_state: int = 42) -> dict:
+        # TEACH d03: ConversionService.train
         if model_type not in MODEL_TYPES:
             raise ValueError(f"model_type mora biti jedan od {MODEL_TYPES}")
         if not 1 <= int(window_days) <= 28 or not 0 < test_size < 1:
@@ -50,6 +51,7 @@ class ConversionService:
         joblib.dump(model, self.dir / self.MODEL); joblib.dump(scaler, self.dir / self.SCALER)
         (self.dir / self.META).write_text(json.dumps(meta, ensure_ascii=False, indent=2))
         return meta
+        # /TEACH
 
     def _load(self):
         if not self.is_trained():
@@ -63,6 +65,7 @@ class ConversionService:
                                      "n_test", "base_rate", "metrics", "baseline")}
 
     def get_customer_probability(self, user_id: int) -> dict:
+        # TEACH d03: ConversionService.get_customer_probability
         model, scaler, meta = self._load()  # model se UČITAVA SA DISKA (persistencija)
         events = require_events(); orders = load_orders()
         cutoff = pd.Timestamp(meta["cutoff"])
@@ -75,3 +78,4 @@ class ConversionService:
         row, _ = scale_customer_features(feats, CONVERSION_FEATURE_COLUMNS, scaler=scaler)
         return {"user_id": user_id, "probability": predict_conversion_probability(model, row.iloc[0]),
                 "fallback": False, "reason": None, "base_rate": meta["base_rate"]}
+        # /TEACH

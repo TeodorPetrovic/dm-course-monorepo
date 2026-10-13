@@ -47,20 +47,25 @@ const recIds = ref<number[]>([])
 const recNote = ref("personalizacija se učitava…")
 
 async function loadRecs() {
+  // TEACH d08: hybrid preporuke za korisnika -> lista ID-jeva + impresije
   setDemoUserId(userId.value)
   const r = await mlGet<any>(`/recommendations/${userId.value}?limit=10`)
   if (!r) { recIds.value = []; recNote.value = "dm-ml nedostupan — default poredak"; mode.value = 'default'; return }
   recIds.value = (r.recommendations || []).map((x: any) => x.product_id)
   if (r.fallback) recNote.value = `fallback: ${r.fallback_reason}`
   recIds.value.forEach((id, i) => trackRecommendationImpression(id, "hybrid", i + 1))
+  // /TEACH
 }
 onMounted(async () => { userId.value = getDemoUserId(); await loadRecs() })
 
 const ordered = computed(() => {
   if (mode.value === 'default' || !recIds.value.length) return products
+  // TEACH d08: personalizovan poredak (preporučeni prvi, ostali zadržavaju redosled)
   const pos = new Map(recIds.value.map((id, i) => [id, i]))
   const rec = products.filter(p => pos.has(p.product_id)).sort((a, b) => pos.get(a.product_id)! - pos.get(b.product_id)!)
   return [...rec, ...products.filter(p => !pos.has(p.product_id))]
+  // /TEACH
+  return products
 })
 const moved = computed(() => ordered.value.filter((p, i) => products[i]?.product_id !== p.product_id).length)
 

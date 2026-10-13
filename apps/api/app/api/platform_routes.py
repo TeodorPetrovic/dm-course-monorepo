@@ -23,12 +23,16 @@ def p_profile(uid: int):
 
 @router.get("/platform/homepage")
 def p_home(user_id: int, session_id: Optional[str] = None, limit: int = Query(5, ge=1, le=20)):
+    # TEACH d12: p_home
     return svc("platform").homepage_payload(user_id, session_id, limit)
+    # /TEACH
 
 
 @router.get("/platform/product/{pid}")
 def p_product(pid: int):
+    # TEACH d12: p_product
     try:
         return svc("platform").product_page_payload(pid)
     except KeyError:
         raise HTTPException(404, f"unknown product {pid}")
+    # /TEACH

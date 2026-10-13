@@ -25,6 +25,7 @@ function nowLocal(): string {
 }
 
 export default defineEventHandler(async (h) => {
+    // TEACH d01: validacija + upis u bazu + prosleđivanje u dm-ml
     const parsed = EventIn.safeParse(await readBody(h))
     if (!parsed.success) {
         throw createError({ statusCode: 422, statusMessage: "invalid_event", data: parsed.error.issues })
@@ -49,4 +50,5 @@ export default defineEventHandler(async (h) => {
     const ml = await forwardToMl(path, Object.fromEntries(Object.entries(row).filter(([, v]) => v !== null)))
     setResponseStatus(h, 201)
     return { ...saved, forwarded_to_ml: ml.ok }
+    // /TEACH
 })

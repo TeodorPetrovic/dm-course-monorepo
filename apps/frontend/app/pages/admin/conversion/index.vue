@@ -43,15 +43,19 @@ async function load() {
   catch (e: any) { status.value = null; down.value = !(e?.statusCode === 503 || e?.status === 503) }
 }
 async function train() {
+  // TEACH d03: POST /models/conversion/train
   busy.value = true
   const r = await mlPost<any>('/models/conversion/train', { model_type: modelType.value })
   busy.value = false; err.value = r.error || ""
   if (r.data) { leak.value = r.data.leakage; await load() }
+  // /TEACH
 }
 async function predict() {
+  // TEACH d03: verovatnoća kupovine za korisnika
   pred.value = null; predErr.value = ""
   try { pred.value = await $fetch(`/ml/customers/${uid.value}/conversion-probability`) }
   catch (e: any) { predErr.value = e?.statusCode === 503 ? 'model nije treniran' : 'dm-ml nedostupan' }
+  // /TEACH
 }
 onMounted(load)
 </script>

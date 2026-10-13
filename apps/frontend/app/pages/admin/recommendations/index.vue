@@ -31,8 +31,18 @@ const cols = ['method', 'precision_at_k', 'recall_at_k', 'hit_rate_at_k', 'ndcg_
 const ctrCols = ['group', 'impressions', 'clicks', 'ctr'].map(x => ({ accessorKey: x, header: x }))
 const cmpCols = ['algorithm', 'impressions', 'clicks', 'ctr'].map(x => ({ accessorKey: x, header: x }))
 onMounted(async () => {
-  [report.value, ctr.value, cmp.value] = await Promise.all([mlGet('/analytics/recommendations'),
-    mlGet('/analytics/recommendations/ctr'), mlGet('/analytics/recommendations/session-comparison')])
+  await Promise.all([loadEval(), loadCtr()])
   loaded.value = true
 })
+async function loadEval() {
+  // TEACH d07: offline evaluacija (P@K, recall, NDCG, coverage)
+  report.value = await mlGet('/analytics/recommendations')
+  // /TEACH
+}
+async function loadCtr() {
+  // TEACH d09: CTR dashboard + popular vs personalized
+  ;[ctr.value, cmp.value] = await Promise.all([mlGet('/analytics/recommendations/ctr'),
+    mlGet('/analytics/recommendations/session-comparison')])
+  // /TEACH
+}
 </script>

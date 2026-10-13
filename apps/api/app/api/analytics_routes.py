@@ -13,11 +13,13 @@ router = APIRouter()
 
 @router.get("/analytics/recommendations")
 def rec_eval(k: int = Query(5, ge=1, le=20), split_ratio: float = Query(0.8, gt=0.5, lt=1.0)):
+    # TEACH d07: rec_eval
     import pandas as pd
     from app.data.paths import day_data
     from app.recommenders.evaluation import build_comparison_report
     _events()
     return svc("eval").comparison_report(k, split_ratio)
+    # /TEACH
 
 
 @router.get("/analytics/recommendations/hybrid")
@@ -27,7 +29,9 @@ def rec_hybrid(k: int = Query(5, ge=1, le=20), max_test_users: Optional[int] = Q
 
 @router.get("/analytics/recommendations/ctr")
 def rec_ctr():
+    # TEACH d09: rec_ctr
     return svc("session").ctr_dashboard()
+    # /TEACH
 
 
 @router.get("/analytics/recommendations/session-comparison")

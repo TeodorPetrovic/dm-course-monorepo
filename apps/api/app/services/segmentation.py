@@ -27,6 +27,7 @@ class SegmentationService:
         return all((self.dir / f).exists() for f in (self.MODEL, self.SCALER, self.META))
 
     def train(self, k: int = 4, random_state: int = 42) -> dict:
+        # TEACH d02: SegmentationService.train
         if not isinstance(k, int) or not 2 <= k <= 10:
             raise ValueError("k mora biti ceo broj u [2, 10]")
         events = require_events(include_live=False); orders = load_orders()
@@ -45,6 +46,7 @@ class SegmentationService:
         joblib.dump(res.model, self.dir / self.MODEL); joblib.dump(scaler, self.dir / self.SCALER)
         (self.dir / self.META).write_text(json.dumps(meta, ensure_ascii=False, indent=2, default=str))
         return meta
+        # /TEACH
 
     def _load(self):
         if not self.is_trained():

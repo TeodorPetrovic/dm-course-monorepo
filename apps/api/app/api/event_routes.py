@@ -34,12 +34,14 @@ class EventIn(BaseModel):
 
 @router.post("/events", status_code=201)
 def post_event(e: EventIn):
+    # TEACH d01: post_event
     data = {k: v for k, v in e.model_dump().items() if v is not None}
     try:
         ev = create_event(**data)
     except (ValueError, TypeError) as ex:
         raise HTTPException(422, str(ex))
     return st.get_store().save_event(ev)
+    # /TEACH
 
 
 @router.post("/recommendations/events", status_code=201)
@@ -83,8 +85,10 @@ def pall(pid: int):
 
 @router.get("/analytics/conversion-rate")
 def conv_rate():
+    # TEACH d01: conv_rate
     ev = _events()
     return {**analytics.calculate_funnel_counts(ev), "conversion_rate": analytics.calculate_conversion_rate(ev)}
+    # /TEACH
 
 
 @router.get("/analytics/share-by-category")
@@ -95,7 +99,9 @@ def share(metric: Literal["view", "cart", "purchase"] = "view"):
 
 @router.get("/analytics/average-order-value")
 def aov():
+    # TEACH d01: aov
     return {"average_order_value": analytics.average_order_value(st.load_orders())}
+    # /TEACH
 
 
 @router.get("/analytics/searches")

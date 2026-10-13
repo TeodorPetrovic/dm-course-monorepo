@@ -34,7 +34,9 @@ def campaign(cid: int):
 @router.get("/campaigns/{cid}/recommended-audience")
 @router.get("/campaigns/{cid}/audience")
 def audience(cid: int, limit: int = Query(20, ge=1), mode: Literal["ml", "rule"] = "ml"):
+    # TEACH d04: audience
     return _campaign(lambda: svc("target").recommended_audience(cid, limit, mode))
+    # /TEACH
 
 
 @router.get("/campaigns/{cid}/targeting-comparison")

@@ -29,10 +29,12 @@ class ContentIn(BaseModel):
 
 @router.post("/ai/seo")
 def ai_seo(b: SEOIn):
+    # TEACH d11: ai_seo
     if not b.product_name.strip():
         raise HTTPException(422, "product_name je obavezan")
     return svc("ai").generate_seo_metadata({"name": b.product_name, "description": b.description,
                                             "category": b.category_name})
+    # /TEACH
 
 
 @router.post("/ai/content")

@@ -10,6 +10,7 @@ MERGE_WEIGHTS = {"popularity": 0.2, "category": 0.3, "content": 0.3, "collaborat
 
 
 def normalize_scores(scores):
+    # TEACH d08: normalize_scores
     scores = [float(s) for s in scores]
     if not scores:
         return []
@@ -19,9 +20,11 @@ def normalize_scores(scores):
     if mx == mn:
         return [1.0] * len(scores)
     return [s / mx for s in scores]
+    # /TEACH
 
 
 def merge_candidates(candidate_lists: dict, weights: dict) -> list:
+    # TEACH d08: merge_candidates
     if not candidate_lists or not any(candidate_lists.values()):
         return []
     total = sum(weights.get(s, 0.0) for s in candidate_lists)
@@ -38,6 +41,7 @@ def merge_candidates(candidate_lists: dict, weights: dict) -> list:
                 if key in c and key not in m:
                     m[key] = c[key]
     return [{**m, "sources": sorted(m["sources"])} for m in merged.values()]
+    # /TEACH
 
 
 def rank_candidates(candidates):
@@ -45,6 +49,7 @@ def rank_candidates(candidates):
 
 
 def apply_business_rules(ranked, rules):
+    # TEACH d08: apply_business_rules
     rules = rules or {}
     kept, removed = [], []
     avail, excl, mins = rules.get("available_ids"), set(rules.get("exclude_ids") or ()), rules.get("min_score")
@@ -58,9 +63,11 @@ def apply_business_rules(ranked, rules):
             why.append("below_min_score")
         (removed.append({**c, "removed_by": why}) if why else kept.append(c))
     return {"ranked": kept, "removed": removed}
+    # /TEACH
 
 
 def diversify_results(ranked, k, max_per_category=2):
+    # TEACH d08: diversify_results
     out, rest, cnt = [], [], Counter()
     for c in ranked:
         cat = c.get("category_id")
@@ -74,6 +81,7 @@ def diversify_results(ranked, k, max_per_category=2):
             break
         out.append(c)
     return out[:k]
+    # /TEACH
 
 
 # --- candidate generators -------------------------------------------------------
@@ -129,6 +137,7 @@ class HybridModels:
 
     def recommend(self, user_id, k=5, weights=None, max_per_category=2, sources=None,
                   candidate_limit=30, signal_limit=15, diversify=True):
+        # TEACH d08: HybridModels.recommend
         if user_id not in self.user_signal:
             return None
         cands, n_sig = self.candidates(user_id, candidate_limit, signal_limit)
@@ -139,6 +148,7 @@ class HybridModels:
         ruled = apply_business_rules(merged, rules)
         final = diversify_results(ruled["ranked"], k, max_per_category) if diversify else ruled["ranked"][:k]
         return {"candidates": cands, "n_signal": n_sig, "merged": merged, "ruled": ruled, "final": final}
+        # /TEACH
 
 
 def user_test_cases(train, test) -> list:

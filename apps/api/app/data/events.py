@@ -61,6 +61,7 @@ def create_event(event_type: str, user_id: Optional[int] = None, product_id: Opt
                  timestamp=None, recommendation_source: Optional[str] = None,
                  recommendation_position: Optional[int] = None) -> dict:
     """Kreira i validira događaj (dict bez ``event_id``)."""
+    # TEACH d01: create_event
     if event_type not in VALID_EVENT_TYPES:
         raise ValueError(f"nepoznat event_type: {event_type!r}")
     if event_type in PRODUCT_EVENT_TYPES and product_id is None:
@@ -83,6 +84,7 @@ def create_event(event_type: str, user_id: Optional[int] = None, product_id: Opt
         "recommendation_source": recommendation_source,
         "recommendation_position": None if recommendation_position is None else int(recommendation_position),
     }
+    # /TEACH
 
 
 class EventStore:
@@ -109,6 +111,7 @@ class EventStore:
 
     def save_event(self, event: dict) -> dict:
         """Dodeljuje ``event_id``, čuva i vraća sačuvan događaj (round-trip)."""
+        # TEACH d01: EventStore.save_event
         with self._lock:
             saved = {c: event.get(c) for c in EVENT_COLUMNS}
             saved["event_id"] = self._next_id
@@ -127,6 +130,7 @@ class EventStore:
                         w.writerow(EVENT_COLUMNS)
                     w.writerow(["" if saved[c] is None else saved[c] for c in EVENT_COLUMNS])
             return saved
+        # /TEACH
 
     def _filter(self, col: str, value) -> pd.DataFrame:
         df = self.events

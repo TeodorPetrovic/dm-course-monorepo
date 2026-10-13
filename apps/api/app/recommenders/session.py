@@ -9,30 +9,39 @@ EVENT_WEIGHTS = {"product_view": 1.0, "add_to_cart": 3.0, "purchase": 5.0}
 
 
 def recency_weights(n, decay):
+    # TEACH d09: recency_weights
     return [decay ** (n - 1 - i) for i in range(n)]
+    # /TEACH
 
 
 def recent_product_interest(events, decay=0.8):
+    # TEACH d09: recent_product_interest
     pe = [e for e in events if e.get("event_type") in EVENT_WEIGHTS and e.get("product_id") is not None]
     out: dict = defaultdict(float)
     for e, w in zip(pe, recency_weights(len(pe), decay)):
         out[int(e["product_id"])] += EVENT_WEIGHTS[e["event_type"]] * w
     return dict(out)
+    # /TEACH
 
 
 def recent_category_interest(events, product_categories, decay=0.8):
+    # TEACH d09: recent_category_interest
     out: dict = defaultdict(float)
     for p, v in recent_product_interest(events, decay).items():
         if p in product_categories:
             out[product_categories[p]] += v
     return dict(out)
+    # /TEACH
 
 
 def recommendation_ctr(impressions, clicks):
+    # TEACH d09: recommendation_ctr
     return len(clicks) / len(impressions) if len(impressions) else 0.0
+    # /TEACH
 
 
 def _group_ctr(impressions, clicks, key):
+    # TEACH d09: _group_ctr
     imp, clk = defaultdict(int), defaultdict(int)
     for r in impressions:
         imp[r[key]] += 1
@@ -40,6 +49,7 @@ def _group_ctr(impressions, clicks, key):
         clk[r[key]] += 1
     return [{key: g, "impressions": imp.get(g, 0), "clicks": clk.get(g, 0),
              "ctr": clk.get(g, 0) / imp[g] if imp.get(g) else 0.0} for g in sorted(set(imp) | set(clk))]
+    # /TEACH
 
 
 def ctr_by_algorithm(impressions, clicks):
@@ -47,6 +57,7 @@ def ctr_by_algorithm(impressions, clicks):
 
 
 def session_features(session_events: pd.DataFrame, product_categories: dict, decay=0.8, top_n=2) -> dict:
+    # TEACH d09: session_features
     ev = session_events.sort_values("timestamp", kind="stable")
     recs = [{"event_type": t, "product_id": (int(p) if pd.notna(p) else None)}
             for t, p in zip(ev["event_type"], pd.to_numeric(ev["product_id"], errors="coerce"))]
@@ -60,11 +71,13 @@ def session_features(session_events: pd.DataFrame, product_categories: dict, dec
             "top_categories": [{"category_id": int(c), "interest": round(v, 4)} for c, v in top(ci, top_n)],
             "top_products": [{"product_id": int(p), "interest": round(v, 4)} for p, v in top(pi, 3)],
             "seen_product_ids": sorted(pi), "_pi": pi, "_ci": ci}
+    # /TEACH
 
 
 def recommend_for_session(feats: dict, products: pd.DataFrame, similarity=None, sim_ids=None,
                           limit=5, w_category=0.5, w_similar=0.5) -> list:
     """score = 0.5·norm(interes kategorije × popularnost) + 0.5·norm(Σ interes × item-sim); viđeni isključeni."""
+    # TEACH d09: recommend_for_session
     pop = dict(zip(products["product_id"].astype(int), products["popularity"].astype(float)))
     cat = dict(zip(products["product_id"].astype(int), products["category_id"].astype(int)))
     ci, pi, seen = feats["_ci"], feats["_pi"], set(feats["seen_product_ids"])
@@ -88,6 +101,7 @@ def recommend_for_session(feats: dict, products: pd.DataFrame, similarity=None, 
     name = dict(zip(products["product_id"].astype(int), products["name"]))
     return [{"product_id": p, "name": name[p], "category_id": cat[p], "score": round(-s, 6), "sources": src}
             for s, p, src in scored[:limit]]
+    # /TEACH
 
 
 # --- imena iz lekcije (Day 9 "Važne funkcije") -----------------------------------

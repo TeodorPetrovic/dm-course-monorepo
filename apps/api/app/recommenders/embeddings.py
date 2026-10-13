@@ -14,18 +14,22 @@ STOPWORDS = {"a", "an", "the", "to", "and", "or", "for", "with", "of", "in", "on
 
 
 def normalize(v):
+    # TEACH d10: normalize
     v = np.asarray(v, dtype=float)
     if v.ndim == 1:
         n = np.linalg.norm(v)
         return v / n if n > 0 else v
     n = np.linalg.norm(v, axis=1, keepdims=True)
     return np.divide(v, n, out=np.zeros_like(v), where=n > 0)
+    # /TEACH
 
 
 def brute_force_nearest(matrix, query_vec, k=3, exclude_index=None):
+    # TEACH d10: brute_force_nearest
     s = normalize(matrix) @ normalize(query_vec)
     order = sorted(range(len(s)), key=lambda i: (-s[i], i))
     return [(i, float(s[i])) for i in order if i != exclude_index][:k]
+    # /TEACH
 
 
 class HashEmbedder:
@@ -47,7 +51,9 @@ class HashEmbedder:
         return {"embedding_dim": self.dim, "seed": self.seed}
 
     def encode(self, texts):
+        # TEACH d10: HashEmbedder.encode
         return normalize(np.asarray(self.vec.transform(list(texts)) @ self.proj))
+        # /TEACH
 
     encode_texts = encode  # ime iz lekcije: encode_texts(texts) -> (n, dim)
 
@@ -79,6 +85,7 @@ class STEmbedder:
 
 
 def make_embedder(kind: str = "auto", name: str | None = None):
+    # TEACH d10: make_embedder
     if kind == "hash" or (name or "").startswith("hash"):
         return HashEmbedder()
     try:
@@ -88,6 +95,7 @@ def make_embedder(kind: str = "auto", name: str | None = None):
         if kind == "st":
             raise
         return HashEmbedder()
+    # /TEACH
 
 
 def build_embedder(descriptor: dict):
@@ -115,6 +123,7 @@ def tokens(text: str) -> set:
 
 
 def keyword_search(products: pd.DataFrame, query: str, k: int = 3) -> list:
+    # TEACH d10: keyword_search
     q = tokens(query)
     rows = []
     pop = products["popularity"] if "popularity" in products.columns else [0.0] * len(products)
@@ -125,6 +134,7 @@ def keyword_search(products: pd.DataFrame, query: str, k: int = 3) -> list:
             rows.append((-s, -float(pp), int(pid), name, int(cat)))
     rows.sort()
     return [{"product_id": p, "name": n, "category_id": c, "score": float(-s)} for s, _pp, p, n, c in rows[:k]]
+    # /TEACH
 
 
 # imena koja Day 10 lab README pominje

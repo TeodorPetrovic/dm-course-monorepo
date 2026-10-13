@@ -32,6 +32,7 @@ def _X(scaled) -> np.ndarray:
 
 
 def train_segmentation_model(scaled, k: int = 4, random_state: int = 42, n_init: int = 10) -> SegmentationResult:
+    # TEACH d02: train_segmentation_model
     X = _X(scaled)
     if not isinstance(k, (int, np.integer)) or k < 2:
         raise ValueError("k mora biti ceo broj >= 2")
@@ -40,6 +41,7 @@ def train_segmentation_model(scaled, k: int = 4, random_state: int = 42, n_init:
     model = KMeans(n_clusters=int(k), random_state=random_state, n_init=n_init).fit(X)
     sil = round(float(silhouette_score(X, model.labels_)), 4)
     return SegmentationResult(model=model, labels=model.labels_.copy(), silhouette=sil, k=int(k))
+    # /TEACH
 
 
 def evaluate_k_range(scaled, k_range=range(2, 7), random_state: int = 42) -> pd.DataFrame:
@@ -49,12 +51,14 @@ def evaluate_k_range(scaled, k_range=range(2, 7), random_state: int = 42) -> pd.
 
 
 def assign_segment(model, scaled_row, fallback_label: str = "unsegmented") -> str:
+    # TEACH d02: assign_segment
     if model is None:
         raise ValueError("model not trained")
     if scaled_row is None or len(scaled_row) == 0:
         return fallback_label
     x = np.asarray(scaled_row, dtype=float).reshape(1, -1)
     return f"segment_{int(model.predict(x)[0])}"
+    # /TEACH
 
 
 def _describe(row: pd.Series, overall: pd.Series) -> str:
@@ -70,6 +74,7 @@ def _describe(row: pd.Series, overall: pd.Series) -> str:
 
 
 def profile_segments(features: pd.DataFrame, labels, scaled_df: Optional[pd.DataFrame] = None) -> pd.DataFrame:
+    # TEACH d02: profile_segments
     df = features.copy()
     df["segment"] = [f"segment_{int(l)}" for l in labels]
     num = ["recency_days", "frequency", "monetary", "product_views", "cart_adds", "sessions", "aov", "conversion"]
@@ -84,6 +89,7 @@ def profile_segments(features: pd.DataFrame, labels, scaled_df: Optional[pd.Data
                      "favorite_category": None if fav.empty else int(fav.iloc[0]),
                      "profile": _describe(means, overall)})
     return pd.DataFrame(rows)
+    # /TEACH
 
 
 def _rank_score(s: pd.Series, ascending: bool = True) -> pd.Series:

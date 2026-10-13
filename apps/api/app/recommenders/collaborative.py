@@ -55,6 +55,7 @@ class InteractionMatrix:
 def build_interaction_matrix(events_df: pd.DataFrame, weights: Optional[dict] = None,
                              aggregation: str = "max", level: str = "session",
                              products=None) -> InteractionMatrix:
+    # TEACH d06: build_interaction_matrix
     w = weights or DEFAULT_WEIGHTS
     if aggregation not in ("max", "sum", "binary"):
         raise ValueError("aggregation mora biti max|sum|binary")
@@ -70,13 +71,16 @@ def build_interaction_matrix(events_df: pd.DataFrame, weights: Optional[dict] = 
     df = agg.reset_index().rename(columns={key: "session_id", "_p": "product_id", "_w": "value"})
     df["session_id"] = df["session_id"].astype(str)
     return InteractionMatrix.from_long_frame(df, products)
+    # /TEACH
 
 
 def calculate_item_similarity(inter, row_normalize: bool = True):
+    # TEACH d06: calculate_item_similarity
     m = inter.matrix if isinstance(inter, InteractionMatrix) else inter
     if row_normalize:
         m = normalize(m, norm="l2", axis=1)  # session-length normalization
     return cosine_similarity(m.T, dense_output=False)
+    # /TEACH
 
 
 def _catalog_recs(products_df, pid_scores: pd.Series, limit: int) -> pd.DataFrame:
@@ -87,6 +91,7 @@ def _catalog_recs(products_df, pid_scores: pd.Series, limit: int) -> pd.DataFram
 
 def recommend_from_item_similarity(products_df: pd.DataFrame, product_id: int, inter: InteractionMatrix,
                                    similarity=None, limit: int = 5) -> dict:
+    # TEACH d06: recommend_from_item_similarity
     if product_id not in set(inter.products):
         return envelope(product_id, "fallback", recommend_popular(products_df, limit=limit), "unknown_product")
     j = inter.products.index(product_id)
@@ -97,11 +102,13 @@ def recommend_from_item_similarity(products_df: pd.DataFrame, product_id: int, i
     row = np.asarray(sim[j].toarray()).ravel() if hasattr(sim, "toarray") else np.asarray(sim[j]).ravel()
     s = pd.Series(row, index=inter.products).drop(product_id)  # target exclusion
     return envelope(product_id, "collaborative", _catalog_recs(products_df, s, limit))
+    # /TEACH
 
 
 def recommend_session_cooccurrence(products_df: pd.DataFrame, events_df: pd.DataFrame, product_id: int,
                                    limit: int = 5, weights: Optional[dict] = None) -> dict:
     """Veran port seed heuristike (recomendations.py): Σ(count × weight), bez normalizacije."""
+    # TEACH d06: recommend_session_cooccurrence
     w = weights or DEFAULT_WEIGHTS
     pid = pd.to_numeric(events_df["product_id"], errors="coerce")
     sess = set(events_df.loc[pid == product_id, "user_session"].dropna())
@@ -114,6 +121,7 @@ def recommend_session_cooccurrence(products_df: pd.DataFrame, events_df: pd.Data
     scores = ev.groupby("_p")["_w"].sum()
     scores = scores[scores > 0]
     return envelope(product_id, "heuristic", _catalog_recs(products_df, scores, limit))
+    # /TEACH
 
 
 def _ids(env):
@@ -121,13 +129,16 @@ def _ids(env):
 
 
 def compare_heuristic_vs_cf(products_df, events_df, inter, product_id, similarity=None, limit=5) -> dict:
+    # TEACH d06: compare_heuristic_vs_cf
     h = recommend_session_cooccurrence(products_df, events_df, product_id, limit)
     c = recommend_from_item_similarity(products_df, product_id, inter, similarity, limit)
     return {"product_id": product_id, "heuristic": h, "collaborative": c,
             "overlap": [x for x in _ids(c) if x in set(_ids(h))]}
+    # /TEACH
 
 
 def weight_sensitivity_experiment(products_df, events_df, product_id, schemes=None, limit=5) -> dict:
+    # TEACH d06: weight_sensitivity_experiment
     schemes = schemes or WEIGHT_SCHEMES
     rows, default_ids = [], None
     for name, w in schemes.items():
@@ -141,3 +152,4 @@ def weight_sensitivity_experiment(products_df, events_df, product_id, schemes=No
                      "n_nonzero_scores": nonzero,
                      "overlap_with_default": len(set(ids) & set(default_ids))})
     return {"product_id": product_id, "limit": limit, "rows": rows}
+    # /TEACH

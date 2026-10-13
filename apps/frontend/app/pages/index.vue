@@ -26,11 +26,14 @@
 import type { Rec } from '~/types/Product'
 const home = ref<any>(null); const recs = ref<Rec[]>([]); const recFallback = ref(false); const loaded = ref(false)
 onMounted(async () => {
+  // TEACH d12: personalizovana početna (GET /platform/homepage)
   const r = await mlGet<any>(`/platform/homepage?user_id=${getDemoUserId()}&session_id=${getOrGenerateSessionId()}&limit=5`)
   loaded.value = true
   if (!r) return
   home.value = r
   recs.value = enrich(r.recommendations?.recommendations, (await useCatalog()).value)
   recFallback.value = !!r.recommendations?.fallback
+  // /TEACH
+  loaded.value = true
 })
 </script>

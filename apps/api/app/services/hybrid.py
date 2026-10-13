@@ -28,6 +28,7 @@ class HybridRecommenderService:
         return self._models
 
     def recommend_for_user(self, user_id: int, limit: int = 5, include_pipeline: bool = False) -> dict:
+        # TEACH d08: HybridRecommenderService.recommend_for_user
         m = self.models
         res = m.recommend(user_id, limit, max_per_category=self.max_per_category)
         if res is None:
@@ -51,6 +52,7 @@ class HybridRecommenderService:
                                "n_merged": len(res["merged"]), "n_removed_by_rules": len(res["ruled"]["removed"]),
                                "n_after_rules": len(res["ruled"]["ranked"])}
         return out
+        # /TEACH
 
     def user_based_comparison(self, k: int = 5, max_test_users=None) -> dict:
         m = self.models

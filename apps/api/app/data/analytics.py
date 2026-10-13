@@ -24,6 +24,7 @@ def get_purchase_count(events: pd.DataFrame, product_id: int) -> int:
 
 
 def calculate_funnel_counts(events: pd.DataFrame) -> dict:
+    # TEACH d01: calculate_funnel_counts
     if len(events) == 0:
         return {"views": 0, "carts": 0, "purchases": 0, "sessions": 0, "sessions_with_purchase": 0}
     et = events["event_type"]
@@ -34,18 +35,22 @@ def calculate_funnel_counts(events: pd.DataFrame) -> dict:
         "sessions": int(events["user_session"].nunique()),
         "sessions_with_purchase": int(events.loc[et == "purchase", "user_session"].nunique()),
     }
+    # /TEACH
 
 
 def calculate_conversion_rate(events: pd.DataFrame) -> float:
     """Sesije sa kupovinom / sve sesije; prazan skup -> 0.0 (nikad None)."""
+    # TEACH d01: calculate_conversion_rate
     f = calculate_funnel_counts(events)
     return 0.0 if f["sessions"] == 0 else f["sessions_with_purchase"] / f["sessions"]
+    # /TEACH
 
 
 METRIC_EVENT = {"view": "product_view", "cart": "add_to_cart", "purchase": "purchase"}
 
 
 def share_by_category(events: pd.DataFrame, products: pd.DataFrame, metric: str = "view") -> pd.DataFrame:
+    # TEACH d01: share_by_category
     if metric not in METRIC_EVENT:
         raise ValueError(f"metric mora biti jedan od {sorted(METRIC_EVENT)}")
     ev = events[events["event_type"] == METRIC_EVENT[metric]]
@@ -56,6 +61,7 @@ def share_by_category(events: pd.DataFrame, products: pd.DataFrame, metric: str 
     total = counts["count"].sum()
     counts["share"] = (counts["count"] / total).round(4) if total else 0.0
     return counts
+    # /TEACH
 
 
 def share_by_product(events: pd.DataFrame, metric: str = "view") -> pd.DataFrame:
@@ -70,11 +76,13 @@ def share_by_product(events: pd.DataFrame, metric: str = "view") -> pd.DataFrame
 
 
 def average_order_value(orders: pd.DataFrame) -> float:
+    # TEACH d01: average_order_value
     if orders is None or len(orders) == 0:
         return 0.0
     # orders.csv ima jedan red po STAVCI; AOV = prihod / broj različitih porudžbina
     n = orders["order_id"].nunique() if "order_id" in orders.columns else len(orders)
     return round(float(orders["total_price"].sum()) / n, 2) if n else 0.0
+    # /TEACH
 
 
 def get_search_events(store) -> pd.DataFrame:

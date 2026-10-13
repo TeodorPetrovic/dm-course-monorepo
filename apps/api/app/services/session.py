@@ -25,6 +25,7 @@ class SessionRecommenderService:
         return self._sim
 
     def recommend_for_session(self, session_id: str, limit: int = 5) -> dict:
+        # TEACH d09: SessionRecommenderService.recommend_for_session
         ev = self.store.get_session_events(session_id)
         ev = pd.DataFrame(ev) if not isinstance(ev, pd.DataFrame) else ev
         if ev.empty or not ev["event_type"].isin(["product_view", "add_to_cart", "purchase"]).any():
@@ -38,6 +39,7 @@ class SessionRecommenderService:
         return {"session_id": session_id, "method": "session", "fallback": False, "fallback_reason": None,
                 "returned": len(recs), "recommendations": recs, "session_features": pub,
                 "excluded_seen": len(f["seen_product_ids"])}
+        # /TEACH
 
     @staticmethod
     def impression_log() -> pd.DataFrame:

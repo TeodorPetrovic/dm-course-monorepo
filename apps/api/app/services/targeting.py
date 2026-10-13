@@ -75,6 +75,7 @@ class TargetingService:
         return out
 
     def recommended_audience(self, campaign_id: int, limit: int = 20, mode: str = "ml") -> dict:
+        # TEACH d04: TargetingService.recommended_audience
         if mode not in ("ml", "rule"):
             raise ValueError("mode mora biti 'ml' ili 'rule'")
         if limit is not None and int(limit) < 1:
@@ -100,6 +101,7 @@ class TargetingService:
                 "fallback": fallback, "fallback_reason": reason, "rules_applied": rules,
                 "total_candidates": len(prof), "selected": len(sel), "returned": len(aud),
                 "audience": self._records(aud)}
+        # /TEACH
 
     def targeting_comparison(self, campaign_id: int, limit=None) -> dict:
         c = self.get_campaign(campaign_id)

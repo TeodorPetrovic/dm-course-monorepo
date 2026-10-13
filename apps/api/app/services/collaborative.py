@@ -25,6 +25,7 @@ class CollaborativeRecommenderService:
         return self._events
 
     def _interaction(self) -> InteractionMatrix:
+        # TEACH d06: CollaborativeRecommenderService._interaction
         if self._inter is None:
             p = day_data(6, "interactions.csv")
             if p.exists():
@@ -34,6 +35,7 @@ class CollaborativeRecommenderService:
                     raise EmptyStoreError("empty_store")
                 self._inter = build_interaction_matrix(self.events, products=self.products["product_id"])
         return self._inter
+        # /TEACH
 
     def _similarity(self):
         if self._sim is None:
@@ -49,8 +51,10 @@ class CollaborativeRecommenderService:
                 "sessions_with_2plus": rows_multi}
 
     def collaborative_recommendations(self, product_id: int, limit: int = 5) -> dict:
+        # TEACH d06: CollaborativeRecommenderService.collaborative_recommendations
         return recommend_from_item_similarity(self.products, product_id, self._interaction(),
                                               self._similarity(), limit)
+        # /TEACH
 
     def heuristic_recommendations(self, product_id: int, limit: int = 5) -> dict:
         return recommend_session_cooccurrence(self.products, self.events, product_id, limit)

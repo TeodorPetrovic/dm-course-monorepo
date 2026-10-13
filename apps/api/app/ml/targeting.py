@@ -49,6 +49,7 @@ def evaluate_campaign_rules(probability, segment, rfm_bucket, monetary, campaign
 
 
 def score_customer(probability, segment, rfm_bucket, monetary, campaign: dict) -> dict:
+    # TEACH d04: score_customer
     ok, reasons = evaluate_campaign_rules(probability, segment, rfm_bucket, monetary, campaign)
     if not ok:
         return {"eligible": False, "score": 0.0, "expected_value": 0.0, "reasons": reasons}
@@ -58,6 +59,7 @@ def score_customer(probability, segment, rfm_bucket, monetary, campaign: dict) -
     ev = round(p * v - cost, 4)
     reasons = reasons + [f"očekivana vrednost = {p:.4f}×{v:.2f} − {cost:.2f} = {ev:.4f}"]
     return {"eligible": True, "score": ev, "expected_value": ev, "reasons": reasons}
+    # /TEACH
 
 
 def _required(campaign):
@@ -74,6 +76,7 @@ def _required(campaign):
 
 
 def select_target_customers(profiles: pd.DataFrame, campaign: dict) -> pd.DataFrame:
+    # TEACH d04: select_target_customers
     if profiles is None or len(profiles) == 0:
         return pd.DataFrame()
     missing = [c for c in _required(campaign) if c not in profiles.columns]
@@ -88,6 +91,7 @@ def select_target_customers(profiles: pd.DataFrame, campaign: dict) -> pd.DataFr
     out = profiles.copy()
     out["selected_reasons"] = reasons
     return out[keep].sort_values("user_id").reset_index(drop=True)
+    # /TEACH
 
 
 def effective_limit(limit: Optional[int], campaign: dict) -> int:
@@ -100,6 +104,7 @@ def effective_limit(limit: Optional[int], campaign: dict) -> int:
 
 
 def rank_target_customers(selected: pd.DataFrame, campaign: dict, limit: Optional[int] = None) -> pd.DataFrame:
+    # TEACH d04: rank_target_customers
     if selected is None or len(selected) == 0:
         return pd.DataFrame(columns=AUDIENCE_COLUMNS)
     df = selected.copy()
@@ -114,6 +119,7 @@ def rank_target_customers(selected: pd.DataFrame, campaign: dict, limit: Optiona
     df = df.sort_values(["score", "user_id"], ascending=[False, True], kind="mergesort").reset_index(drop=True)
     df["rank"] = range(1, len(df) + 1)
     return df.head(effective_limit(limit, campaign))[AUDIENCE_COLUMNS].reset_index(drop=True)
+    # /TEACH
 
 
 def rule_based_score(rfm_bucket: Optional[str], monetary: Optional[float]) -> float:
@@ -153,6 +159,7 @@ def _audience_metrics(aud: pd.DataFrame, profiles: pd.DataFrame, cost: float) ->
 
 
 def compare_rule_vs_ml(profiles: pd.DataFrame, campaign: dict, limit: Optional[int] = None) -> dict:
+    # TEACH d04: compare_rule_vs_ml
     lim = effective_limit(limit, campaign)
     rule = rank_by_rule(profiles, campaign, lim)
     ml = rank_target_customers(select_target_customers(profiles, campaign), campaign, lim)
@@ -164,3 +171,4 @@ def compare_rule_vs_ml(profiles: pd.DataFrame, campaign: dict, limit: Optional[i
             "metrics": {"rule": mr, "ml": mm,
                         "lift_expected_conversions": round(mm["expected_conversions"] / mr["expected_conversions"], 2) if mr["expected_conversions"] else None,
                         "overlap": len(a & b), "jaccard": round(len(a & b) / len(union), 3) if union else 0.0}}
+    # /TEACH

@@ -27,7 +27,9 @@ def category(pid: int, limit: int = Query(5, ge=1, le=50)):
 
 @router.get("/recommendations/content/{pid}")
 def content(pid: int, limit: int = Query(5, ge=1, le=50)):
+    # TEACH d05: content
     return svc("rec").content_recommendations(pid, limit)
+    # /TEACH
 
 
 @router.get("/recommendations/content/{pid}/comparison")
@@ -38,7 +40,9 @@ def content_cmp(pid: int, limit: int = Query(5, ge=1, le=50)):
 
 @router.get("/recommendations/collaborative/{pid}")
 def collab(pid: int, limit: int = Query(5, ge=1, le=50)):
+    # TEACH d06: collab
     return svc("cf").collaborative_recommendations(pid, limit)
+    # /TEACH
 
 
 @router.get("/recommendations/collaborative/{pid}/comparison")
@@ -48,17 +52,23 @@ def collab_cmp(pid: int, limit: int = Query(5, ge=1, le=50)):
 
 @router.get("/recommendations/session/{sid}")
 def session_recs(sid: str, limit: int = Query(5, ge=1, le=50)):
+    # TEACH d09: session_recs
     return svc("session").recommend_for_session(sid, limit)
+    # /TEACH
 
 
 @router.get("/recommendations/semantic/{pid}")
 def semantic_recs(pid: int, limit: int = Query(5, ge=1, le=50)):
+    # TEACH d10: semantic_recs
     return svc("semantic").recommendations_for_product(pid, limit)
+    # /TEACH
 
 
 @router.get("/search/semantic")
 def semantic_search(q: str = Query(..., min_length=1), limit: int = Query(5, ge=1, le=50)):
+    # TEACH d10: semantic_search
     return svc("semantic").semantic_search(q, limit)
+    # /TEACH
 
 
 @router.get("/recommendations/legacy/{pid}")
@@ -70,4 +80,6 @@ def legacy(pid: int, limit: int = Query(5, ge=1, le=50)):
 @router.get("/recommendations/user/{uid}")
 @router.get("/recommendations/{uid}")
 def hybrid(uid: int, limit: int = Query(5, ge=1, le=50)):
+    # TEACH d08: hybrid
     return svc("hybrid").recommend_for_user(uid, limit)
+    # /TEACH

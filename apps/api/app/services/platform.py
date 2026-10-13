@@ -44,6 +44,7 @@ class IntegratedPlatformService:
                 s.train()
 
     def _available(self, mid) -> bool:
+        # TEACH d12: IntegratedPlatformService._available
         try:
             if mid in ("kmeans_segmentation", "ml_targeting"):
                 return self._get("seg").is_trained() and (mid != "ml_targeting" or self._get("conv").is_trained())
@@ -59,6 +60,7 @@ class IntegratedPlatformService:
             return True
         except Exception:
             return False
+        # /TEACH
 
     def _buckets(self) -> dict:
         if "buckets" not in self._svc:
@@ -74,6 +76,7 @@ class IntegratedPlatformService:
         return {"modules": mods, "summary": {"total": len(mods), "available": n, "unavailable": len(mods) - n}}
 
     def profile_for_user(self, user_id: int) -> dict:
+        # TEACH d12: IntegratedPlatformService.profile_for_user
         self._ensure_models()
         seg = self._get("seg").get_customer_segment(user_id)
         conv = self._get("conv").get_customer_probability(user_id)
@@ -100,6 +103,7 @@ class IntegratedPlatformService:
                             "top_categories": [{"category_id": int(c), "n_events": int(n)} for c, n in top.items()],
                             "module_class": "statistical"},
                 "targeting_hint": {"reason": hint, "module_class": _cls("rule_targeting")}}
+        # /TEACH
 
     def _overall_ctr(self) -> dict:
         imp = int((self.events["event_type"] == "recommendation_impression").sum())
@@ -107,6 +111,7 @@ class IntegratedPlatformService:
         return {"impressions": imp, "clicks": clk, "ctr": round(clk / imp, 4) if imp else 0.0}
 
     def homepage_payload(self, user_id: int, session_id=None, limit: int = 5) -> dict:
+        # TEACH d12: IntegratedPlatformService.homepage_payload
         prof = self.profile_for_user(user_id)
         recs = self._get("hybrid").recommend_for_user(user_id, limit)
         recs["module_class"] = _cls("hybrid") if not recs["fallback"] else _cls("popularity")
@@ -135,8 +140,10 @@ class IntegratedPlatformService:
                 "evaluation_summary": {"available": True, "overall": self._overall_ctr(),
                                        "module_class": _cls("ctr")},
                 "modules_used": [{"id": i, "name": _BY_ID[i]["name"], "class": _cls(i)} for i in used]}
+        # /TEACH
 
     def product_page_payload(self, product_id: int) -> dict:
+        # TEACH d12: IntegratedPlatformService.product_page_payload
         p = self.products[self.products["product_id"] == product_id]
         if p.empty:
             raise KeyError(product_id)
@@ -149,3 +156,4 @@ class IntegratedPlatformService:
                 "ai_description": ai.generate_product_description(prod).model_dump(),
                 "ai_seo": ai.generate_seo_metadata(prod).model_dump(),
                 "sections": [{"section": s, "module_id": m, "class": _cls(m)} for s, m in SECTIONS]}
+        # /TEACH

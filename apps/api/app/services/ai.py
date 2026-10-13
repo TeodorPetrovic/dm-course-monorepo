@@ -84,6 +84,7 @@ class ExternalProvider(AIProvider):
         return {"name": "external", "base_url": self.base_url, "model": self.model}  # nikad ključ
 
     def generate(self, prompt, *, max_tokens=256, temperature=0.5):
+        # TEACH d11: ExternalProvider.generate
         status, body = http_post(f"{self.base_url}/chat/completions",
                                  {"model": self.model, "messages": [{"role": "user", "content": prompt}],
                                   "max_tokens": max_tokens, "temperature": temperature},
@@ -91,6 +92,7 @@ class ExternalProvider(AIProvider):
         if status != 200:
             raise RuntimeError(f"external provider HTTP {status}")
         return json.loads(body)["choices"][0]["message"]["content"].strip()
+        # /TEACH
 
 
 class DeepSeekProvider(ExternalProvider):
@@ -176,6 +178,7 @@ def build_default_provider(mode: Optional[str] = None) -> Optional[AIProvider]:
 
 
 def parse_json_output(raw: str) -> dict:
+    # TEACH d11: parse_json_output
     if not isinstance(raw, str):
         raise InvalidLLMJsonError("output nije string")
     dec = json.JSONDecoder()
@@ -187,28 +190,36 @@ def parse_json_output(raw: str) -> dict:
         if isinstance(obj, dict):
             return obj
     raise InvalidLLMJsonError("nema validnog JSON objekta u outputu")
+    # /TEACH
 
 
 def validate_required_fields(data: dict, required: list) -> None:
+    # TEACH d11: validate_required_fields
     missing = [f for f in required if f not in data]
     if missing:
         raise InvalidLLMJsonError(f"nedostaju polja: {', '.join(missing)}")
+    # /TEACH
 
 
 def validate_length(value, max_len: int) -> bool:
+    # TEACH d11: validate_length
     return len(str(value)) <= max_len
+    # /TEACH
 
 
 def validate_product_facts(generated_text: str, product: dict) -> list:
+    # TEACH d11: validate_product_facts
     text = set(significant_tokens(generated_text)); missing = []
     for fact in ("name", "category"):
         toks = significant_tokens(product.get(fact) or "")
         if toks and not set(toks) <= text:
             missing.append(fact)
     return missing
+    # /TEACH
 
 
 def validate_generated_output(data: dict, product: dict) -> dict:
+    # TEACH d11: validate_generated_output
     title, desc = str(data.get("seo_title", "")), str(data.get("seo_description", ""))
     checks = {"fields_ok": all(f in data for f in SEO_FIELDS), "title_ok": validate_length(title, TITLE_MAX),
               "desc_ok": validate_length(desc, DESC_MAX),
@@ -216,10 +227,12 @@ def validate_generated_output(data: dict, product: dict) -> dict:
     checks["valid"] = all(checks.values())
     checks.update(title_len=len(title), desc_len=len(desc))
     return checks
+    # /TEACH
 
 
 def generate_with_retry(provider: AIProvider, prompt: str, *, max_retries: int = 2, schema=None,
                         required=None, trace: Optional[list] = None, validator=None, **kwargs) -> dict:
+    # TEACH d11: generate_with_retry
     required = required or SEO_FIELDS; last = None
     for _attempt in range(max_retries + 1):  # bounded: 1 + max_retries pokušaja
         if trace is not None:
@@ -237,6 +250,7 @@ def generate_with_retry(provider: AIProvider, prompt: str, *, max_retries: int =
             if trace is not None:
                 trace[-1] = f"{type(e).__name__}: {e}"[:200]
     raise GenerationFailSafeError(f"{max_retries + 1} pokušaja neuspešno: {last}")
+    # /TEACH
 
 
 def seo_prompt(p: dict) -> str:
@@ -263,6 +277,7 @@ class AIService:
         return r
 
     def generate_seo_metadata(self, product: dict) -> SEOResponse:
+        # TEACH d11: AIService.generate_seo_metadata
         if not product.get("name", "").strip():
             raise ValueError("product name je obavezan")
         if self.provider is None or not self.provider.available():
@@ -285,6 +300,7 @@ class AIService:
         return SEOResponse(seo_title=data["seo_title"], seo_description=data["seo_description"],
                            keywords=[str(k).strip() for k in kw], source=self.provider.descriptor()["name"],
                            raw=json.dumps(data, ensure_ascii=False))
+        # /TEACH
 
     def _content(self, kind, prompt, template_text, required_tokens) -> ContentResponse:
         if self.provider is None or not self.provider.available() or isinstance(self.provider, DemoProvider):

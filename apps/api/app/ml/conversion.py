@@ -27,6 +27,7 @@ def compute_cutoff(events, orders, window_days: int = 7):
 def build_training_dataset(events: pd.DataFrame, orders: pd.DataFrame, window_days: int = 7,
                            leaky: bool = False) -> pd.DataFrame:
     """Labeled dataset: feature-i (clean = pre cut-off-a) + labela iz window-a."""
+    # TEACH d03: build_training_dataset
     if window_days <= 0:
         raise ValueError("window_days mora biti > 0")
     if len(events) == 0 and len(orders) == 0:
@@ -43,18 +44,22 @@ def build_training_dataset(events: pd.DataFrame, orders: pd.DataFrame, window_da
     feats = feats.drop(columns=["favorite_category"], errors="ignore")
     feats[LABEL_COLUMN] = feats["user_id"].isin(buyers).astype(int)
     return feats[["user_id"] + CONVERSION_FEATURE_COLUMNS + [LABEL_COLUMN]].reset_index(drop=True)
+    # /TEACH
 
 
 def split_dataset(df: pd.DataFrame, test_size: float = 0.3, random_state: int = 42):
+    # TEACH d03: split_dataset
     if not 0 < test_size < 1:
         raise ValueError("test_size mora biti u (0, 1)")
     tr, te = train_test_split(df, test_size=test_size, random_state=random_state,
                               stratify=df[LABEL_COLUMN])
     return tr.reset_index(drop=True), te.reset_index(drop=True)
+    # /TEACH
 
 
 def train_conversion_model(X_train, y_train, model_type: str = "logistic_regression",
                            random_state: int = 42):
+    # TEACH d03: train_conversion_model
     if model_type == "logistic_regression":
         model = LogisticRegression(max_iter=1000, random_state=random_state)
     elif model_type == "random_forest":
@@ -62,9 +67,11 @@ def train_conversion_model(X_train, y_train, model_type: str = "logistic_regress
     else:
         raise ValueError(f"nepoznat model_type: {model_type!r}")
     return model.fit(X_train, y_train)
+    # /TEACH
 
 
 def _metrics(y, pred) -> dict:
+    # TEACH d03: _metrics
     y = np.asarray(y); pred = np.asarray(pred)
     return {
         "accuracy": round(float(accuracy_score(y, pred)), 4),
@@ -75,6 +82,7 @@ def _metrics(y, pred) -> dict:
         "n": int(len(y)),
         "positive_class": 1,
     }
+    # /TEACH
 
 
 def evaluate_model(model, X, y) -> dict:
@@ -82,20 +90,24 @@ def evaluate_model(model, X, y) -> dict:
 
 
 def majority_class_baseline(y) -> dict:
+    # TEACH d03: majority_class_baseline
     y = np.asarray(y)
     maj = int(np.bincount(y.astype(int), minlength=2).argmax()) if len(y) else 0
     out = _metrics(y, np.full(len(y), maj))
     out["majority_class"] = maj
     return out
+    # /TEACH
 
 
 def predict_conversion_probability(model, scaled_row) -> float:
+    # TEACH d03: predict_conversion_probability
     if model is None:
         raise ValueError("model not trained")
     if scaled_row is None or len(scaled_row) == 0:
         raise ValueError("prazna feature vrsta")
     x = np.asarray(scaled_row, dtype=float).reshape(1, -1)
     return round(float(model.predict_proba(x)[0, 1]), 4)
+    # /TEACH
 
 
 def run_leakage_exercise(events, orders, window_days: int = 7, test_size: float = 0.3,

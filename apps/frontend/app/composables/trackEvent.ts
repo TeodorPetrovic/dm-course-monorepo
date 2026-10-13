@@ -41,6 +41,7 @@ export function setDemoUserId(id: number) {
 }
 
 export async function trackEvent(payload: TrackPayload) {
+    // TEACH d01: trackEvent -> POST /api/event/track (nikad ne ruši stranicu)
     if (!import.meta.client) return null
     try {
         return await $fetch("/api/event/track", {
@@ -51,6 +52,7 @@ export async function trackEvent(payload: TrackPayload) {
         console.warn("trackEvent failed", e)   // tracking nikad ne ruši stranicu
         return null
     }
+    // /TEACH
 }
 
 type P = { product_id: number, price?: number | null, category_id?: number | null }

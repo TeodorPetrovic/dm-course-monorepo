@@ -31,6 +31,7 @@ def reference_time(events: pd.DataFrame, orders: Optional[pd.DataFrame] = None) 
 def calculate_rfm(events: pd.DataFrame, orders: Optional[pd.DataFrame] = None,
                   reference: Optional[pd.Timestamp] = None, user_ids=None) -> pd.DataFrame:
     """R/F/M po korisniku sa eksplicitnim fallback-ovima (vidi lekciju Day 2)."""
+    # TEACH d02: calculate_rfm
     cols = ["user_id", "recency_days", "frequency", "monetary"]
     if (events is None or len(events) == 0) and (orders is None or len(orders) == 0):
         return pd.DataFrame(columns=cols)
@@ -64,6 +65,7 @@ def calculate_rfm(events: pd.DataFrame, orders: Optional[pd.DataFrame] = None,
     rec = (ref - last).dt.days
     out["recency_days"] = rec.fillna(cold).astype(int)
     return out.reset_index()[cols]
+    # /TEACH
 
 
 def build_customer_features(events: pd.DataFrame, orders: Optional[pd.DataFrame] = None,

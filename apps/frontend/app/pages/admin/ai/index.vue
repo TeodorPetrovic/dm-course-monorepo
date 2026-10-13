@@ -26,9 +26,11 @@ onMounted(async () => {
   catNames.value = Object.fromEntries(cats.map((c: any) => [c.category_id, c.name]))
 })
 async function generate() {
+  // TEACH d11: POST /ai/seo (validacija + fallback su u API-ju)
   const p = products.value.find(x => x.product_id === pid.value); if (!p) return
   busy.value = true
   const r = await mlPost('/ai/seo', { product_name: p.name, description: p.description, category_name: catNames.value[p.category_id] || '' })
   busy.value = false; err.value = r.error ? `dm-ml: ${r.error}` : ''; out.value = r.data
+  // /TEACH
 }
 </script>

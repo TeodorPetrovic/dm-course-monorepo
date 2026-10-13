@@ -1,0 +1,202 @@
+{
+ "d01": {
+  "data/events.py": [
+   "create_event",
+   "EventStore.save_event"
+  ],
+  "data/analytics.py": [
+   "calculate_funnel_counts",
+   "calculate_conversion_rate",
+   "share_by_category",
+   "average_order_value"
+  ],
+  "api/event_routes.py": [
+   "post_event",
+   "conv_rate",
+   "aov"
+  ]
+ },
+ "d02": {
+  "ml/features.py": [
+   "calculate_rfm"
+  ],
+  "ml/segmentation.py": [
+   "train_segmentation_model",
+   "assign_segment",
+   "profile_segments"
+  ],
+  "services/segmentation.py": [
+   "SegmentationService.train"
+  ],
+  "api/segment_routes.py": [
+   "seg_train",
+   "segments",
+   "cust_segment"
+  ]
+ },
+ "d03": {
+  "ml/conversion.py": [
+   "build_training_dataset",
+   "split_dataset",
+   "train_conversion_model",
+   "predict_conversion_probability",
+   "_metrics",
+   "majority_class_baseline"
+  ],
+  "services/conversion.py": [
+   "ConversionService.get_customer_probability",
+   "ConversionService.train"
+  ],
+  "api/conversion_routes.py": [
+   "conv_train",
+   "conv_prob"
+  ]
+ },
+ "d04": {
+  "ml/targeting.py": [
+   "score_customer",
+   "select_target_customers",
+   "rank_target_customers",
+   "compare_rule_vs_ml"
+  ],
+  "services/targeting.py": [
+   "TargetingService.recommended_audience"
+  ],
+  "api/campaign_routes.py": [
+   "audience"
+  ]
+ },
+ "d05": {
+  "recommenders/content.py": [
+   "recommend_popular",
+   "prepare_product_text",
+   "build_tfidf_matrix",
+   "calculate_product_similarity",
+   "recommend_similar_products",
+   "popularity_from_events",
+   "recommend_same_category"
+  ],
+  "services/recommender.py": [
+   "RecommenderService.content_recommendations",
+   "RecommenderService.baseline_comparison"
+  ],
+  "api/recommendation_routes.py": [
+   "content"
+  ]
+ },
+ "d06": {
+  "recommenders/collaborative.py": [
+   "build_interaction_matrix",
+   "calculate_item_similarity",
+   "recommend_from_item_similarity",
+   "weight_sensitivity_experiment",
+   "recommend_session_cooccurrence",
+   "compare_heuristic_vs_cf"
+  ],
+  "services/collaborative.py": [
+   "CollaborativeRecommenderService.collaborative_recommendations",
+   "CollaborativeRecommenderService._interaction"
+  ],
+  "api/recommendation_routes.py": [
+   "collab"
+  ]
+ },
+ "d07": {
+  "recommenders/evaluation.py": [
+   "precision_at_k",
+   "recall_at_k",
+   "hit_rate_at_k",
+   "ndcg_at_k",
+   "catalog_coverage",
+   "temporal_split",
+   "evaluate_recommender",
+   "build_comparison_report",
+   "extract_test_cases",
+   "make_popularity_predictor",
+   "make_category_predictor"
+  ],
+  "api/analytics_routes.py": [
+   "rec_eval"
+  ]
+ },
+ "d08": {
+  "recommenders/hybrid.py": [
+   "normalize_scores",
+   "merge_candidates",
+   "apply_business_rules",
+   "diversify_results",
+   "HybridModels.recommend"
+  ],
+  "services/hybrid.py": [
+   "HybridRecommenderService.recommend_for_user"
+  ],
+  "api/recommendation_routes.py": [
+   "hybrid"
+  ]
+ },
+ "d09": {
+  "recommenders/session.py": [
+   "recency_weights",
+   "recent_product_interest",
+   "recent_category_interest",
+   "session_features",
+   "recommend_for_session",
+   "recommendation_ctr",
+   "_group_ctr"
+  ],
+  "services/session.py": [
+   "SessionRecommenderService.recommend_for_session"
+  ],
+  "api/recommendation_routes.py": [
+   "session_recs"
+  ],
+  "api/analytics_routes.py": [
+   "rec_ctr"
+  ]
+ },
+ "d10": {
+  "recommenders/embeddings.py": [
+   "normalize",
+   "brute_force_nearest",
+   "keyword_search",
+   "HashEmbedder.encode",
+   "make_embedder"
+  ],
+  "services/semantic.py": [
+   "SemanticService.semantic_search",
+   "SemanticService.recommendations_for_product",
+   "SemanticService.build_comparison"
+  ],
+  "api/recommendation_routes.py": [
+   "semantic_search",
+   "semantic_recs"
+  ]
+ },
+ "d11": {
+  "services/ai.py": [
+   "parse_json_output",
+   "validate_required_fields",
+   "validate_length",
+   "validate_product_facts",
+   "validate_generated_output",
+   "generate_with_retry",
+   "ExternalProvider.generate",
+   "AIService.generate_seo_metadata"
+  ],
+  "api/ai_routes.py": [
+   "ai_seo"
+  ]
+ },
+ "d12": {
+  "services/platform.py": [
+   "IntegratedPlatformService._available",
+   "IntegratedPlatformService.profile_for_user",
+   "IntegratedPlatformService.homepage_payload",
+   "IntegratedPlatformService.product_page_payload"
+  ],
+  "api/platform_routes.py": [
+   "p_home",
+   "p_product"
+  ]
+ }
+}
