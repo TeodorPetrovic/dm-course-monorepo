@@ -10,7 +10,7 @@ MERGE_WEIGHTS = {"popularity": 0.2, "category": 0.3, "content": 0.3, "collaborat
 
 
 def normalize_scores(scores):
-    # TEACH d08: normalize_scores
+    # TEACH d08+: normalize_scores
     scores = [float(s) for s in scores]
     if not scores:
         return []
@@ -67,7 +67,7 @@ def apply_business_rules(ranked, rules):
 
 
 def diversify_results(ranked, k, max_per_category=2):
-    # TEACH d08: diversify_results
+    # TEACH d08+: diversify_results
     out, rest, cnt = [], [], Counter()
     for c in ranked:
         cat = c.get("category_id")

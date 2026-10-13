@@ -74,7 +74,7 @@ def _describe(row: pd.Series, overall: pd.Series) -> str:
 
 
 def profile_segments(features: pd.DataFrame, labels, scaled_df: Optional[pd.DataFrame] = None) -> pd.DataFrame:
-    # TEACH d02: profile_segments
+    # TEACH d02+: profile_segments
     df = features.copy()
     df["segment"] = [f"segment_{int(l)}" for l in labels]
     num = ["recency_days", "frequency", "monetary", "product_views", "cart_adds", "sessions", "aov", "conversion"]

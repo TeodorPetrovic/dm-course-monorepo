@@ -84,7 +84,7 @@ class ExternalProvider(AIProvider):
         return {"name": "external", "base_url": self.base_url, "model": self.model}  # nikad ključ
 
     def generate(self, prompt, *, max_tokens=256, temperature=0.5):
-        # TEACH d11: ExternalProvider.generate
+        # TEACH d11+: ExternalProvider.generate
         status, body = http_post(f"{self.base_url}/chat/completions",
                                  {"model": self.model, "messages": [{"role": "user", "content": prompt}],
                                   "max_tokens": max_tokens, "temperature": temperature},

@@ -27,7 +27,7 @@ class ConversionService:
 
     def train(self, model_type: str = "logistic_regression", window_days: int = 7,
               test_size: float = 0.3, random_state: int = 42) -> dict:
-        # TEACH d03: ConversionService.train
+        # TEACH d03+: ConversionService.train
         if model_type not in MODEL_TYPES:
             raise ValueError(f"model_type mora biti jedan od {MODEL_TYPES}")
         if not 1 <= int(window_days) <= 28 or not 0 < test_size < 1:

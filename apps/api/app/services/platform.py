@@ -44,7 +44,7 @@ class IntegratedPlatformService:
                 s.train()
 
     def _available(self, mid) -> bool:
-        # TEACH d12: IntegratedPlatformService._available
+        # TEACH d12+: IntegratedPlatformService._available
         try:
             if mid in ("kmeans_segmentation", "ml_targeting"):
                 return self._get("seg").is_trained() and (mid != "ml_targeting" or self._get("conv").is_trained())

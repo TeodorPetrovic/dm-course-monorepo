@@ -50,7 +50,7 @@ METRIC_EVENT = {"view": "product_view", "cart": "add_to_cart", "purchase": "purc
 
 
 def share_by_category(events: pd.DataFrame, products: pd.DataFrame, metric: str = "view") -> pd.DataFrame:
-    # TEACH d01: share_by_category
+    # TEACH d01+: share_by_category
     if metric not in METRIC_EVENT:
         raise ValueError(f"metric mora biti jedan od {sorted(METRIC_EVENT)}")
     ev = events[events["event_type"] == METRIC_EVENT[metric]]

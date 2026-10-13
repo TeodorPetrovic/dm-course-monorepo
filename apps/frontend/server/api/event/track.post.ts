@@ -25,7 +25,7 @@ function nowLocal(): string {
 }
 
 export default defineEventHandler(async (h) => {
-    // TEACH d01: validacija + upis u bazu + prosleđivanje u dm-ml
+    // TEACH d01+: validacija + upis u bazu + prosleđivanje u dm-ml
     const parsed = EventIn.safeParse(await readBody(h))
     if (!parsed.success) {
         throw createError({ statusCode: 422, statusMessage: "invalid_event", data: parsed.error.issues })
