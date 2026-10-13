@@ -1,0 +1,48 @@
+query,method,rank,product_id,name,category_id,score
+smartphone,keyword,1,1,Smartphone 5102,1,1.0
+smartphone,keyword,2,11,Smartphone 4622,1,1.0
+smartphone,keyword,3,21,Smartphone 8464,1,1.0
+smartphone,tfidf,1,1,Smartphone 5102,1,0.570554
+smartphone,tfidf,2,11,Smartphone 4622,1,0.570554
+smartphone,tfidf,3,21,Smartphone 8464,1,0.570554
+smartphone,embedding,1,21,Smartphone 8464,1,0.693488
+smartphone,embedding,2,1,Smartphone 5102,1,0.669005
+smartphone,embedding,3,11,Smartphone 4622,1,0.666963
+something to listen to music with,keyword,1,229,Stand 8561,11,1.0
+something to listen to music with,keyword,2,225,Strings 2570,11,1.0
+something to listen to music with,keyword,3,230,Metronome 3935,11,1.0
+something to listen to music with,tfidf,1,211,Guitar 6721,11,0.391345
+something to listen to music with,tfidf,2,221,Guitar 228,11,0.391345
+something to listen to music with,tfidf,3,231,Guitar 8134,11,0.391345
+something to listen to music with,embedding,1,220,Metronome 7381,11,0.41385
+something to listen to music with,embedding,2,227,Amp 9862,11,0.405609
+something to listen to music with,embedding,3,224,Headphones 2106,11,0.403567
+a book to read before bed,keyword,1,170,Bed 5319,9,1.0
+a book to read before bed,keyword,2,180,Bed 2116,9,1.0
+a book to read before bed,tfidf,1,170,Bed 5319,9,0.586222
+a book to read before bed,tfidf,2,180,Bed 2116,9,0.586222
+a book to read before bed,tfidf,3,1,Smartphone 5102,1,0.0
+a book to read before bed,embedding,1,53,Novel 4188,3,0.426622
+a book to read before bed,embedding,2,54,Textbook 6278,3,0.387519
+a book to read before bed,embedding,3,63,Novel 6417,3,0.386441
+fitness and training gear,tfidf,1,1,Smartphone 5102,1,0.0
+fitness and training gear,tfidf,2,2,Laptop 6557,1,0.0
+fitness and training gear,tfidf,3,3,Tablet 2837,1,0.0
+fitness and training gear,embedding,1,41,Belt 1358,2,0.393647
+fitness and training gear,embedding,2,38,Backpack 139,2,0.384839
+fitness and training gear,embedding,3,68,Dumbbell 7550,4,0.38212
+home cooking essentials,keyword,1,95,Lamp 300,5,1.0
+home cooking essentials,keyword,2,91,Toaster 8625,5,1.0
+home cooking essentials,keyword,3,90,Blender 4338,5,1.0
+home cooking essentials,tfidf,1,87,Table 9153,5,0.383295
+home cooking essentials,tfidf,2,97,Table 4882,5,0.383295
+home cooking essentials,tfidf,3,85,Lamp 1952,5,0.381583
+home cooking essentials,embedding,1,165,Spice Set 8706,8,0.410028
+home cooking essentials,embedding,2,155,Spice Set 3357,8,0.378365
+home cooking essentials,embedding,3,45,Cookbook 7623,3,0.354293
+wireless earbuds for travel,tfidf,1,1,Smartphone 5102,1,0.0
+wireless earbuds for travel,tfidf,2,2,Laptop 6557,1,0.0
+wireless earbuds for travel,tfidf,3,3,Tablet 2837,1,0.0
+wireless earbuds for travel,embedding,1,14,Headphones 8397,1,0.365203
+wireless earbuds for travel,embedding,2,224,Headphones 2106,11,0.355617
+wireless earbuds for travel,embedding,3,4,Headphones 8407,1,0.345963

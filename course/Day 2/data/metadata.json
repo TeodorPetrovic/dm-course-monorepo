@@ -1,0 +1,49 @@
+{
+  "dataset": "dm_customer_features_v1",
+  "description": "Seeded customer feature table derived from Day 1 events + orders (RFM + counts + AOV + conversion + favorite category).",
+  "source": "derived",
+  "derived_from": {
+    "events": "Day 1/data/events.csv",
+    "orders": "Day 1/data/orders.csv",
+    "module": "app.data.generate_features",
+    "function": "generate_features",
+    "builder": "app.ml.features.build_customer_features"
+  },
+  "seed": {
+    "seed": 42,
+    "note": "features are deterministic functions of the Day 1 seed (42); no RNG is used in this generator"
+  },
+  "reference_date": "2026-01-31 23:59:38",
+  "feature_columns": [
+    "recency_days",
+    "frequency",
+    "monetary",
+    "aov",
+    "conversion"
+  ],
+  "counts": {
+    "customers": 3000,
+    "buyers": 583,
+    "zero_spend": 2417,
+    "with_favorite_category": 3000
+  },
+  "fields": {
+    "user_id": "int, stabilan ID korisnika (FK -> customers.user_id)",
+    "recency_days": "int, dani od reference do poslednje kupovine (ili aktivnosti za ne-kupce; najhladniji fallback za bez istorije)",
+    "frequency": "int, broj porudžbina (orders); 0 za ne-kupce",
+    "monetary": "float, ukupna vrednost porudžbina (suma total_price); 0.0 za ne-kupce",
+    "product_views": "int, broj product_view događaja",
+    "cart_adds": "int, broj add_to_cart događaja",
+    "sessions": "int, broj jedinstvenih sesija",
+    "aov": "float, prosečna vrednost porudžbine (monetary/frequency); 0.0 za ne-kupce",
+    "conversion": "float 0..1, sesije sa kupovinom / sve sesije; 0.0 ako nema sesija",
+    "favorite_category": "float ili NaN, modus kategorije po product_view; NaN ako nema pregleda"
+  },
+  "created": "2026-08-19",
+  "reproducibility_note": "No wall-clock timestamp is recorded here: the generator is byte-for-byte reproducible, so the sidecar must not change between runs. Regenerate with the same seed to reproduce all files.",
+  "manifest": {
+    "sha256": {
+      "customer_features.csv": "706c5148d3d3cc092325288494df30bb21704f7aff47f963802c1f947687c67b"
+    }
+  }
+}

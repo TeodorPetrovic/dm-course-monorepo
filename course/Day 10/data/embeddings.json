@@ -1,0 +1,7 @@
+{
+  "dataset": "dm_semantic_v1",
+  "embedder": {
+    "name": "sentence-transformers:sentence-transformers/all-MiniLM-L6-v2",
+    "params": {}
+  }
+}

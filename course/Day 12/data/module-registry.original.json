@@ -1,0 +1,191 @@
+{
+  "description": "Integrated Marketing Platform — manifest arhitekture (Day 12). Svaka komponenta je označena klasom (rule/heuristic, statistical, ML, generative AI) i ima definisan fallback. 'available' je live diagnostics na ovom okruženju — fallback je deo dizajna.",
+  "modules": [
+    {
+      "id": "events",
+      "name": "Event tracking & analytics (Day 1)",
+      "class": "data pipeline",
+      "day": 1,
+      "endpoint": "POST /events, GET /analytics/summary",
+      "data": "Day 1/data/events.csv",
+      "fallback": "— (sve kasnije zavisi od ovoga)",
+      "available": true
+    },
+    {
+      "id": "rfm",
+      "name": "Manual RFM buckets (Day 2)",
+      "class": "rule / heuristic",
+      "day": 2,
+      "endpoint": "GET /segments",
+      "data": "Day 1/data/events.csv + orders.csv",
+      "fallback": "korisnik bez istorije -> bucket izostavljen (no_history)",
+      "available": true
+    },
+    {
+      "id": "kmeans_segmentation",
+      "name": "K-Means customer segmentation (Day 2)",
+      "class": "ML (prediction / learned representation)",
+      "day": 2,
+      "endpoint": "GET /segments/customer/{user_id}",
+      "data": "app/models/segment_kmeans.joblib + meta",
+      "fallback": "netreniran model -> unsegmented (untrained_model); bez istorije -> unsegmented (no_history)",
+      "available": true
+    },
+    {
+      "id": "majority_baseline",
+      "name": "Majority-class conversion baseline (Day 3)",
+      "class": "statistical",
+      "day": 3,
+      "endpoint": "GET /analytics/conversion/status",
+      "data": "Day 3/data/training_dataset.csv",
+      "fallback": "— (baseline uvek postoji)",
+      "available": true
+    },
+    {
+      "id": "conversion_model",
+      "name": "Purchase probability model (Day 3)",
+      "class": "ML (prediction / learned representation)",
+      "day": 3,
+      "endpoint": "GET /models/conversion/probability/{user_id}",
+      "data": "app/models/conversion_model.joblib + meta",
+      "fallback": "netreniran model -> base_rate (untrained_model); bez istorije -> base_rate (no_history)",
+      "available": true
+    },
+    {
+      "id": "rule_targeting",
+      "name": "Rule-based campaign targeting (Day 4)",
+      "class": "rule / heuristic",
+      "day": 4,
+      "endpoint": "GET /campaigns/{campaign_id}/audience?mode=rule",
+      "data": "Day 4/data/campaigns.csv",
+      "fallback": "— (pravila uvek rade)",
+      "available": true
+    },
+    {
+      "id": "ml_targeting",
+      "name": "ML-assisted campaign targeting (Day 4)",
+      "class": "ML (prediction / learned representation)",
+      "day": 4,
+      "endpoint": "GET /campaigns/{campaign_id}/audience?mode=ml",
+      "data": "Day 4/data/campaigns.csv + trenirani Day 2/3 modeli",
+      "fallback": "netrenirani modeli -> rule-based publika (untrained_model)",
+      "available": true
+    },
+    {
+      "id": "popularity",
+      "name": "Popularity baseline (Day 5)",
+      "class": "statistical",
+      "day": 5,
+      "endpoint": "GET /recommendations/popular",
+      "data": "Day 1/data/events.csv",
+      "fallback": "— (baseline uvek radi)",
+      "available": true
+    },
+    {
+      "id": "content_tfidf",
+      "name": "Content-based recommender (TF-IDF + cosine) (Day 5)",
+      "class": "statistical",
+      "day": 5,
+      "endpoint": "GET /recommendations/content/{product_id}",
+      "data": "Day 5/data/products_text.csv",
+      "fallback": "cold-start -> popularity (no_signal)",
+      "available": true
+    },
+    {
+      "id": "template_text",
+      "name": "Template product text (Day 5/11)",
+      "class": "rule / heuristic",
+      "day": 5,
+      "endpoint": "app.services.templates",
+      "data": "Day 5/data/products_text.csv",
+      "fallback": "— (deterministički baseline)",
+      "available": true
+    },
+    {
+      "id": "collaborative",
+      "name": "Collaborative item-item (implicit feedback) (Day 6)",
+      "class": "statistical",
+      "day": 6,
+      "endpoint": "GET /recommendations/collaborative/{product_id}",
+      "data": "Day 6/data/interactions.csv",
+      "fallback": "cold-start -> popularity (unknown_product / no_interactions)",
+      "available": true
+    },
+    {
+      "id": "evaluation",
+      "name": "Recommendation evaluation framework (Day 7)",
+      "class": "statistical / evaluation protocol",
+      "day": 7,
+      "endpoint": "GET /analytics/recommendations",
+      "data": "Day 1/data/events.csv + Day 5 katalog",
+      "fallback": "nema fajlova -> 503 (koji generator da pokrene)",
+      "available": true
+    },
+    {
+      "id": "hybrid",
+      "name": "Hybrid candidate-generation + ranking (Day 8)",
+      "class": "rule / heuristic pipeline",
+      "day": 8,
+      "endpoint": "GET /recommendations/{user_id}",
+      "data": "Day 1/data/events.csv + Day 5 katalog",
+      "fallback": "nepoznat korisnik -> popularity (unknown_user); merge težine su heuristika, ne naučen odgovor",
+      "available": true
+    },
+    {
+      "id": "session",
+      "name": "Session-aware recommendations (Day 9)",
+      "class": "rule / heuristic",
+      "day": 9,
+      "endpoint": "GET /recommendations/session/{session_id}",
+      "data": "Day 1/data/events.csv",
+      "fallback": "sesija bez signala -> popularity (no_session_signal)",
+      "available": true
+    },
+    {
+      "id": "ctr",
+      "name": "Recommendation CTR / feedback loop (Day 9)",
+      "class": "statistical",
+      "day": 9,
+      "endpoint": "GET /analytics/recommendations/ctr",
+      "data": "live event store (POST /recommendations/events)",
+      "fallback": "0 impresija -> ctr=0.0 (zero-division)",
+      "available": true
+    },
+    {
+      "id": "embeddings",
+      "name": "Product embeddings + semantic search (Day 10)",
+      "class": "ML (prediction / learned representation)",
+      "day": 10,
+      "endpoint": "GET /search/semantic, GET /recommendations/semantic/{product_id}",
+      "data": "Day 10/data/embeddings.npz",
+      "fallback": "embedder nedostupan -> keyword; proizvod bez embeddinga -> popularity (no_embedding)",
+      "available": true
+    },
+    {
+      "id": "generative_ai",
+      "name": "Structured generative-AI content (Day 11)",
+      "class": "generative AI",
+      "day": 11,
+      "endpoint": "POST /ai/seo, POST /ai/content",
+      "data": "AI_PROVIDER (local/external/auto) + template baseline",
+      "fallback": "provider nedostupan / nevalidan output -> template (model_unavailable / invalid_llm_output)",
+      "available": false
+    },
+    {
+      "id": "seo_template",
+      "name": "Template SEO baseline (Day 11)",
+      "class": "rule / heuristic",
+      "day": 11,
+      "endpoint": "app.services.templates.template_seo_metadata",
+      "data": "Day 5/data/products_text.csv",
+      "fallback": "— (struktura garantovana kodom)",
+      "available": true
+    }
+  ],
+  "summary": {
+    "total": 18,
+    "available": 17,
+    "unavailable": 1
+  },
+  "note": "available=False znači da modul pada na svoj fallback (vidi 'fallback' polje) — ne da platforma ne radi. Klasa 'class' je taksonomija: rule/heuristic, statistical, ML, generative AI."
+}

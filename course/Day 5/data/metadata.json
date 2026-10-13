@@ -1,0 +1,77 @@
+{
+  "dataset": "dm_product_text_v1",
+  "description": "Seeded product-text corpus derived from the Day 1 catalog: one text representation per product (category + name + description) for TF-IDF content recommendations, plus a popularity score computed from Day 1 events (view=1, add_to_cart=3, purchase=5) as the baseline.",
+  "source": "derived",
+  "derived_from": {
+    "products": "Day 1/data/products.csv",
+    "categories": "Day 1/data/categories.csv",
+    "events": "Day 1/data/events.csv",
+    "module": "app.data.generate_product_text",
+    "function": "generate_product_text",
+    "text_builder": "app.recommenders.content.prepare_product_text",
+    "popularity_builder": "app.recommenders.content._popularity_from_events"
+  },
+  "weights": {
+    "product_view": 1.0,
+    "add_to_cart": 3.0,
+    "purchase": 5.0
+  },
+  "columns": [
+    "product_id",
+    "category_id",
+    "category_name",
+    "name",
+    "slug",
+    "description",
+    "img_url",
+    "price",
+    "product_text",
+    "popularity"
+  ],
+  "counts": {
+    "products": 252,
+    "categories": 12,
+    "by_category": {
+      "1": 21,
+      "2": 21,
+      "3": 21,
+      "4": 21,
+      "5": 21,
+      "6": 21,
+      "7": 21,
+      "8": 21,
+      "9": 21,
+      "10": 21,
+      "11": 21,
+      "12": 21
+    },
+    "products_with_events": 252,
+    "total_popularity": 108922.0,
+    "top_popular": [
+      90,
+      184,
+      110,
+      12,
+      49
+    ]
+  },
+  "fields": {
+    "product_id": "int, stabilan ID proizvoda (FK -> products.product_id)",
+    "category_id": "int, FK -> categories.category_id",
+    "category_name": "str, naziv kategorije (za tekst — kategorija je token)",
+    "name": "str, naziv proizvoda (iz Day 1 kataloga)",
+    "slug": "str, URL slug",
+    "description": "str, opis proizvoda (iz Day 1 kataloga)",
+    "img_url": "str, putanja do slike",
+    "price": "float, cena",
+    "product_text": "str, tekst za TF-IDF: kategorija + naziv + opis (pripremljen kroz prepare_product_text)",
+    "popularity": "float, težinski zbir događaja (view=1, add_to_cart=3, purchase=5) — popularity baseline skor"
+  },
+  "created": "2026-08-19",
+  "reproducibility_note": "No wall-clock timestamp is recorded here: the generator is byte-for-byte reproducible, so the sidecar must not change between runs. Regenerate with the same seed to reproduce all files.",
+  "manifest": {
+    "sha256": {
+      "products_text.csv": "ad00b379283fed0b4e81a53f5a1c847b9d3006cf7d43c4f096ac1fa2153bc3de"
+    }
+  }
+}

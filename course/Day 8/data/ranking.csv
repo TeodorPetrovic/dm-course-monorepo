@@ -1,0 +1,26 @@
+user_id,position,product_id,name,category_id,score,sources
+395,1,50,Biography Essential 819,3,0.520321695,category;collaborative;content
+395,2,52,Fantasy Pro 681,3,0.509836066,category;collaborative;popularity
+395,3,127,Building Blocks Premium 126,7,0.36899563,category;collaborative;popularity
+395,4,133,Doll Eco 977,7,0.294663008,category;collaborative;popularity
+395,5,90,Table Lamp Eco 643,5,0.234501178,category;popularity
+1465,1,30,T-shirt Everyday 987,2,0.888958189,category;collaborative;content;popularity
+1465,2,41,Boots Compact 911,2,0.72414186,category;collaborative;content;popularity
+1465,3,110,Shampoo Everyday 111,6,0.462945934,category;collaborative;popularity
+1465,4,76,Tennis Racket Compact 416,4,0.373002791,category;collaborative;popularity
+1465,5,111,Shampoo Classic 190,6,0.343880821,collaborative;content
+409,1,133,Doll Eco 977,7,0.665285648,category;collaborative;content;popularity
+409,2,127,Building Blocks Premium 126,7,0.620048607,category;collaborative;popularity
+409,3,243,Ladder Deluxe 713,12,0.392084888,category;collaborative;content;popularity
+409,4,200,Floor Mats Everyday 949,10,0.384050257,category;collaborative;popularity
+409,5,49,Biography Deluxe 648,3,0.35989805,category;collaborative;popularity
+1182,1,12,Keyboard Classic 505,1,0.669437939,category;collaborative;popularity
+1182,2,1,Smartphone Compact 686,1,0.438003213,category;collaborative;content
+1182,3,37,Backpack Compact 926,2,0.360230932,category;content;popularity
+1182,4,200,Floor Mats Everyday 949,10,0.315745277,category;collaborative;popularity
+1182,5,231,Studio Headphones Classic 686,11,0.290230315,category;collaborative;popularity
+2360,1,85,Blender Classic 334,5,0.711660949,category;collaborative;content;popularity
+2360,2,90,Table Lamp Eco 643,5,0.684036166,category;collaborative;popularity
+2360,3,177,Bed Frame Eco 577,9,0.666807534,category;collaborative;content;popularity
+2360,4,184,Nightstand Everyday 721,9,0.510771414,category;collaborative;popularity
+2360,5,80,Fitness Band Eco 108,4,0.438828066,category;collaborative;popularity

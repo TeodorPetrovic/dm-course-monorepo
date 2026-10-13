@@ -1,0 +1,40 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+apps/api/app/models/
+
+# Node / Nuxt
+node_modules/
+.output/
+.nuxt/
+.nitro/
+.cache/
+.data/
+dist/
+
+# Lokalna baza (generiše se: db/start_local_db.sh + db/load.sh)
+db/data/
+db/seed.sql
+db/*.sock
+db/*.pid
+db/*.err
+db/install.log
+
+# Logovi skripti / izlazi
+outputs/
+*.log
+
+# Tajne — nikad u git
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Veliki regenerabilni podatak (17 MB): scripts/setup.sh ga pravi (seed 42, bajt-identičan; verify_dataset proverava sha256)
+course/Day 1/data/events.csv

@@ -1,0 +1,98 @@
+{
+  "dataset": "dm_recommendation_evaluation_v1",
+  "description": "Seeded recommendation-evaluation artifacts. test_cases.csv = session-based evaluation cases from the TEST period of a temporal split (query = first product a session sees, targets = later products in the same session). comparison.csv = P@K / R@K / HR@K / NDCG@K / catalog coverage for the popularity/category/content/collaborative recommenders. Temporal split is used so the FUTURE does not leak into training (DAY-BRIEFS Day 7).",
+  "source": "derived",
+  "derived_from": {
+    "events": "Day 1/data/events.csv",
+    "products": "Day 5/data/products_text.csv",
+    "module": "app.data.generate_evaluation",
+    "function": "generate_evaluation",
+    "split_function": "app.recommenders.evaluation.temporal_split",
+    "metric_functions": "app.recommenders.evaluation"
+  },
+  "parameters": {
+    "k": 5,
+    "split_ratio": 0.8,
+    "split_time": "2026-01-26 11:21:20",
+    "min_session_items": 2,
+    "session_protocol": "query = first distinct product by timestamp in test window; targets = distinct products seen later in the same session"
+  },
+  "columns": {
+    "test_cases.csv": [
+      "session_id",
+      "query_product_id",
+      "target_product_ids",
+      "n_targets",
+      "query_time"
+    ],
+    "comparison.csv": [
+      "method",
+      "precision_at_k",
+      "recall_at_k",
+      "hit_rate_at_k",
+      "ndcg_at_k",
+      "catalog_coverage"
+    ]
+  },
+  "counts": {
+    "n_train_events": 146774,
+    "n_test_events": 36694,
+    "n_test_sessions": 3121,
+    "n_test_cases": 2803,
+    "methods": [
+      "popularity",
+      "category",
+      "content",
+      "collaborative"
+    ]
+  },
+  "comparison": [
+    {
+      "method": "popularity",
+      "precision_at_k": 0.081841,
+      "recall_at_k": 0.078593,
+      "hit_rate_at_k": 0.335355,
+      "ndcg_at_k": 0.096795,
+      "catalog_coverage": 0.02381
+    },
+    {
+      "method": "category",
+      "precision_at_k": 0.244595,
+      "recall_at_k": 0.297802,
+      "hit_rate_at_k": 0.674634,
+      "ndcg_at_k": 0.345375,
+      "catalog_coverage": 0.285714
+    },
+    {
+      "method": "content",
+      "precision_at_k": 0.068641,
+      "recall_at_k": 0.073318,
+      "hit_rate_at_k": 0.278987,
+      "ndcg_at_k": 0.093596,
+      "catalog_coverage": 1.0
+    },
+    {
+      "method": "collaborative",
+      "precision_at_k": 0.239386,
+      "recall_at_k": 0.289999,
+      "hit_rate_at_k": 0.668926,
+      "ndcg_at_k": 0.335239,
+      "catalog_coverage": 0.722222
+    }
+  ],
+  "fields": {
+    "session_id": "str, user_session (Day 1 kolona) — red evaluacionog slučaja",
+    "query_product_id": "int, PRVI različiti proizvod koji sesija vidi u test periodu — ulaz u preporučivača (query)",
+    "target_product_ids": "str, različiti proizvodi viđeni KASNIJE u istoj sesiji, ';'-spojeni — ground truth (šta je sesija stvarno radila posle query-ja)",
+    "n_targets": "int, broj target proizvoda",
+    "query_time": "str, timestamp prvog proizvoda u sesiji (test period)"
+  },
+  "created": "2026-08-19",
+  "reproducibility_note": "No wall-clock timestamp is recorded here: the generator is byte-for-byte reproducible, so the sidecar must not change between runs. Regenerate with the same seed to reproduce all files.",
+  "manifest": {
+    "sha256": {
+      "test_cases.csv": "c5ee998c96efaff8b0533095864254de634adad5bd96c0b00bb286e0e84f2022",
+      "comparison.csv": "e88d3ef65d5090a4b509bb26606b0fb455203d7137c47fb4d3476794fe939359"
+    }
+  }
+}

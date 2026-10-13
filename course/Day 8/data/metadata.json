@@ -1,0 +1,151 @@
+{
+  "dataset": "dm_hybrid_pipeline_v1",
+  "description": "Seeded hybrid candidate-generation and ranking artifacts. candidates.csv = per-source candidates (recall phase) for demo users; ranking.csv = final hybrid ranking after merge/score/business-rules/diversity; comparison.csv = hybrid vs single-source recommenders on a USER-BASED protocol (temporal split, Day 7 metrics). Models are built from TRAIN events only (anti-leakage).",
+  "source": "derived",
+  "derived_from": {
+    "events": "Day 1/data/events.csv",
+    "products": "Day 5/data/products_text.csv",
+    "module": "app.data.generate_hybrid",
+    "function": "generate_hybrid",
+    "pipeline_module": "app.recommenders.hybrid",
+    "split_function": "app.recommenders.evaluation.temporal_split",
+    "metric_functions": "app.recommenders.evaluation"
+  },
+  "parameters": {
+    "k": 5,
+    "split_ratio": 0.8,
+    "split_time": "2026-01-26 11:21:20",
+    "candidate_limit": 30,
+    "signal_limit": 15,
+    "merge_weights": {
+      "popularity": 0.2,
+      "category": 0.3,
+      "content": 0.3,
+      "collaborative": 0.2
+    },
+    "availability_quantile": 0.2,
+    "available_ids_count": 201,
+    "max_test_users": null,
+    "demo_user_ids": [
+      395,
+      1465,
+      409,
+      1182,
+      2360
+    ],
+    "user_protocol": "test users = users with history in both train and test; targets = distinct products from TEST period NOT in the user's train history; metrics = Day 7 P@K/R@K/HR@K/NDCG@K + catalog coverage"
+  },
+  "columns": {
+    "candidates.csv": {
+      "user_id": "int, korisnik (Day 1 kolona) — red evaluacije",
+      "source": "str, izvor kandidata (popularity/category/content/collaborative)",
+      "product_id": "int, stabilan ID proizvoda",
+      "score": "float, SIROV skor izvora (pre normalizacije merge-a)",
+      "rank_in_source": "int, pozicija u rangiranoj listi izvora (1=top)"
+    },
+    "ranking.csv": {
+      "user_id": "int, korisnik",
+      "position": "int, finalna pozicija (1=prva preporuka)",
+      "product_id": "int, preporučeni proizvod",
+      "name": "str, naziv proizvoda (katalog)",
+      "category_id": "int, kategorija (za raznovrsnost)",
+      "score": "float, merged blended skor (Σ w·normalizovani skor)",
+      "sources": "str, izvori koji su predložili proizvod (';'-spojeni)"
+    },
+    "comparison.csv": {
+      "method": "str, hybrid ili single izvor (popularity/category/content/collaborative)",
+      "precision_at_k": "float, P@K (user-based protokol)",
+      "recall_at_k": "float, R@K",
+      "hit_rate_at_k": "float, HR@K",
+      "ndcg_at_k": "float, NDCG@K",
+      "catalog_coverage": "float, distinct preporučenih / katalog"
+    }
+  },
+  "counts": {
+    "n_train_events": 146774,
+    "n_test_events": 36694,
+    "n_test_users": 1293,
+    "n_candidate_rows": 600,
+    "n_ranking_rows": 25,
+    "n_catalog": 252,
+    "profiles": {
+      "395": {
+        "n_train_events": 267,
+        "n_train_products": 90,
+        "n_purchases": 5
+      },
+      "1465": {
+        "n_train_events": 229,
+        "n_train_products": 77,
+        "n_purchases": 4
+      },
+      "409": {
+        "n_train_events": 227,
+        "n_train_products": 108,
+        "n_purchases": 5
+      },
+      "1182": {
+        "n_train_events": 214,
+        "n_train_products": 98,
+        "n_purchases": 11
+      },
+      "2360": {
+        "n_train_events": 182,
+        "n_train_products": 95,
+        "n_purchases": 4
+      }
+    }
+  },
+  "comparison": [
+    {
+      "method": "hybrid",
+      "precision_at_k": 0.058469,
+      "recall_at_k": 0.054208,
+      "hit_rate_at_k": 0.239753,
+      "ndcg_at_k": 0.064345,
+      "catalog_coverage": 0.503968
+    },
+    {
+      "method": "popularity",
+      "precision_at_k": 0.071307,
+      "recall_at_k": 0.052988,
+      "hit_rate_at_k": 0.28925,
+      "ndcg_at_k": 0.079087,
+      "catalog_coverage": 0.031746
+    },
+    {
+      "method": "category",
+      "precision_at_k": 0.043619,
+      "recall_at_k": 0.040365,
+      "hit_rate_at_k": 0.180201,
+      "ndcg_at_k": 0.048559,
+      "catalog_coverage": 0.293651
+    },
+    {
+      "method": "content",
+      "precision_at_k": 0.043929,
+      "recall_at_k": 0.037665,
+      "hit_rate_at_k": 0.190255,
+      "ndcg_at_k": 0.052932,
+      "catalog_coverage": 0.793651
+    },
+    {
+      "method": "collaborative",
+      "precision_at_k": 0.057077,
+      "recall_at_k": 0.051523,
+      "hit_rate_at_k": 0.21423,
+      "ndcg_at_k": 0.070652,
+      "catalog_coverage": 0.492063
+    }
+  ],
+  "weights_note": "merge weights are hand-picked heuristics (0.2/0.3/0.3/0.2), NOT learned — DAY-BRIEFS 'What the result does NOT prove'.",
+  "created": "2026-08-19",
+  "reproducibility_note": "No wall-clock timestamp is recorded here: the generator is byte-for-byte reproducible, so the sidecar must not change between runs. Regenerate with the same seed to reproduce all files.",
+  "manifest": {
+    "sha256": {
+      "candidates.csv": "e3109120a610bcc37f3a970c26a42e2843434485077cd56fc21a7790eccd0151",
+      "ranking.csv": "71bcf949149d731dbf5c3b5294afda5e9f41a1dc373bbffaa9ebd1fb07b3305d",
+      "comparison.csv": "30d5ea6b9601e6d2d134391f579d3e846ccfa571a3da961b742c168d0762ae9e"
+    }
+  }
+}

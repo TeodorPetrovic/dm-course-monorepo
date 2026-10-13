@@ -1,0 +1,89 @@
+{
+  "dataset": "dm_targeting_profiles_v1",
+  "description": "Seeded campaign-targeting profile derived from Day 1 events + orders: Day 2 K-Means segment + manual RFM bucket + Day 3 conversion probability + customer value. Seeded campaigns table with rules (target segments, eligible buckets, probability/value thresholds, cost, budget, contact limit).",
+  "source": "derived",
+  "derived_from": {
+    "events": "Day 1/data/events.csv",
+    "orders": "Day 1/data/orders.csv",
+    "module": "app.data.generate_targeting",
+    "function": "generate_targeting",
+    "profile_builder": "app.data.generate_targeting.build_targeting_profile",
+    "segment_builder": "app.ml.segmentation.train_segmentation_model",
+    "conversion_builder": "app.ml.conversion.train_conversion_model",
+    "rfm_builder": "app.ml.segmentation.manual_rfm_buckets"
+  },
+  "seed": {
+    "seed": 42,
+    "k": 4,
+    "window_days": 7,
+    "model_type": "logistic_regression",
+    "note": "isti seed kao Day 2 (K-Means k=4) i Day 3 (logistic_regression) — reproduktivno"
+  },
+  "reference_date": "2026-01-31 23:59:38",
+  "cutoff_date": "2026-01-24 23:59:38",
+  "columns": [
+    "user_id",
+    "segment",
+    "rfm_bucket",
+    "probability",
+    "monetary",
+    "frequency",
+    "recency_days",
+    "aov",
+    "conversion",
+    "favorite_category"
+  ],
+  "counts": {
+    "customers": 2579,
+    "by_rfm_bucket": {
+      "dormant": 1623,
+      "at_risk": 716,
+      "loyal": 159,
+      "champions": 81
+    },
+    "by_segment": {
+      "segment_1": 1468,
+      "segment_0": 720,
+      "segment_3": 344,
+      "segment_2": 47
+    },
+    "buyers": 571
+  },
+  "campaigns": 4,
+  "fields": {
+    "user_id": "int, stabilan ID korisnika (FK -> customers.user_id)",
+    "segment": "K-Means labela segmenta (segment_0..3; Day 2, k=4, seed 42)",
+    "rfm_bucket": "ručni RFM bucket (champions/loyal/at_risk/dormant; pravilo)",
+    "probability": "float 0..1, P(kupovina u prediction window-u) iz Day 3 modela (logistic_regression, seed 42)",
+    "monetary": "float, ukupna vrednost porudžbina (istorijska vrednost korisnika)",
+    "frequency": "int, broj porudžbina",
+    "recency_days": "int, dani od reference do poslednje kupovine (ili aktivnosti)",
+    "aov": "float, prosečna vrednost porudžbine (0.0 za ne-kupce)",
+    "conversion": "float 0..1, sesije sa kupovinom / sve sesije",
+    "favorite_category": "float ili NaN, modus kategorije po product_view"
+  },
+  "campaign_fields": {
+    "campaign_id": "int, stabilan ID kampanje",
+    "name": "str, naziv kampanje",
+    "description": "str, kratak opis",
+    "goal": "str, cilj kampanje",
+    "target_segments": "JSON lista ciljanih K-Means segmenta (prazno = svi)",
+    "eligible_buckets": "JSON lista dozvoljenih RFM bucket-a (prazno = svi)",
+    "min_probability": "float, prag verovatnoće (0 = nije aktivan)",
+    "min_monetary": "float, prag istorijske vrednosti (0 = nije aktivan)",
+    "cost_per_contact": "float, cena jednog kontakta",
+    "expected_revenue": "float, očekivani prihod po konverziji",
+    "budget": "float, ukupan budžet kampanje",
+    "max_contacts": "int, kontakt limit (kapacitet)",
+    "status": "str, active/draft",
+    "notes": "str, napomena (koje pravilo se demonstrira)"
+  },
+  "created": "2026-08-19",
+  "reproducibility_note": "No wall-clock timestamp is recorded here: the generator is byte-for-byte reproducible, so the sidecar must not change between runs. Regenerate with the same seed to reproduce all files.",
+  "manifest": {
+    "sha256": {
+      "customer_profiles.csv": "75ba700a9b62e2f20aaf1f1c58d68cf4f94eae7f8d82bcbf04583ae46c234b98",
+      "campaigns.csv": "6942cae2a347fbf3decb57f5e5d6382726afa86c6b17dbbeca8bfccebd198f27"
+    }
+  }
+}

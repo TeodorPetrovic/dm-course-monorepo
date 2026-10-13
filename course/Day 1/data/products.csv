@@ -1,0 +1,253 @@
+product_id,name,slug,description,img_url,category_id,price,created_at
+1,Smartphone Compact 686,smartphone-compact-686,"5G smartphone with OLED display, dual camera and fast charging. Compact line, black.",/images/products/smartphone-compact-686.jpg,1,185.99,2025-05-14
+2,Smartphone Compact 854,smartphone-compact-854,"5G smartphone with OLED display, dual camera and fast charging. Compact line, red.",/images/products/smartphone-compact-854.jpg,1,263.99,2025-10-15
+3,Laptop Compact 775,laptop-compact-775,"Lightweight laptop for work and study, SSD storage, long battery life. Compact line, grey.",/images/products/laptop-compact-775.jpg,1,765.99,2025-08-20
+4,Laptop Classic 505,laptop-classic-505,"Lightweight laptop for work and study, SSD storage, long battery life. Classic line, silver.",/images/products/laptop-classic-505.jpg,1,1393.99,2025-04-21
+5,Headphones Deluxe 350,headphones-deluxe-350,"Wireless over-ear headphones with noise cancelling and 30h battery. Deluxe line, grey.",/images/products/headphones-deluxe-350.jpg,1,71.99,2025-07-02
+6,Headphones Compact 103,headphones-compact-103,"Wireless over-ear headphones with noise cancelling and 30h battery. Compact line, grey.",/images/products/headphones-compact-103.jpg,1,265.99,2025-03-04
+7,Tablet Compact 853,tablet-compact-853,"10-inch tablet for streaming, reading and video calls. Compact line, red.",/images/products/tablet-compact-853.jpg,1,336.99,2025-10-09
+8,Tablet Essential 949,tablet-essential-949,"10-inch tablet for streaming, reading and video calls. Essential line, red.",/images/products/tablet-essential-949.jpg,1,725.99,2025-11-07
+9,Monitor Premium 997,monitor-premium-997,"27-inch IPS monitor, full HD, slim bezel, for office and gaming. Premium line, black.",/images/products/monitor-premium-997.jpg,1,142.99,2025-10-20
+10,Monitor Classic 784,monitor-classic-784,"27-inch IPS monitor, full HD, slim bezel, for office and gaming. Classic line, white.",/images/products/monitor-classic-784.jpg,1,200.99,2025-10-15
+11,Keyboard Everyday 369,keyboard-everyday-369,"Mechanical keyboard with backlight, quiet switches. Everyday line, red.",/images/products/keyboard-everyday-369.jpg,1,21.99,2025-08-30
+12,Keyboard Classic 505,keyboard-classic-505,"Mechanical keyboard with backlight, quiet switches. Classic line, red.",/images/products/keyboard-classic-505.jpg,1,24.99,2025-07-14
+13,Mouse Deluxe 406,mouse-deluxe-406,"Ergonomic wireless mouse with silent clicks. Deluxe line, red.",/images/products/mouse-deluxe-406.jpg,1,17.99,2025-07-31
+14,Mouse Eco 475,mouse-eco-475,"Ergonomic wireless mouse with silent clicks. Eco line, blue.",/images/products/mouse-eco-475.jpg,1,11.99,2025-09-05
+15,Speaker Pro 628,speaker-pro-628,"Portable bluetooth speaker, waterproof, deep bass. Pro line, black.",/images/products/speaker-pro-628.jpg,1,101.99,2025-10-04
+16,Speaker Eco 174,speaker-eco-174,"Portable bluetooth speaker, waterproof, deep bass. Eco line, red.",/images/products/speaker-eco-174.jpg,1,180.99,2025-05-06
+17,Camera Compact 359,camera-compact-359,"Mirrorless camera with 4K video and interchangeable lens. Compact line, black.",/images/products/camera-compact-359.jpg,1,478.99,2025-04-25
+18,Camera Everyday 481,camera-everyday-481,"Mirrorless camera with 4K video and interchangeable lens. Everyday line, red.",/images/products/camera-everyday-481.jpg,1,373.99,2025-08-20
+19,Smartwatch Premium 103,smartwatch-premium-103,"Fitness smartwatch with heart rate, GPS and sleep tracking. Premium line, beige.",/images/products/smartwatch-premium-103.jpg,1,140.99,2025-10-22
+20,Smartwatch Everyday 615,smartwatch-everyday-615,"Fitness smartwatch with heart rate, GPS and sleep tracking. Everyday line, beige.",/images/products/smartwatch-everyday-615.jpg,1,253.99,2025-04-04
+21,Keyboard Compact 874,keyboard-compact-874,"Mechanical keyboard with backlight, quiet switches. Compact line, grey.",/images/products/keyboard-compact-874.jpg,1,28.99,2025-04-11
+22,Jacket Compact 350,jacket-compact-350,"Warm winter jacket, water-repellent, hooded. Compact line, silver.",/images/products/jacket-compact-350.jpg,2,123.99,2025-08-11
+23,Jacket Essential 819,jacket-essential-819,"Warm winter jacket, water-repellent, hooded. Essential line, silver.",/images/products/jacket-essential-819.jpg,2,109.99,2025-10-10
+24,Jeans Premium 253,jeans-premium-253,"Slim fit denim jeans, stretch cotton. Premium line, silver.",/images/products/jeans-premium-253.jpg,2,106.99,2025-07-14
+25,Jeans Essential 168,jeans-essential-168,"Slim fit denim jeans, stretch cotton. Essential line, grey.",/images/products/jeans-essential-168.jpg,2,73.99,2025-08-30
+26,Sneakers Deluxe 539,sneakers-deluxe-539,"Everyday sneakers, breathable mesh, cushioned sole. Deluxe line, silver.",/images/products/sneakers-deluxe-539.jpg,2,100.99,2025-09-02
+27,Sneakers Compact 248,sneakers-compact-248,"Everyday sneakers, breathable mesh, cushioned sole. Compact line, green.",/images/products/sneakers-compact-248.jpg,2,81.99,2025-06-16
+28,Dress Essential 892,dress-essential-892,"Midi dress for office and evening, soft fabric. Essential line, white.",/images/products/dress-essential-892.jpg,2,109.99,2025-08-21
+29,Dress Pro 538,dress-pro-538,"Midi dress for office and evening, soft fabric. Pro line, beige.",/images/products/dress-pro-538.jpg,2,87.99,2025-07-23
+30,T-shirt Everyday 987,t-shirt-everyday-987,"Basic cotton t-shirt, regular fit. Everyday line, red.",/images/products/t-shirt-everyday-987.jpg,2,34.99,2025-04-29
+31,T-shirt Classic 854,t-shirt-classic-854,"Basic cotton t-shirt, regular fit. Classic line, grey.",/images/products/t-shirt-classic-854.jpg,2,14.99,2025-08-25
+32,Scarf Eco 733,scarf-eco-733,"Knitted wool scarf for winter. Eco line, silver.",/images/products/scarf-eco-733.jpg,2,32.99,2025-11-24
+33,Scarf Eco 599,scarf-eco-599,"Knitted wool scarf for winter. Eco line, green.",/images/products/scarf-eco-599.jpg,2,37.99,2025-09-13
+34,Belt Eco 953,belt-eco-953,"Genuine leather belt with metal buckle. Eco line, grey.",/images/products/belt-eco-953.jpg,2,65.99,2025-11-07
+35,Belt Eco 785,belt-eco-785,"Genuine leather belt with metal buckle. Eco line, red.",/images/products/belt-eco-785.jpg,2,17.99,2025-09-14
+36,Backpack Classic 759,backpack-classic-759,"City backpack with laptop sleeve, water-resistant. Classic line, silver.",/images/products/backpack-classic-759.jpg,2,117.99,2025-09-25
+37,Backpack Compact 926,backpack-compact-926,"City backpack with laptop sleeve, water-resistant. Compact line, grey.",/images/products/backpack-compact-926.jpg,2,39.99,2025-05-24
+38,Cap Compact 731,cap-compact-731,"Cotton baseball cap, adjustable. Compact line, white.",/images/products/cap-compact-731.jpg,2,31.99,2025-08-20
+39,Cap Everyday 356,cap-everyday-356,"Cotton baseball cap, adjustable. Everyday line, red.",/images/products/cap-everyday-356.jpg,2,25.99,2025-10-24
+40,Boots Compact 582,boots-compact-582,"Leather winter boots, non-slip sole. Compact line, black.",/images/products/boots-compact-582.jpg,2,130.99,2025-11-13
+41,Boots Compact 911,boots-compact-911,"Leather winter boots, non-slip sole. Compact line, black.",/images/products/boots-compact-911.jpg,2,158.99,2025-08-31
+42,Jacket Pro 710,jacket-pro-710,"Warm winter jacket, water-repellent, hooded. Pro line, blue.",/images/products/jacket-pro-710.jpg,2,216.99,2025-07-09
+43,Novel Premium 556,novel-premium-556,"Bestselling contemporary novel, paperback. Premium line, red.",/images/products/novel-premium-556.jpg,3,23.99,2025-08-03
+44,Novel Premium 964,novel-premium-964,"Bestselling contemporary novel, paperback. Premium line, green.",/images/products/novel-premium-964.jpg,3,13.99,2025-07-14
+45,Thriller Compact 230,thriller-compact-230,"Crime thriller, gripping page-turner. Compact line, black.",/images/products/thriller-compact-230.jpg,3,11.99,2025-05-12
+46,Thriller Premium 108,thriller-premium-108,"Crime thriller, gripping page-turner. Premium line, beige.",/images/products/thriller-premium-108.jpg,3,10.99,2025-11-21
+47,Cookbook Premium 243,cookbook-premium-243,"Cookbook with healthy everyday recipes. Premium line, blue.",/images/products/cookbook-premium-243.jpg,3,30.99,2025-04-10
+48,Cookbook Essential 136,cookbook-essential-136,"Cookbook with healthy everyday recipes. Essential line, white.",/images/products/cookbook-essential-136.jpg,3,43.99,2025-11-18
+49,Biography Deluxe 648,biography-deluxe-648,"Biography of a famous entrepreneur. Deluxe line, silver.",/images/products/biography-deluxe-648.jpg,3,15.99,2025-05-21
+50,Biography Essential 819,biography-essential-819,"Biography of a famous entrepreneur. Essential line, white.",/images/products/biography-essential-819.jpg,3,23.99,2025-05-16
+51,Fantasy Premium 823,fantasy-premium-823,"Epic fantasy saga, first book in the series. Premium line, white.",/images/products/fantasy-premium-823.jpg,3,11.99,2025-09-30
+52,Fantasy Pro 681,fantasy-pro-681,"Epic fantasy saga, first book in the series. Pro line, blue.",/images/products/fantasy-pro-681.jpg,3,17.99,2025-11-24
+53,Textbook Deluxe 723,textbook-deluxe-723,"University textbook on marketing and statistics. Deluxe line, beige.",/images/products/textbook-deluxe-723.jpg,3,56.99,2025-10-20
+54,Textbook Eco 847,textbook-eco-847,"University textbook on marketing and statistics. Eco line, silver.",/images/products/textbook-eco-847.jpg,3,87.99,2025-03-03
+55,Guide Everyday 453,guide-everyday-453,"Travel guide with maps and itineraries. Everyday line, white.",/images/products/guide-everyday-453.jpg,3,26.99,2025-11-03
+56,Guide Eco 397,guide-eco-397,"Travel guide with maps and itineraries. Eco line, beige.",/images/products/guide-eco-397.jpg,3,14.99,2025-04-15
+57,Children's Book Premium 257,childrens-book-premium-257,"Illustrated picture book for children. Premium line, blue.",/images/products/childrens-book-premium-257.jpg,3,9.49,2025-04-29
+58,Children's Book Deluxe 173,childrens-book-deluxe-173,"Illustrated picture book for children. Deluxe line, silver.",/images/products/childrens-book-deluxe-173.jpg,3,8.49,2025-05-25
+59,Poetry Classic 204,poetry-classic-204,"Collection of modern poetry. Classic line, white.",/images/products/poetry-classic-204.jpg,3,8.49,2025-10-07
+60,Poetry Everyday 604,poetry-everyday-604,"Collection of modern poetry. Everyday line, beige.",/images/products/poetry-everyday-604.jpg,3,14.99,2025-04-15
+61,Dictionary Essential 458,dictionary-essential-458,"English-Serbian dictionary, updated edition. Essential line, beige.",/images/products/dictionary-essential-458.jpg,3,24.99,2025-08-11
+62,Dictionary Compact 106,dictionary-compact-106,"English-Serbian dictionary, updated edition. Compact line, blue.",/images/products/dictionary-compact-106.jpg,3,17.99,2025-04-25
+63,Cookbook Compact 232,cookbook-compact-232,"Cookbook with healthy everyday recipes. Compact line, white.",/images/products/cookbook-compact-232.jpg,3,20.99,2025-07-18
+64,Running Shoes Pro 936,running-shoes-pro-936,"Running shoes with responsive cushioning. Pro line, blue.",/images/products/running-shoes-pro-936.jpg,4,104.99,2025-11-08
+65,Running Shoes Deluxe 803,running-shoes-deluxe-803,"Running shoes with responsive cushioning. Deluxe line, beige.",/images/products/running-shoes-deluxe-803.jpg,4,96.99,2025-11-20
+66,Yoga Mat Premium 817,yoga-mat-premium-817,"Non-slip yoga mat, eco-friendly material. Premium line, green.",/images/products/yoga-mat-premium-817.jpg,4,54.99,2025-03-14
+67,Yoga Mat Everyday 759,yoga-mat-everyday-759,"Non-slip yoga mat, eco-friendly material. Everyday line, grey.",/images/products/yoga-mat-everyday-759.jpg,4,45.99,2025-07-12
+68,Dumbbell Set Premium 193,dumbbell-set-premium-193,"Adjustable dumbbell set for home workouts. Premium line, silver.",/images/products/dumbbell-set-premium-193.jpg,4,116.99,2025-10-17
+69,Dumbbell Set Pro 352,dumbbell-set-pro-352,"Adjustable dumbbell set for home workouts. Pro line, blue.",/images/products/dumbbell-set-pro-352.jpg,4,90.99,2025-09-01
+70,Bicycle Compact 781,bicycle-compact-781,"City and trekking bicycle, aluminium frame, 21 gears. Compact line, black.",/images/products/bicycle-compact-781.jpg,4,251.99,2025-07-13
+71,Bicycle Everyday 242,bicycle-everyday-242,"City and trekking bicycle, aluminium frame, 21 gears. Everyday line, green.",/images/products/bicycle-everyday-242.jpg,4,493.99,2025-11-21
+72,Tent Classic 324,tent-classic-324,"Lightweight camping tent for two, waterproof. Classic line, black.",/images/products/tent-classic-324.jpg,4,129.99,2025-08-19
+73,Tent Classic 332,tent-classic-332,"Lightweight camping tent for two, waterproof. Classic line, beige.",/images/products/tent-classic-332.jpg,4,76.99,2025-07-05
+74,Football Deluxe 883,football-deluxe-883,"Official size football, durable. Deluxe line, black.",/images/products/football-deluxe-883.jpg,4,36.99,2025-07-09
+75,Football Premium 903,football-premium-903,"Official size football, durable. Premium line, black.",/images/products/football-premium-903.jpg,4,41.99,2025-03-23
+76,Tennis Racket Compact 416,tennis-racket-compact-416,"Graphite tennis racket for intermediate players. Compact line, grey.",/images/products/tennis-racket-compact-416.jpg,4,46.99,2025-09-26
+77,Tennis Racket Classic 374,tennis-racket-classic-374,"Graphite tennis racket for intermediate players. Classic line, grey.",/images/products/tennis-racket-classic-374.jpg,4,47.99,2025-11-01
+78,Sports Bottle Pro 464,sports-bottle-pro-464,"Insulated sports water bottle, leak-proof. Pro line, grey.",/images/products/sports-bottle-pro-464.jpg,4,9.49,2025-05-14
+79,Sports Bottle Premium 411,sports-bottle-premium-411,"Insulated sports water bottle, leak-proof. Premium line, silver.",/images/products/sports-bottle-premium-411.jpg,4,6.49,2025-08-31
+80,Fitness Band Eco 108,fitness-band-eco-108,"Resistance bands set for strength training. Eco line, blue.",/images/products/fitness-band-eco-108.jpg,4,37.99,2025-07-23
+81,Fitness Band Deluxe 954,fitness-band-deluxe-954,"Resistance bands set for strength training. Deluxe line, red.",/images/products/fitness-band-deluxe-954.jpg,4,29.99,2025-07-10
+82,Ski Gloves Eco 904,ski-gloves-eco-904,"Insulated ski gloves, waterproof. Eco line, beige.",/images/products/ski-gloves-eco-904.jpg,4,25.99,2025-03-10
+83,Ski Gloves Premium 117,ski-gloves-premium-117,"Insulated ski gloves, waterproof. Premium line, black.",/images/products/ski-gloves-premium-117.jpg,4,40.99,2025-05-26
+84,Bicycle Eco 162,bicycle-eco-162,"City and trekking bicycle, aluminium frame, 21 gears. Eco line, grey.",/images/products/bicycle-eco-162.jpg,4,552.99,2025-07-21
+85,Blender Classic 334,blender-classic-334,"Kitchen blender for smoothies and soups. Classic line, beige.",/images/products/blender-classic-334.jpg,5,61.99,2025-05-01
+86,Blender Everyday 283,blender-everyday-283,"Kitchen blender for smoothies and soups. Everyday line, red.",/images/products/blender-everyday-283.jpg,5,84.99,2025-06-23
+87,Coffee Maker Pro 639,coffee-maker-pro-639,"Espresso coffee maker with milk frother. Pro line, green.",/images/products/coffee-maker-pro-639.jpg,5,103.99,2025-10-23
+88,Coffee Maker Compact 260,coffee-maker-compact-260,"Espresso coffee maker with milk frother. Compact line, silver.",/images/products/coffee-maker-compact-260.jpg,5,176.99,2025-09-17
+89,Table Lamp Deluxe 218,table-lamp-deluxe-218,"LED table lamp with dimmer, warm light. Deluxe line, white.",/images/products/table-lamp-deluxe-218.jpg,5,32.99,2025-11-04
+90,Table Lamp Eco 643,table-lamp-eco-643,"LED table lamp with dimmer, warm light. Eco line, silver.",/images/products/table-lamp-eco-643.jpg,5,23.99,2025-09-02
+91,Bedding Set Everyday 737,bedding-set-everyday-737,"Cotton bedding set, soft and breathable. Everyday line, silver.",/images/products/bedding-set-everyday-737.jpg,5,45.99,2025-04-09
+92,Bedding Set Everyday 735,bedding-set-everyday-735,"Cotton bedding set, soft and breathable. Everyday line, white.",/images/products/bedding-set-everyday-735.jpg,5,48.99,2025-04-04
+93,Towel Set Eco 365,towel-set-eco-365,"Absorbent bath towel set. Eco line, blue.",/images/products/towel-set-eco-365.jpg,5,23.99,2025-09-26
+94,Towel Set Pro 801,towel-set-pro-801,"Absorbent bath towel set. Pro line, red.",/images/products/towel-set-pro-801.jpg,5,50.99,2025-03-25
+95,Cookware Set Premium 431,cookware-set-premium-431,"Non-stick cookware set, induction compatible. Premium line, grey.",/images/products/cookware-set-premium-431.jpg,5,88.99,2025-08-12
+96,Cookware Set Premium 319,cookware-set-premium-319,"Non-stick cookware set, induction compatible. Premium line, green.",/images/products/cookware-set-premium-319.jpg,5,243.99,2025-03-09
+97,Rug Pro 262,rug-pro-262,"Soft living room rug, easy to clean. Pro line, black.",/images/products/rug-pro-262.jpg,5,32.99,2025-10-22
+98,Rug Everyday 138,rug-everyday-138,"Soft living room rug, easy to clean. Everyday line, blue.",/images/products/rug-everyday-138.jpg,5,151.99,2025-06-27
+99,Vacuum Cleaner Eco 407,vacuum-cleaner-eco-407,"Bagless vacuum cleaner with HEPA filter. Eco line, blue.",/images/products/vacuum-cleaner-eco-407.jpg,5,372.99,2025-08-31
+100,Vacuum Cleaner Classic 924,vacuum-cleaner-classic-924,"Bagless vacuum cleaner with HEPA filter. Classic line, black.",/images/products/vacuum-cleaner-classic-924.jpg,5,122.99,2025-07-01
+101,Kettle Deluxe 984,kettle-deluxe-984,"Electric kettle, 1.7 litre, auto shut-off. Deluxe line, beige.",/images/products/kettle-deluxe-984.jpg,5,67.99,2025-04-26
+102,Kettle Pro 822,kettle-pro-822,"Electric kettle, 1.7 litre, auto shut-off. Pro line, blue.",/images/products/kettle-pro-822.jpg,5,35.99,2025-03-30
+103,Candle Everyday 732,candle-everyday-732,"Scented candle, vanilla and amber. Everyday line, green.",/images/products/candle-everyday-732.jpg,5,13.99,2025-11-07
+104,Candle Deluxe 106,candle-deluxe-106,"Scented candle, vanilla and amber. Deluxe line, silver.",/images/products/candle-deluxe-106.jpg,5,9.49,2025-11-21
+105,Bedding Set Everyday 147,bedding-set-everyday-147,"Cotton bedding set, soft and breathable. Everyday line, green.",/images/products/bedding-set-everyday-147.jpg,5,59.99,2025-05-04
+106,Face Cream Deluxe 613,face-cream-deluxe-613,"Hydrating face cream for daily use. Deluxe line, white.",/images/products/face-cream-deluxe-613.jpg,6,65.99,2025-03-28
+107,Face Cream Everyday 865,face-cream-everyday-865,"Hydrating face cream for daily use. Everyday line, white.",/images/products/face-cream-everyday-865.jpg,6,31.99,2025-05-05
+108,Serum Essential 226,serum-essential-226,"Vitamin C serum for radiant skin. Essential line, blue.",/images/products/serum-essential-226.jpg,6,48.99,2025-06-24
+109,Serum Everyday 923,serum-everyday-923,"Vitamin C serum for radiant skin. Everyday line, black.",/images/products/serum-everyday-923.jpg,6,31.99,2025-10-10
+110,Shampoo Everyday 111,shampoo-everyday-111,"Nourishing shampoo for dry hair. Everyday line, red.",/images/products/shampoo-everyday-111.jpg,6,9.49,2025-07-27
+111,Shampoo Classic 190,shampoo-classic-190,"Nourishing shampoo for dry hair. Classic line, grey.",/images/products/shampoo-classic-190.jpg,6,8.49,2025-06-28
+112,Perfume Classic 324,perfume-classic-324,"Eau de parfum, floral and woody notes. Classic line, black.",/images/products/perfume-classic-324.jpg,6,65.99,2025-03-09
+113,Perfume Pro 986,perfume-pro-986,"Eau de parfum, floral and woody notes. Pro line, red.",/images/products/perfume-pro-986.jpg,6,72.99,2025-11-05
+114,Lipstick Compact 868,lipstick-compact-868,"Long-lasting matte lipstick. Compact line, grey.",/images/products/lipstick-compact-868.jpg,6,8.49,2025-03-01
+115,Lipstick Eco 829,lipstick-eco-829,"Long-lasting matte lipstick. Eco line, beige.",/images/products/lipstick-eco-829.jpg,6,9.49,2025-06-25
+116,Hair Dryer Deluxe 707,hair-dryer-deluxe-707,"Ionic hair dryer, fast drying. Deluxe line, silver.",/images/products/hair-dryer-deluxe-707.jpg,6,85.99,2025-03-07
+117,Hair Dryer Everyday 502,hair-dryer-everyday-502,"Ionic hair dryer, fast drying. Everyday line, blue.",/images/products/hair-dryer-everyday-502.jpg,6,80.99,2025-05-23
+118,Body Lotion Deluxe 734,body-lotion-deluxe-734,"Body lotion with shea butter. Deluxe line, beige.",/images/products/body-lotion-deluxe-734.jpg,6,6.49,2025-09-28
+119,Body Lotion Everyday 438,body-lotion-everyday-438,"Body lotion with shea butter. Everyday line, blue.",/images/products/body-lotion-everyday-438.jpg,6,5.49,2025-11-02
+120,Sunscreen Eco 737,sunscreen-eco-737,"Sunscreen SPF 50, water-resistant. Eco line, green.",/images/products/sunscreen-eco-737.jpg,6,11.99,2025-10-24
+121,Sunscreen Classic 799,sunscreen-classic-799,"Sunscreen SPF 50, water-resistant. Classic line, silver.",/images/products/sunscreen-classic-799.jpg,6,22.99,2025-11-02
+122,Makeup Brush Set Eco 513,makeup-brush-set-eco-513,"Makeup brush set, soft synthetic bristles. Eco line, black.",/images/products/makeup-brush-set-eco-513.jpg,6,37.99,2025-11-10
+123,Makeup Brush Set Pro 675,makeup-brush-set-pro-675,"Makeup brush set, soft synthetic bristles. Pro line, beige.",/images/products/makeup-brush-set-pro-675.jpg,6,24.99,2025-10-07
+124,Beard Trimmer Pro 366,beard-trimmer-pro-366,"Rechargeable beard trimmer with combs. Pro line, black.",/images/products/beard-trimmer-pro-366.jpg,6,51.99,2025-05-19
+125,Beard Trimmer Premium 354,beard-trimmer-premium-354,"Rechargeable beard trimmer with combs. Premium line, grey.",/images/products/beard-trimmer-premium-354.jpg,6,71.99,2025-09-16
+126,Body Lotion Classic 808,body-lotion-classic-808,"Body lotion with shea butter. Classic line, green.",/images/products/body-lotion-classic-808.jpg,6,7.49,2025-05-21
+127,Building Blocks Premium 126,building-blocks-premium-126,"Building blocks set, creative construction toy. Premium line, grey.",/images/products/building-blocks-premium-126.jpg,7,37.99,2025-10-30
+128,Building Blocks Deluxe 813,building-blocks-deluxe-813,"Building blocks set, creative construction toy. Deluxe line, beige.",/images/products/building-blocks-deluxe-813.jpg,7,51.99,2025-08-13
+129,Board Game Deluxe 308,board-game-deluxe-308,"Family board game for 2-6 players. Deluxe line, green.",/images/products/board-game-deluxe-308.jpg,7,16.99,2025-08-13
+130,Board Game Essential 786,board-game-essential-786,"Family board game for 2-6 players. Essential line, grey.",/images/products/board-game-essential-786.jpg,7,57.99,2025-10-22
+131,Puzzle Essential 352,puzzle-essential-352,"1000-piece jigsaw puzzle. Essential line, grey.",/images/products/puzzle-essential-352.jpg,7,29.99,2025-08-20
+132,Puzzle Everyday 336,puzzle-everyday-336,"1000-piece jigsaw puzzle. Everyday line, silver.",/images/products/puzzle-everyday-336.jpg,7,8.49,2025-11-15
+133,Doll Eco 977,doll-eco-977,"Fashion doll with accessories. Eco line, beige.",/images/products/doll-eco-977.jpg,7,23.99,2025-10-30
+134,Doll Classic 843,doll-classic-843,"Fashion doll with accessories. Classic line, silver.",/images/products/doll-classic-843.jpg,7,47.99,2025-11-12
+135,RC Car Deluxe 276,rc-car-deluxe-276,"Remote control car, rechargeable. Deluxe line, black.",/images/products/rc-car-deluxe-276.jpg,7,55.99,2025-08-12
+136,RC Car Essential 980,rc-car-essential-980,"Remote control car, rechargeable. Essential line, blue.",/images/products/rc-car-essential-980.jpg,7,52.99,2025-03-09
+137,Plush Toy Classic 439,plush-toy-classic-439,"Soft plush teddy bear. Classic line, red.",/images/products/plush-toy-classic-439.jpg,7,32.99,2025-05-21
+138,Plush Toy Premium 855,plush-toy-premium-855,"Soft plush teddy bear. Premium line, black.",/images/products/plush-toy-premium-855.jpg,7,14.99,2025-05-19
+139,Robot Kit Premium 136,robot-kit-premium-136,"Programmable robot kit, STEM learning. Premium line, grey.",/images/products/robot-kit-premium-136.jpg,7,47.99,2025-10-25
+140,Robot Kit Essential 218,robot-kit-essential-218,"Programmable robot kit, STEM learning. Essential line, green.",/images/products/robot-kit-essential-218.jpg,7,63.99,2025-11-07
+141,Paint Set Classic 369,paint-set-classic-369,"Kids paint set with brushes. Classic line, red.",/images/products/paint-set-classic-369.jpg,7,17.99,2025-08-18
+142,Paint Set Deluxe 295,paint-set-deluxe-295,"Kids paint set with brushes. Deluxe line, white.",/images/products/paint-set-deluxe-295.jpg,7,9.49,2025-04-25
+143,Toy Train Deluxe 965,toy-train-deluxe-965,"Wooden toy train set. Deluxe line, blue.",/images/products/toy-train-deluxe-965.jpg,7,43.99,2025-07-06
+144,Toy Train Pro 565,toy-train-pro-565,"Wooden toy train set. Pro line, green.",/images/products/toy-train-pro-565.jpg,7,93.99,2025-10-04
+145,Card Game Essential 324,card-game-essential-324,"Fast card game for kids and adults. Essential line, black.",/images/products/card-game-essential-324.jpg,7,10.99,2025-05-29
+146,Card Game Eco 736,card-game-eco-736,"Fast card game for kids and adults. Eco line, blue.",/images/products/card-game-eco-736.jpg,7,7.49,2025-04-10
+147,Paint Set Everyday 573,paint-set-everyday-573,"Kids paint set with brushes. Everyday line, green.",/images/products/paint-set-everyday-573.jpg,7,17.99,2025-10-18
+148,Coffee Beans Pro 813,coffee-beans-pro-813,"Arabica coffee beans, medium roast. Pro line, white.",/images/products/coffee-beans-pro-813.jpg,8,8.49,2025-07-18
+149,Coffee Beans Pro 200,coffee-beans-pro-200,"Arabica coffee beans, medium roast. Pro line, silver.",/images/products/coffee-beans-pro-200.jpg,8,8.49,2025-03-26
+150,Green Tea Deluxe 321,green-tea-deluxe-321,"Organic green tea, loose leaf. Deluxe line, blue.",/images/products/green-tea-deluxe-321.jpg,8,7.49,2025-10-20
+151,Green Tea Eco 344,green-tea-eco-344,"Organic green tea, loose leaf. Eco line, white.",/images/products/green-tea-eco-344.jpg,8,10.99,2025-05-05
+152,Dark Chocolate Premium 512,dark-chocolate-premium-512,"Dark chocolate 70% cocoa. Premium line, green.",/images/products/dark-chocolate-premium-512.jpg,8,3.49,2025-08-17
+153,Dark Chocolate Essential 370,dark-chocolate-essential-370,"Dark chocolate 70% cocoa. Essential line, silver.",/images/products/dark-chocolate-essential-370.jpg,8,3.49,2025-09-20
+154,Olive Oil Everyday 426,olive-oil-everyday-426,"Extra virgin olive oil, cold pressed. Everyday line, white.",/images/products/olive-oil-everyday-426.jpg,8,7.49,2025-04-03
+155,Olive Oil Deluxe 890,olive-oil-deluxe-890,"Extra virgin olive oil, cold pressed. Deluxe line, grey.",/images/products/olive-oil-deluxe-890.jpg,8,10.99,2025-08-12
+156,Honey Everyday 491,honey-everyday-491,"Natural forest honey. Everyday line, white.",/images/products/honey-everyday-491.jpg,8,7.49,2025-10-24
+157,Honey Compact 112,honey-compact-112,"Natural forest honey. Compact line, grey.",/images/products/honey-compact-112.jpg,8,8.49,2025-03-29
+158,Pasta Eco 942,pasta-eco-942,"Durum wheat pasta. Eco line, black.",/images/products/pasta-eco-942.jpg,8,5.49,2025-07-27
+159,Pasta Premium 123,pasta-premium-123,"Durum wheat pasta. Premium line, blue.",/images/products/pasta-premium-123.jpg,8,2.49,2025-05-24
+160,Granola Premium 789,granola-premium-789,"Crunchy granola with nuts and honey. Premium line, blue.",/images/products/granola-premium-789.jpg,8,5.49,2025-06-19
+161,Granola Deluxe 683,granola-deluxe-683,"Crunchy granola with nuts and honey. Deluxe line, red.",/images/products/granola-deluxe-683.jpg,8,5.49,2025-07-09
+162,Spice Set Pro 698,spice-set-pro-698,"Gourmet spice set for grilling and cooking. Pro line, white.",/images/products/spice-set-pro-698.jpg,8,26.99,2025-05-23
+163,Spice Set Premium 106,spice-set-premium-106,"Gourmet spice set for grilling and cooking. Premium line, green.",/images/products/spice-set-premium-106.jpg,8,9.49,2025-08-14
+164,Protein Bar Box Compact 478,protein-bar-box-compact-478,"Protein bars box, 12 pieces. Compact line, red.",/images/products/protein-bar-box-compact-478.jpg,8,13.99,2025-07-19
+165,Protein Bar Box Deluxe 678,protein-bar-box-deluxe-678,"Protein bars box, 12 pieces. Deluxe line, white.",/images/products/protein-bar-box-deluxe-678.jpg,8,27.99,2025-06-29
+166,Juice Eco 447,juice-eco-447,"Fresh orange juice, no added sugar. Eco line, red.",/images/products/juice-eco-447.jpg,8,2.49,2025-07-08
+167,Juice Everyday 509,juice-everyday-509,"Fresh orange juice, no added sugar. Everyday line, white.",/images/products/juice-everyday-509.jpg,8,3.49,2025-04-11
+168,Juice Everyday 512,juice-everyday-512,"Fresh orange juice, no added sugar. Everyday line, white.",/images/products/juice-everyday-512.jpg,8,4.49,2025-06-22
+169,Sofa Essential 990,sofa-essential-990,"Three-seat sofa, fabric upholstery. Essential line, beige.",/images/products/sofa-essential-990.jpg,9,440.99,2025-05-05
+170,Sofa Everyday 232,sofa-everyday-232,"Three-seat sofa, fabric upholstery. Everyday line, white.",/images/products/sofa-everyday-232.jpg,9,591.99,2025-05-09
+171,Office Chair Deluxe 707,office-chair-deluxe-707,"Ergonomic office chair with lumbar support. Deluxe line, silver.",/images/products/office-chair-deluxe-707.jpg,9,235.99,2025-08-30
+172,Office Chair Classic 995,office-chair-classic-995,"Ergonomic office chair with lumbar support. Classic line, beige.",/images/products/office-chair-classic-995.jpg,9,165.99,2025-09-18
+173,Desk Eco 120,desk-eco-120,"Home office desk, wooden top. Eco line, silver.",/images/products/desk-eco-120.jpg,9,321.99,2025-09-14
+174,Desk Compact 268,desk-compact-268,"Home office desk, wooden top. Compact line, white.",/images/products/desk-compact-268.jpg,9,190.99,2025-08-01
+175,Bookshelf Eco 371,bookshelf-eco-371,"Five-tier bookshelf. Eco line, blue.",/images/products/bookshelf-eco-371.jpg,9,167.99,2025-03-13
+176,Bookshelf Compact 435,bookshelf-compact-435,"Five-tier bookshelf. Compact line, grey.",/images/products/bookshelf-compact-435.jpg,9,60.99,2025-11-03
+177,Bed Frame Eco 577,bed-frame-eco-577,"Double bed frame with storage. Eco line, grey.",/images/products/bed-frame-eco-577.jpg,9,241.99,2025-04-17
+178,Bed Frame Essential 340,bed-frame-essential-340,"Double bed frame with storage. Essential line, white.",/images/products/bed-frame-essential-340.jpg,9,561.99,2025-03-04
+179,Wardrobe Eco 520,wardrobe-eco-520,"Two-door wardrobe with mirror. Eco line, white.",/images/products/wardrobe-eco-520.jpg,9,763.99,2025-06-17
+180,Wardrobe Classic 848,wardrobe-classic-848,"Two-door wardrobe with mirror. Classic line, red.",/images/products/wardrobe-classic-848.jpg,9,591.99,2025-03-23
+181,Coffee Table Eco 857,coffee-table-eco-857,"Coffee table, oak finish. Eco line, white.",/images/products/coffee-table-eco-857.jpg,9,204.99,2025-06-06
+182,Coffee Table Pro 626,coffee-table-pro-626,"Coffee table, oak finish. Pro line, black.",/images/products/coffee-table-pro-626.jpg,9,56.99,2025-03-27
+183,Nightstand Classic 778,nightstand-classic-778,"Nightstand with drawer. Classic line, grey.",/images/products/nightstand-classic-778.jpg,9,144.99,2025-05-24
+184,Nightstand Everyday 721,nightstand-everyday-721,"Nightstand with drawer. Everyday line, silver.",/images/products/nightstand-everyday-721.jpg,9,89.99,2025-10-24
+185,Dining Chair Classic 954,dining-chair-classic-954,"Upholstered dining chair. Classic line, black.",/images/products/dining-chair-classic-954.jpg,9,98.99,2025-07-25
+186,Dining Chair Essential 421,dining-chair-essential-421,"Upholstered dining chair. Essential line, blue.",/images/products/dining-chair-essential-421.jpg,9,81.99,2025-10-07
+187,Armchair Eco 684,armchair-eco-684,"Reading armchair, velvet. Eco line, white.",/images/products/armchair-eco-684.jpg,9,277.99,2025-05-18
+188,Armchair Classic 733,armchair-classic-733,"Reading armchair, velvet. Classic line, white.",/images/products/armchair-classic-733.jpg,9,141.99,2025-10-31
+189,Nightstand Pro 841,nightstand-pro-841,"Nightstand with drawer. Pro line, grey.",/images/products/nightstand-pro-841.jpg,9,56.99,2025-10-13
+190,Winter Tires Essential 210,winter-tires-essential-210,"Winter tire, excellent grip on snow and ice. Essential line, grey.",/images/products/winter-tires-essential-210.jpg,10,183.99,2025-08-20
+191,Winter Tires Deluxe 474,winter-tires-deluxe-474,"Winter tire, excellent grip on snow and ice. Deluxe line, white.",/images/products/winter-tires-deluxe-474.jpg,10,65.99,2025-10-22
+192,Car Battery Premium 115,car-battery-premium-115,"12V car battery, long life. Premium line, blue.",/images/products/car-battery-premium-115.jpg,10,147.99,2025-10-30
+193,Car Battery Deluxe 488,car-battery-deluxe-488,"12V car battery, long life. Deluxe line, white.",/images/products/car-battery-deluxe-488.jpg,10,92.99,2025-07-21
+194,Dash Cam Compact 583,dash-cam-compact-583,"Full HD dash cam with night vision. Compact line, silver.",/images/products/dash-cam-compact-583.jpg,10,154.99,2025-11-14
+195,Dash Cam Eco 784,dash-cam-eco-784,"Full HD dash cam with night vision. Eco line, red.",/images/products/dash-cam-eco-784.jpg,10,108.99,2025-07-16
+196,Phone Holder Pro 656,phone-holder-pro-656,"Magnetic car phone holder. Pro line, black.",/images/products/phone-holder-pro-656.jpg,10,19.99,2025-06-09
+197,Phone Holder Pro 706,phone-holder-pro-706,"Magnetic car phone holder. Pro line, green.",/images/products/phone-holder-pro-706.jpg,10,10.99,2025-06-24
+198,Car Charger Everyday 607,car-charger-everyday-607,"Fast USB-C car charger. Everyday line, blue.",/images/products/car-charger-everyday-607.jpg,10,11.99,2025-10-16
+199,Car Charger Everyday 299,car-charger-everyday-299,"Fast USB-C car charger. Everyday line, beige.",/images/products/car-charger-everyday-299.jpg,10,16.99,2025-06-14
+200,Floor Mats Everyday 949,floor-mats-everyday-949,"Rubber car floor mats, all-weather. Everyday line, silver.",/images/products/floor-mats-everyday-949.jpg,10,30.99,2025-04-29
+201,Floor Mats Pro 348,floor-mats-pro-348,"Rubber car floor mats, all-weather. Pro line, beige.",/images/products/floor-mats-pro-348.jpg,10,28.99,2025-09-17
+202,Engine Oil Compact 508,engine-oil-compact-508,"Synthetic engine oil 5W-30. Compact line, beige.",/images/products/engine-oil-compact-508.jpg,10,27.99,2025-05-06
+203,Engine Oil Eco 775,engine-oil-eco-775,"Synthetic engine oil 5W-30. Eco line, beige.",/images/products/engine-oil-eco-775.jpg,10,19.99,2025-07-05
+204,Ice Scraper Eco 750,ice-scraper-eco-750,"Ice scraper with snow brush. Eco line, beige.",/images/products/ice-scraper-eco-750.jpg,10,6.49,2025-09-27
+205,Ice Scraper Deluxe 739,ice-scraper-deluxe-739,"Ice scraper with snow brush. Deluxe line, grey.",/images/products/ice-scraper-deluxe-739.jpg,10,10.99,2025-05-26
+206,Car Vacuum Deluxe 348,car-vacuum-deluxe-348,"Handheld car vacuum cleaner. Deluxe line, silver.",/images/products/car-vacuum-deluxe-348.jpg,10,85.99,2025-09-27
+207,Car Vacuum Everyday 954,car-vacuum-everyday-954,"Handheld car vacuum cleaner. Everyday line, white.",/images/products/car-vacuum-everyday-954.jpg,10,32.99,2025-10-25
+208,Jump Starter Essential 942,jump-starter-essential-942,"Portable jump starter with power bank. Essential line, green.",/images/products/jump-starter-essential-942.jpg,10,57.99,2025-10-25
+209,Jump Starter Compact 635,jump-starter-compact-635,"Portable jump starter with power bank. Compact line, white.",/images/products/jump-starter-compact-635.jpg,10,106.99,2025-08-25
+210,Dash Cam Premium 877,dash-cam-premium-877,"Full HD dash cam with night vision. Premium line, white.",/images/products/dash-cam-premium-877.jpg,10,76.99,2025-07-31
+211,Acoustic Guitar Everyday 144,acoustic-guitar-everyday-144,"Acoustic guitar, spruce top. Everyday line, blue.",/images/products/acoustic-guitar-everyday-144.jpg,11,407.99,2025-11-01
+212,Acoustic Guitar Compact 849,acoustic-guitar-compact-849,"Acoustic guitar, spruce top. Compact line, silver.",/images/products/acoustic-guitar-compact-849.jpg,11,172.99,2025-10-24
+213,Digital Piano Deluxe 132,digital-piano-deluxe-132,"88-key digital piano with weighted keys. Deluxe line, green.",/images/products/digital-piano-deluxe-132.jpg,11,623.99,2025-10-03
+214,Digital Piano Premium 233,digital-piano-premium-233,"88-key digital piano with weighted keys. Premium line, green.",/images/products/digital-piano-premium-233.jpg,11,582.99,2025-10-05
+215,Guitar Strings Compact 500,guitar-strings-compact-500,"Steel guitar strings, light gauge. Compact line, grey.",/images/products/guitar-strings-compact-500.jpg,11,14.99,2025-06-11
+216,Guitar Strings Essential 403,guitar-strings-essential-403,"Steel guitar strings, light gauge. Essential line, black.",/images/products/guitar-strings-essential-403.jpg,11,19.99,2025-07-01
+217,Studio Headphones Essential 159,studio-headphones-essential-159,"Closed-back studio monitoring headphones. Essential line, silver.",/images/products/studio-headphones-essential-159.jpg,11,90.99,2025-05-29
+218,Studio Headphones Pro 770,studio-headphones-pro-770,"Closed-back studio monitoring headphones. Pro line, green.",/images/products/studio-headphones-pro-770.jpg,11,64.99,2025-05-08
+219,Microphone Essential 454,microphone-essential-454,"USB condenser microphone for podcasts and vocals. Essential line, red.",/images/products/microphone-essential-454.jpg,11,181.99,2025-09-24
+220,Microphone Eco 278,microphone-eco-278,"USB condenser microphone for podcasts and vocals. Eco line, silver.",/images/products/microphone-eco-278.jpg,11,76.99,2025-03-05
+221,Guitar Amp Classic 781,guitar-amp-classic-781,"Practice guitar amplifier, 20W. Classic line, black.",/images/products/guitar-amp-classic-781.jpg,11,149.99,2025-08-08
+222,Guitar Amp Eco 862,guitar-amp-eco-862,"Practice guitar amplifier, 20W. Eco line, red.",/images/products/guitar-amp-eco-862.jpg,11,272.99,2025-09-17
+223,Ukulele Premium 117,ukulele-premium-117,"Soprano ukulele for beginners. Premium line, black.",/images/products/ukulele-premium-117.jpg,11,34.99,2025-08-21
+224,Ukulele Essential 759,ukulele-essential-759,"Soprano ukulele for beginners. Essential line, beige.",/images/products/ukulele-essential-759.jpg,11,76.99,2025-06-22
+225,Drum Sticks Pro 333,drum-sticks-pro-333,"Hickory drum sticks. Pro line, blue.",/images/products/drum-sticks-pro-333.jpg,11,9.49,2025-05-12
+226,Drum Sticks Eco 816,drum-sticks-eco-816,"Hickory drum sticks. Eco line, blue.",/images/products/drum-sticks-eco-816.jpg,11,24.99,2025-11-21
+227,Music Stand Everyday 471,music-stand-everyday-471,"Foldable music stand. Everyday line, blue.",/images/products/music-stand-everyday-471.jpg,11,46.99,2025-04-04
+228,Music Stand Pro 759,music-stand-pro-759,"Foldable music stand. Pro line, white.",/images/products/music-stand-pro-759.jpg,11,29.99,2025-06-15
+229,Effects Pedal Essential 260,effects-pedal-essential-260,"Distortion effects pedal. Essential line, grey.",/images/products/effects-pedal-essential-260.jpg,11,64.99,2025-10-31
+230,Effects Pedal Eco 176,effects-pedal-eco-176,"Distortion effects pedal. Eco line, white.",/images/products/effects-pedal-eco-176.jpg,11,110.99,2025-08-30
+231,Studio Headphones Classic 686,studio-headphones-classic-686,"Closed-back studio monitoring headphones. Classic line, red.",/images/products/studio-headphones-classic-686.jpg,11,76.99,2025-05-24
+232,Cordless Drill Classic 499,cordless-drill-classic-499,"Cordless drill driver with two batteries. Classic line, grey.",/images/products/cordless-drill-classic-499.jpg,12,162.99,2025-03-22
+233,Cordless Drill Everyday 416,cordless-drill-everyday-416,"Cordless drill driver with two batteries. Everyday line, green.",/images/products/cordless-drill-everyday-416.jpg,12,150.99,2025-05-12
+234,Screwdriver Set Eco 897,screwdriver-set-eco-897,"Precision screwdriver set. Eco line, beige.",/images/products/screwdriver-set-eco-897.jpg,12,13.99,2025-07-08
+235,Screwdriver Set Pro 103,screwdriver-set-pro-103,"Precision screwdriver set. Pro line, black.",/images/products/screwdriver-set-pro-103.jpg,12,25.99,2025-05-12
+236,Hammer Essential 301,hammer-essential-301,"Claw hammer with fiberglass handle. Essential line, red.",/images/products/hammer-essential-301.jpg,12,36.99,2025-05-31
+237,Hammer Essential 102,hammer-essential-102,"Claw hammer with fiberglass handle. Essential line, blue.",/images/products/hammer-essential-102.jpg,12,34.99,2025-06-04
+238,Tape Measure Pro 133,tape-measure-pro-133,"5 metre tape measure. Pro line, blue.",/images/products/tape-measure-pro-133.jpg,12,15.99,2025-08-29
+239,Tape Measure Premium 980,tape-measure-premium-980,"5 metre tape measure. Premium line, blue.",/images/products/tape-measure-premium-980.jpg,12,8.49,2025-09-25
+240,Toolbox Premium 215,toolbox-premium-215,"Toolbox with 100 hand tools. Premium line, black.",/images/products/toolbox-premium-215.jpg,12,26.99,2025-06-04
+241,Toolbox Compact 854,toolbox-compact-854,"Toolbox with 100 hand tools. Compact line, green.",/images/products/toolbox-compact-854.jpg,12,119.99,2025-06-10
+242,Ladder Everyday 810,ladder-everyday-810,"Aluminium step ladder. Everyday line, beige.",/images/products/ladder-everyday-810.jpg,12,194.99,2025-10-16
+243,Ladder Deluxe 713,ladder-deluxe-713,"Aluminium step ladder. Deluxe line, green.",/images/products/ladder-deluxe-713.jpg,12,53.99,2025-11-22
+244,Circular Saw Deluxe 150,circular-saw-deluxe-150,"Circular saw, 1200W. Deluxe line, beige.",/images/products/circular-saw-deluxe-150.jpg,12,168.99,2025-04-23
+245,Circular Saw Pro 650,circular-saw-pro-650,"Circular saw, 1200W. Pro line, red.",/images/products/circular-saw-pro-650.jpg,12,120.99,2025-10-24
+246,Spirit Level Pro 357,spirit-level-pro-357,"Spirit level, 60 cm. Pro line, blue.",/images/products/spirit-level-pro-357.jpg,12,21.99,2025-09-17
+247,Spirit Level Eco 157,spirit-level-eco-157,"Spirit level, 60 cm. Eco line, silver.",/images/products/spirit-level-eco-157.jpg,12,15.99,2025-05-28
+248,Work Gloves Pro 810,work-gloves-pro-810,"Protective work gloves. Pro line, silver.",/images/products/work-gloves-pro-810.jpg,12,9.49,2025-05-17
+249,Work Gloves Compact 227,work-gloves-compact-227,"Protective work gloves. Compact line, white.",/images/products/work-gloves-compact-227.jpg,12,7.49,2025-06-07
+250,Glue Gun Deluxe 657,glue-gun-deluxe-657,"Hot glue gun with glue sticks. Deluxe line, silver.",/images/products/glue-gun-deluxe-657.jpg,12,19.99,2025-06-22
+251,Glue Gun Eco 799,glue-gun-eco-799,"Hot glue gun with glue sticks. Eco line, silver.",/images/products/glue-gun-eco-799.jpg,12,32.99,2025-11-11
+252,Spirit Level Classic 425,spirit-level-classic-425,"Spirit level, 60 cm. Classic line, beige.",/images/products/spirit-level-classic-425.jpg,12,15.99,2025-10-22

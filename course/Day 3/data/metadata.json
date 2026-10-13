@@ -1,0 +1,112 @@
+{
+  "dataset": "dm_conversion_training_v1",
+  "description": "Seeded labeled training dataset for purchase/conversion prediction: per-customer features computed BEFORE the prediction window + will_purchase label (bought in the window). Leaky variant included for the leakage exercise.",
+  "source": "derived",
+  "derived_from": {
+    "events": "Day 1/data/events.csv",
+    "orders": "Day 1/data/orders.csv",
+    "module": "app.data.generate_training",
+    "function": "generate_training",
+    "builder": "app.ml.conversion.build_training_dataset"
+  },
+  "seed": {
+    "seed": 42,
+    "note": "features/labels are deterministic functions of the Day 1 seed (42); seed is the random_state for the leakage-exercise split+model"
+  },
+  "window_days": 7,
+  "reference_date": "2026-01-31 23:59:38",
+  "cutoff_date": "2026-01-24 23:59:38",
+  "feature_columns": [
+    "recency_days",
+    "frequency",
+    "monetary",
+    "product_views",
+    "cart_adds",
+    "sessions",
+    "aov",
+    "conversion"
+  ],
+  "label_column": "will_purchase",
+  "counts": {
+    "customers_clean": 2579,
+    "buyers_in_window_clean": 163,
+    "positive_rate_clean": 0.0632,
+    "customers_leaky": 3000,
+    "buyers_in_window_leaky": 175
+  },
+  "leakage_exercise": {
+    "model_type": "logistic_regression",
+    "test_size": 0.3,
+    "random_state": 42,
+    "summary": {
+      "clean_f1": 0.1754,
+      "leaky_f1": 0.7619,
+      "delta_f1": 0.5865,
+      "leaky_looks_better": true
+    },
+    "details": {
+      "model_type": "logistic_regression",
+      "window_days": 7,
+      "test_size": 0.3,
+      "random_state": 42,
+      "n_test": 774,
+      "clean": {
+        "accuracy": 0.9393,
+        "precision": 0.625,
+        "recall": 0.102,
+        "f1": 0.1754,
+        "confusion_matrix": [
+          [
+            722,
+            3
+          ],
+          [
+            44,
+            5
+          ]
+        ],
+        "n": 774,
+        "positive_class": 1
+      },
+      "leaky": {
+        "accuracy": 0.9742,
+        "precision": 0.9143,
+        "recall": 0.6531,
+        "f1": 0.7619,
+        "confusion_matrix": [
+          [
+            722,
+            3
+          ],
+          [
+            17,
+            32
+          ]
+        ],
+        "n": 774,
+        "positive_class": 1
+      },
+      "delta_f1": 0.5865
+    }
+  },
+  "fields": {
+    "user_id": "int, stabilan ID korisnika (FK -> customers.user_id)",
+    "recency_days": "int, dani od cut-off-a do poslednje kupovine (ili aktivnosti) PRE window-a; u leaky verziji od reference do poslednje kupovine (uklj. window)",
+    "frequency": "int, broj porudžbina pre cut-off-a (0 za ne-kupce); u leaky verziji ukupan broj porudžbina",
+    "monetary": "float, ukupna vrednost porudžbina pre cut-off-a; u leaky verziji uključuje window",
+    "product_views": "int, broj product_view događaja pre cut-off-a",
+    "cart_adds": "int, broj add_to_cart događaja pre cut-off-a",
+    "sessions": "int, broj jedinstvenih sesija pre cut-off-a",
+    "aov": "float, prosečna vrednost porudžbine pre cut-off-a; 0.0 za ne-kupce",
+    "conversion": "float 0..1, sesije sa kupovinom / sve sesije pre cut-off-a",
+    "will_purchase": "int 0/1, labela: 1 ako je korisnik kupio u prediction window-u (poslednjih window_days dana dataset-a)"
+  },
+  "created": "2026-08-19",
+  "reproducibility_note": "No wall-clock timestamp is recorded here: the generator is byte-for-byte reproducible, so the sidecar must not change between runs. Regenerate with the same seed to reproduce all files.",
+  "manifest": {
+    "sha256": {
+      "training_dataset.csv": "966728b451496fa97a336ec44935bf30561ba8f4e30f0e54f42d6b2b134ca72d",
+      "leaky_training_dataset.csv": "695bdfe9fa51c2adce2ad2b68b242f5f5804782729b6bcb61160aa44397e944a"
+    }
+  }
+}

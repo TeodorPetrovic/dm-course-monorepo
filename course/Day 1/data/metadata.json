@@ -1,0 +1,348 @@
+{
+  "dataset": "dm_events_v2",
+  "description": "Seeded synthetic e-commerce month (January 2026): catalog, customers, behavioral events and orders for the Digital Marketing & Recommender Systems course (Day 1).",
+  "source": "synthetic",
+  "generator": {
+    "module": "app.data.generate_dataset",
+    "function": "generate_dataset",
+    "version": 2,
+    "params": {
+      "n_customers": 3000,
+      "products_per_category": 21,
+      "n_products": 252,
+      "window_start": "2026-01-01",
+      "window_days": 31
+    }
+  },
+  "seed": {
+    "rng": "numpy.default_rng",
+    "seed_base": 42,
+    "sub_seeds": {
+      "customers": 42,
+      "products": 43,
+      "events": 44
+    },
+    "derivation": "seed_base + per-part integer offset; each part gets its own default_rng"
+  },
+  "personas": {
+    "primary_counts": {
+      "occasional": 957,
+      "price_sensitive": 600,
+      "category_focused": 588,
+      "new_user": 523,
+      "high_value": 332
+    },
+    "secondary_counts": {
+      "high_value": 222,
+      "new_user": 209,
+      "price_sensitive": 203,
+      "category_focused": 195,
+      "occasional": 174
+    },
+    "secondary_probability": 0.35,
+    "blend_prob": 0.25,
+    "price_noise_prob": 0.15,
+    "definitions": {
+      "high_value": "high-value frequent buyers",
+      "price_sensitive": "price-sensitive bargain hunters",
+      "category_focused": "category-focused enthusiasts",
+      "occasional": "occasional visitors",
+      "new_user": "new users"
+    },
+    "behavior": {
+      "high_value": {
+        "sessions": 11.0,
+        "views": 5.5,
+        "cart": 0.048,
+        "checkout": 0.45,
+        "price": [
+          4.0,
+          2.0
+        ],
+        "alpha": 0.45
+      },
+      "category_focused": {
+        "sessions": 7.0,
+        "views": 7.0,
+        "cart": 0.034,
+        "checkout": 0.32,
+        "price": [
+          2.5,
+          2.5
+        ],
+        "alpha": 0.12
+      },
+      "price_sensitive": {
+        "sessions": 6.5,
+        "views": 8.0,
+        "cart": 0.019,
+        "checkout": 0.2,
+        "price": [
+          1.3,
+          4.5
+        ],
+        "alpha": 0.6
+      },
+      "occasional": {
+        "sessions": 2.6,
+        "views": 3.5,
+        "cart": 0.026,
+        "checkout": 0.22,
+        "price": [
+          2.0,
+          2.5
+        ],
+        "alpha": 0.6
+      },
+      "new_user": {
+        "sessions": 2.8,
+        "views": 4.5,
+        "cart": 0.027,
+        "checkout": 0.2,
+        "price": [
+          2.0,
+          2.5
+        ],
+        "alpha": 0.6
+      }
+    }
+  },
+  "realism": {
+    "seasonality": "Jan 1 low (0.55x), winter sale Jan 2-6 (1.45x traffic, 30% of catalog 15-35% off, 1.2x cart/checkout), Orthodox Christmas Jan 7 (0.65x), weekends +18%, after payday Jan 25+ (+12%); hourly profile peaks 12-13h and 19-21h",
+    "session_timing": "log-normal gaps between events (median ~35 s for views), capped at 25 min",
+    "category_affinity": {
+      "1": [
+        [
+          11,
+          3
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          10,
+          1
+        ]
+      ],
+      "2": [
+        [
+          6,
+          3
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "3": [
+        [
+          7,
+          3
+        ],
+        [
+          11,
+          1
+        ]
+      ],
+      "4": [
+        [
+          2,
+          3
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "5": [
+        [
+          9,
+          3
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          6,
+          1
+        ]
+      ],
+      "6": [
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "7": [
+        [
+          3,
+          3
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "8": [
+        [
+          5,
+          3
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "9": [
+        [
+          5,
+          3
+        ],
+        [
+          12,
+          1
+        ]
+      ],
+      "10": [
+        [
+          12,
+          3
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "11": [
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "12": [
+        [
+          10,
+          2
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          5,
+          1
+        ]
+      ]
+    },
+    "co_purchase": "after add_to_cart, 45% chance to view a complementary product type (e.g. Laptop -> Mouse)",
+    "recommendations": {
+      "slate_prob": 0.22,
+      "k": 3,
+      "ctr_by_position": [
+        0.035,
+        0.02,
+        0.012
+      ],
+      "rule": "top-popular in the viewed product's category"
+    },
+    "funnel": "cart probability depends on persona and price fit; 12% of cart items removed; checkout probability by persona (0.20-0.45)",
+    "products_on_sale": 70
+  },
+  "counts": {
+    "categories": 12,
+    "products": 252,
+    "customers": 3000,
+    "events": 183468,
+    "orders": 893,
+    "order_lines": 1045
+  },
+  "funnel": {
+    "product_views": 94220,
+    "add_to_cart": 3159,
+    "purchases": 1045,
+    "sessions": 15361,
+    "sessions_with_cart": 2713,
+    "sessions_with_purchase": 893,
+    "session_conversion_rate": 0.0581,
+    "cart_abandonment_rate": 0.6708,
+    "recommendation_impressions": 61530,
+    "recommendation_clicks": 1427
+  },
+  "revenue": {
+    "total": 95378.18,
+    "aov": 106.81,
+    "items_per_order": 1.17
+  },
+  "fields": {
+    "categories": {
+      "category_id": "int, stabilan ID kategorije",
+      "name": "str, naziv kategorije",
+      "slug": "str, URL slug"
+    },
+    "products": {
+      "product_id": "int, stabilan ID proizvoda",
+      "name": "str, tip + linija + model",
+      "slug": "str, URL slug",
+      "description": "str, opis sa atributima (namena, linija, boja)",
+      "img_url": "str, placeholder putanja slike",
+      "category_id": "int, FK -> categories.category_id",
+      "price": "float, redovna cena u EUR (log-uniformno u opsegu tipa proizvoda), .99/.49",
+      "created_at": "str, datum dodavanja u katalog (2025)"
+    },
+    "customers": {
+      "user_id": "int, stabilan ID korisnika",
+      "name": "str, generisano (veštački, nije PII)",
+      "email": "str, generisani email (example.test)",
+      "join_date": "str (YYYY-MM-DD)",
+      "persona": "str, primarna persona",
+      "secondary_persona": "str ili prazno, sekundarna persona",
+      "blend_prob": "float, verovatnoća da sesija koristi sekundarnu personu"
+    },
+    "events": {
+      "event_id": "int, rastući po vremenu",
+      "event_type": "product_view|category_view|search|add_to_cart|remove_from_cart|purchase|recommendation_impression|recommendation_click",
+      "user_id": "int, FK -> customers",
+      "user_session": "str, session_NNNNNN (redosled početka sesije)",
+      "product_id": "int ili prazno (category_view/search)",
+      "category_id": "int ili prazno (search)",
+      "price": "float ili prazno, cena u trenutku događaja (sa popustom tokom sniženja)",
+      "quantity": "int >= 1",
+      "source": "product_page|category_page|shop|search_page|cart|recommendation",
+      "timestamp": "str YYYY-MM-DD HH:MM:SS, bez zone",
+      "recommendation_source": "str ili prazno (category = Day 1 rule-based)",
+      "recommendation_position": "int ili prazno, 1-based"
+    },
+    "orders": {
+      "order_id": "int, ID porudžbine (stavke iste porudžbine dele ID)",
+      "user_id": "int",
+      "user_session": "str",
+      "product_id": "int",
+      "quantity": "int",
+      "unit_price": "float, plaćena cena",
+      "total_price": "float, unit_price * quantity (stavka)",
+      "status": "str (completed)",
+      "timestamp": "str, isto kao purchase događaj",
+      "event_id": "int, FK -> purchase događaj"
+    }
+  },
+  "reproducibility_note": "No wall-clock timestamp is recorded here: the generator is byte-for-byte reproducible, so the sidecar must not change between runs.",
+  "manifest": {
+    "sha256": {
+      "categories.csv": "e879d218899fee5d837b9d9c00260ce5abf6ff1781457db1bb9c0ac0c787b276",
+      "products.csv": "44fd94efd58cc025eb1e7ca1dc4502942eefd1ac47d0ea01af787a7a309e17c2",
+      "customers.csv": "57d1fc8c34129a0819b4f4b4b1589c4f5ef3ff4c3a16f0e98afe82fa92dc4074",
+      "events.csv": "abd0360d39134f601804ef58102d6465c15760ad287cfa8e507f5f5923cce195",
+      "orders.csv": "2d213925473fd9f3430f8743083a835d909da62f059e5403667ed2d97bc7aa63"
+    }
+  }
+}

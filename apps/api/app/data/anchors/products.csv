@@ -1,0 +1,253 @@
+product_id,name,slug,description,img_url,category_id,price,created_at
+1,Smartphone 5102,smartphone-5102,Smartphone for electronics — synthetic catalog item.,/images/products/smartphone-5102.jpg,1,47.01,2025-10-03
+2,Laptop 6557,laptop-6557,Laptop for electronics — synthetic catalog item.,/images/products/laptop-6557.jpg,1,43.07,2025-10-03
+3,Tablet 2837,tablet-2837,Tablet for electronics — synthetic catalog item.,/images/products/tablet-2837.jpg,1,348.9,2025-10-03
+4,Headphones 8407,headphones-8407,Headphones for electronics — synthetic catalog item.,/images/products/headphones-8407.jpg,1,91.63,2025-10-03
+5,Speaker 8479,speaker-8479,Speaker for electronics — synthetic catalog item.,/images/products/speaker-8479.jpg,1,105.81,2025-10-03
+6,Camera 7541,camera-7541,Camera for electronics — synthetic catalog item.,/images/products/camera-7541.jpg,1,188.32,2025-10-03
+7,Monitor 6428,monitor-6428,Monitor for electronics — synthetic catalog item.,/images/products/monitor-6428.jpg,1,1356.85,2025-10-03
+8,Keyboard 4564,keyboard-4564,Keyboard for electronics — synthetic catalog item.,/images/products/keyboard-4564.jpg,1,1073.84,2025-10-03
+9,Mouse 1974,mouse-1974,Mouse for electronics — synthetic catalog item.,/images/products/mouse-1974.jpg,1,111.76,2025-10-03
+10,Drone 2858,drone-2858,Drone for electronics — synthetic catalog item.,/images/products/drone-2858.jpg,1,189.73,2025-10-03
+11,Smartphone 4622,smartphone-4622,Smartphone for electronics — synthetic catalog item.,/images/products/smartphone-4622.jpg,1,125.02,2025-10-03
+12,Laptop 140,laptop-140,Laptop for electronics — synthetic catalog item.,/images/products/laptop-140.jpg,1,1339.14,2025-10-03
+13,Tablet 239,tablet-239,Tablet for electronics — synthetic catalog item.,/images/products/tablet-239.jpg,1,287.98,2025-10-03
+14,Headphones 8397,headphones-8397,Headphones for electronics — synthetic catalog item.,/images/products/headphones-8397.jpg,1,239.8,2025-10-03
+15,Speaker 8263,speaker-8263,Speaker for electronics — synthetic catalog item.,/images/products/speaker-8263.jpg,1,356.75,2025-10-03
+16,Camera 9455,camera-9455,Camera for electronics — synthetic catalog item.,/images/products/camera-9455.jpg,1,1295.96,2025-10-03
+17,Monitor 9333,monitor-9333,Monitor for electronics — synthetic catalog item.,/images/products/monitor-9333.jpg,1,45.31,2025-10-03
+18,Keyboard 9978,keyboard-9978,Keyboard for electronics — synthetic catalog item.,/images/products/keyboard-9978.jpg,1,61.94,2025-10-03
+19,Mouse 8650,mouse-8650,Mouse for electronics — synthetic catalog item.,/images/products/mouse-8650.jpg,1,63.7,2025-10-03
+20,Drone 7635,drone-7635,Drone for electronics — synthetic catalog item.,/images/products/drone-7635.jpg,1,141.16,2025-10-03
+21,Smartphone 8464,smartphone-8464,Smartphone for electronics — synthetic catalog item.,/images/products/smartphone-8464.jpg,1,305.4,2025-10-03
+22,Jacket 3069,jacket-3069,Jacket for fashion — synthetic catalog item.,/images/products/jacket-3069.jpg,2,9.46,2025-10-03
+23,Sneakers 6796,sneakers-6796,Sneakers for fashion — synthetic catalog item.,/images/products/sneakers-6796.jpg,2,50.41,2025-10-03
+24,Jeans 4564,jeans-4564,Jeans for fashion — synthetic catalog item.,/images/products/jeans-4564.jpg,2,11.87,2025-10-03
+25,T-shirt 5053,t-shirt-5053,T-shirt for fashion — synthetic catalog item.,/images/products/t-shirt-5053.jpg,2,42.59,2025-10-03
+26,Dress 3479,dress-3479,Dress for fashion — synthetic catalog item.,/images/products/dress-3479.jpg,2,21.91,2025-10-03
+27,Scarf 5674,scarf-5674,Scarf for fashion — synthetic catalog item.,/images/products/scarf-5674.jpg,2,31.61,2025-10-03
+28,Backpack 4236,backpack-4236,Backpack for fashion — synthetic catalog item.,/images/products/backpack-4236.jpg,2,10.9,2025-10-03
+29,Cap 6997,cap-6997,Cap for fashion — synthetic catalog item.,/images/products/cap-6997.jpg,2,10.23,2025-10-03
+30,Watch 5920,watch-5920,Watch for fashion — synthetic catalog item.,/images/products/watch-5920.jpg,2,54.78,2025-10-03
+31,Belt 8079,belt-8079,Belt for fashion — synthetic catalog item.,/images/products/belt-8079.jpg,2,47.76,2025-10-03
+32,Jacket 920,jacket-920,Jacket for fashion — synthetic catalog item.,/images/products/jacket-920.jpg,2,134.16,2025-10-03
+33,Sneakers 2530,sneakers-2530,Sneakers for fashion — synthetic catalog item.,/images/products/sneakers-2530.jpg,2,10.52,2025-10-03
+34,Jeans 2958,jeans-2958,Jeans for fashion — synthetic catalog item.,/images/products/jeans-2958.jpg,2,23.14,2025-10-03
+35,T-shirt 2146,t-shirt-2146,T-shirt for fashion — synthetic catalog item.,/images/products/t-shirt-2146.jpg,2,60.84,2025-10-03
+36,Dress 4302,dress-4302,Dress for fashion — synthetic catalog item.,/images/products/dress-4302.jpg,2,13.22,2025-10-03
+37,Scarf 6440,scarf-6440,Scarf for fashion — synthetic catalog item.,/images/products/scarf-6440.jpg,2,130.79,2025-10-03
+38,Backpack 139,backpack-139,Backpack for fashion — synthetic catalog item.,/images/products/backpack-139.jpg,2,36.15,2025-10-03
+39,Cap 8728,cap-8728,Cap for fashion — synthetic catalog item.,/images/products/cap-8728.jpg,2,113.89,2025-10-03
+40,Watch 5778,watch-5778,Watch for fashion — synthetic catalog item.,/images/products/watch-5778.jpg,2,100.38,2025-10-03
+41,Belt 1358,belt-1358,Belt for fashion — synthetic catalog item.,/images/products/belt-1358.jpg,2,23.25,2025-10-03
+42,Jacket 8632,jacket-8632,Jacket for fashion — synthetic catalog item.,/images/products/jacket-8632.jpg,2,15.21,2025-10-03
+43,Novel 1623,novel-1623,Novel for books — synthetic catalog item.,/images/products/novel-1623.jpg,3,11.94,2025-10-03
+44,Textbook 225,textbook-225,Textbook for books — synthetic catalog item.,/images/products/textbook-225.jpg,3,18.95,2025-10-03
+45,Cookbook 7623,cookbook-7623,Cookbook for books — synthetic catalog item.,/images/products/cookbook-7623.jpg,3,34.48,2025-10-03
+46,Guide 5707,guide-5707,Guide for books — synthetic catalog item.,/images/products/guide-5707.jpg,3,30.82,2025-10-03
+47,Biography 6973,biography-6973,Biography for books — synthetic catalog item.,/images/products/biography-6973.jpg,3,6.55,2025-10-03
+48,Poetry 5015,poetry-5015,Poetry for books — synthetic catalog item.,/images/products/poetry-5015.jpg,3,15.02,2025-10-03
+49,Thriller 8118,thriller-8118,Thriller for books — synthetic catalog item.,/images/products/thriller-8118.jpg,3,34.64,2025-10-03
+50,Fantasy 9201,fantasy-9201,Fantasy for books — synthetic catalog item.,/images/products/fantasy-9201.jpg,3,21.99,2025-10-03
+51,Atlas 4643,atlas-4643,Atlas for books — synthetic catalog item.,/images/products/atlas-4643.jpg,3,30.91,2025-10-03
+52,Dictionary 6622,dictionary-6622,Dictionary for books — synthetic catalog item.,/images/products/dictionary-6622.jpg,3,22.62,2025-10-03
+53,Novel 4188,novel-4188,Novel for books — synthetic catalog item.,/images/products/novel-4188.jpg,3,12.09,2025-10-03
+54,Textbook 6278,textbook-6278,Textbook for books — synthetic catalog item.,/images/products/textbook-6278.jpg,3,12.03,2025-10-03
+55,Cookbook 9966,cookbook-9966,Cookbook for books — synthetic catalog item.,/images/products/cookbook-9966.jpg,3,34.7,2025-10-03
+56,Guide 4914,guide-4914,Guide for books — synthetic catalog item.,/images/products/guide-4914.jpg,3,20.47,2025-10-03
+57,Biography 9502,biography-9502,Biography for books — synthetic catalog item.,/images/products/biography-9502.jpg,3,15.09,2025-10-03
+58,Poetry 8271,poetry-8271,Poetry for books — synthetic catalog item.,/images/products/poetry-8271.jpg,3,16.25,2025-10-03
+59,Thriller 5465,thriller-5465,Thriller for books — synthetic catalog item.,/images/products/thriller-5465.jpg,3,23.0,2025-10-03
+60,Fantasy 7017,fantasy-7017,Fantasy for books — synthetic catalog item.,/images/products/fantasy-7017.jpg,3,8.1,2025-10-03
+61,Atlas 2969,atlas-2969,Atlas for books — synthetic catalog item.,/images/products/atlas-2969.jpg,3,8.19,2025-10-03
+62,Dictionary 9275,dictionary-9275,Dictionary for books — synthetic catalog item.,/images/products/dictionary-9275.jpg,3,21.23,2025-10-03
+63,Novel 6417,novel-6417,Novel for books — synthetic catalog item.,/images/products/novel-6417.jpg,3,9.28,2025-10-03
+64,Ball 3686,ball-3686,Ball for sports — synthetic catalog item.,/images/products/ball-3686.jpg,4,293.17,2025-10-03
+65,Racket 2784,racket-2784,Racket for sports — synthetic catalog item.,/images/products/racket-2784.jpg,4,26.22,2025-10-03
+66,Tent 6826,tent-6826,Tent for sports — synthetic catalog item.,/images/products/tent-6826.jpg,4,118.62,2025-10-03
+67,Bicycle 5130,bicycle-5130,Bicycle for sports — synthetic catalog item.,/images/products/bicycle-5130.jpg,4,34.36,2025-10-03
+68,Dumbbell 7550,dumbbell-7550,Dumbbell for sports — synthetic catalog item.,/images/products/dumbbell-7550.jpg,4,239.0,2025-10-03
+69,Yoga Mat 7948,yoga-mat-7948,Yoga Mat for sports — synthetic catalog item.,/images/products/yoga-mat-7948.jpg,4,24.66,2025-10-03
+70,Rope 9696,rope-9696,Rope for sports — synthetic catalog item.,/images/products/rope-9696.jpg,4,120.04,2025-10-03
+71,Helmet 3740,helmet-3740,Helmet for sports — synthetic catalog item.,/images/products/helmet-3740.jpg,4,21.02,2025-10-03
+72,Shorts 2098,shorts-2098,Shorts for sports — synthetic catalog item.,/images/products/shorts-2098.jpg,4,138.45,2025-10-03
+73,Gloves 8040,gloves-8040,Gloves for sports — synthetic catalog item.,/images/products/gloves-8040.jpg,4,54.03,2025-10-03
+74,Ball 9456,ball-9456,Ball for sports — synthetic catalog item.,/images/products/ball-9456.jpg,4,29.1,2025-10-03
+75,Racket 7278,racket-7278,Racket for sports — synthetic catalog item.,/images/products/racket-7278.jpg,4,46.81,2025-10-03
+76,Tent 2894,tent-2894,Tent for sports — synthetic catalog item.,/images/products/tent-2894.jpg,4,88.26,2025-10-03
+77,Bicycle 1589,bicycle-1589,Bicycle for sports — synthetic catalog item.,/images/products/bicycle-1589.jpg,4,127.11,2025-10-03
+78,Dumbbell 9197,dumbbell-9197,Dumbbell for sports — synthetic catalog item.,/images/products/dumbbell-9197.jpg,4,199.17,2025-10-03
+79,Yoga Mat 7488,yoga-mat-7488,Yoga Mat for sports — synthetic catalog item.,/images/products/yoga-mat-7488.jpg,4,43.23,2025-10-03
+80,Rope 7611,rope-7611,Rope for sports — synthetic catalog item.,/images/products/rope-7611.jpg,4,256.07,2025-10-03
+81,Helmet 5565,helmet-5565,Helmet for sports — synthetic catalog item.,/images/products/helmet-5565.jpg,4,46.71,2025-10-03
+82,Shorts 6108,shorts-6108,Shorts for sports — synthetic catalog item.,/images/products/shorts-6108.jpg,4,100.55,2025-10-03
+83,Gloves 1814,gloves-1814,Gloves for sports — synthetic catalog item.,/images/products/gloves-1814.jpg,4,69.81,2025-10-03
+84,Ball 7558,ball-7558,Ball for sports — synthetic catalog item.,/images/products/ball-7558.jpg,4,51.76,2025-10-03
+85,Lamp 1952,lamp-1952,Lamp for home — synthetic catalog item.,/images/products/lamp-1952.jpg,5,56.72,2025-10-03
+86,Chair 9146,chair-9146,Chair for home — synthetic catalog item.,/images/products/chair-9146.jpg,5,64.81,2025-10-03
+87,Table 9153,table-9153,Table for home — synthetic catalog item.,/images/products/table-9153.jpg,5,421.06,2025-10-03
+88,Cushion 9371,cushion-9371,Cushion for home — synthetic catalog item.,/images/products/cushion-9371.jpg,5,107.19,2025-10-03
+89,Rug 7933,rug-7933,Rug for home — synthetic catalog item.,/images/products/rug-7933.jpg,5,11.38,2025-10-03
+90,Blender 4338,blender-4338,Blender for home — synthetic catalog item.,/images/products/blender-4338.jpg,5,9.32,2025-10-03
+91,Toaster 8625,toaster-8625,Toaster for home — synthetic catalog item.,/images/products/toaster-8625.jpg,5,6.27,2025-10-03
+92,Vase 3113,vase-3113,Vase for home — synthetic catalog item.,/images/products/vase-3113.jpg,5,255.43,2025-10-03
+93,Mirror 3773,mirror-3773,Mirror for home — synthetic catalog item.,/images/products/mirror-3773.jpg,5,12.14,2025-10-03
+94,Curtain 2314,curtain-2314,Curtain for home — synthetic catalog item.,/images/products/curtain-2314.jpg,5,52.87,2025-10-03
+95,Lamp 300,lamp-300,Lamp for home — synthetic catalog item.,/images/products/lamp-300.jpg,5,7.17,2025-10-03
+96,Chair 6427,chair-6427,Chair for home — synthetic catalog item.,/images/products/chair-6427.jpg,5,10.54,2025-10-03
+97,Table 4882,table-4882,Table for home — synthetic catalog item.,/images/products/table-4882.jpg,5,89.11,2025-10-03
+98,Cushion 9601,cushion-9601,Cushion for home — synthetic catalog item.,/images/products/cushion-9601.jpg,5,371.69,2025-10-03
+99,Rug 6703,rug-6703,Rug for home — synthetic catalog item.,/images/products/rug-6703.jpg,5,206.75,2025-10-03
+100,Blender 2187,blender-2187,Blender for home — synthetic catalog item.,/images/products/blender-2187.jpg,5,11.46,2025-10-03
+101,Toaster 8764,toaster-8764,Toaster for home — synthetic catalog item.,/images/products/toaster-8764.jpg,5,210.41,2025-10-03
+102,Vase 6246,vase-6246,Vase for home — synthetic catalog item.,/images/products/vase-6246.jpg,5,12.62,2025-10-03
+103,Mirror 7146,mirror-7146,Mirror for home — synthetic catalog item.,/images/products/mirror-7146.jpg,5,104.69,2025-10-03
+104,Curtain 1002,curtain-1002,Curtain for home — synthetic catalog item.,/images/products/curtain-1002.jpg,5,49.92,2025-10-03
+105,Lamp 3652,lamp-3652,Lamp for home — synthetic catalog item.,/images/products/lamp-3652.jpg,5,129.16,2025-10-03
+106,Cream 5426,cream-5426,Cream for beauty — synthetic catalog item.,/images/products/cream-5426.jpg,6,55.91,2025-10-03
+107,Shampoo 7944,shampoo-7944,Shampoo for beauty — synthetic catalog item.,/images/products/shampoo-7944.jpg,6,53.18,2025-10-03
+108,Perfume 6405,perfume-6405,Perfume for beauty — synthetic catalog item.,/images/products/perfume-6405.jpg,6,82.94,2025-10-03
+109,Lipstick 1913,lipstick-1913,Lipstick for beauty — synthetic catalog item.,/images/products/lipstick-1913.jpg,6,13.58,2025-10-03
+110,Mask 9889,mask-9889,Mask for beauty — synthetic catalog item.,/images/products/mask-9889.jpg,6,8.49,2025-10-03
+111,Oil 2264,oil-2264,Oil for beauty — synthetic catalog item.,/images/products/oil-2264.jpg,6,11.19,2025-10-03
+112,Lotion 8640,lotion-8640,Lotion for beauty — synthetic catalog item.,/images/products/lotion-8640.jpg,6,49.23,2025-10-03
+113,Brush 7108,brush-7108,Brush for beauty — synthetic catalog item.,/images/products/brush-7108.jpg,6,6.9,2025-10-03
+114,Serum 2096,serum-2096,Serum for beauty — synthetic catalog item.,/images/products/serum-2096.jpg,6,15.44,2025-10-03
+115,Soap 9181,soap-9181,Soap for beauty — synthetic catalog item.,/images/products/soap-9181.jpg,6,5.16,2025-10-03
+116,Cream 3978,cream-3978,Cream for beauty — synthetic catalog item.,/images/products/cream-3978.jpg,6,79.11,2025-10-03
+117,Shampoo 1728,shampoo-1728,Shampoo for beauty — synthetic catalog item.,/images/products/shampoo-1728.jpg,6,5.74,2025-10-03
+118,Perfume 3309,perfume-3309,Perfume for beauty — synthetic catalog item.,/images/products/perfume-3309.jpg,6,8.63,2025-10-03
+119,Lipstick 4175,lipstick-4175,Lipstick for beauty — synthetic catalog item.,/images/products/lipstick-4175.jpg,6,22.95,2025-10-03
+120,Mask 823,mask-823,Mask for beauty — synthetic catalog item.,/images/products/mask-823.jpg,6,47.38,2025-10-03
+121,Oil 291,oil-291,Oil for beauty — synthetic catalog item.,/images/products/oil-291.jpg,6,13.87,2025-10-03
+122,Lotion 6733,lotion-6733,Lotion for beauty — synthetic catalog item.,/images/products/lotion-6733.jpg,6,46.05,2025-10-03
+123,Brush 9956,brush-9956,Brush for beauty — synthetic catalog item.,/images/products/brush-9956.jpg,6,4.09,2025-10-03
+124,Serum 4257,serum-4257,Serum for beauty — synthetic catalog item.,/images/products/serum-4257.jpg,6,14.23,2025-10-03
+125,Soap 8887,soap-8887,Soap for beauty — synthetic catalog item.,/images/products/soap-8887.jpg,6,6.33,2025-10-03
+126,Cream 1246,cream-1246,Cream for beauty — synthetic catalog item.,/images/products/cream-1246.jpg,6,6.22,2025-10-03
+127,Puzzle 5444,puzzle-5444,Puzzle for toys — synthetic catalog item.,/images/products/puzzle-5444.jpg,7,10.14,2025-10-03
+128,Doll 3062,doll-3062,Doll for toys — synthetic catalog item.,/images/products/doll-3062.jpg,7,25.55,2025-10-03
+129,Blocks 3907,blocks-3907,Blocks for toys — synthetic catalog item.,/images/products/blocks-3907.jpg,7,26.22,2025-10-03
+130,Car 9346,car-9346,Car for toys — synthetic catalog item.,/images/products/car-9346.jpg,7,67.37,2025-10-03
+131,Board Game 8491,board-game-8491,Board Game for toys — synthetic catalog item.,/images/products/board-game-8491.jpg,7,20.95,2025-10-03
+132,Plush 9786,plush-9786,Plush for toys — synthetic catalog item.,/images/products/plush-9786.jpg,7,4.38,2025-10-03
+133,Robot 7324,robot-7324,Robot for toys — synthetic catalog item.,/images/products/robot-7324.jpg,7,67.25,2025-10-03
+134,Paint Set 584,paint-set-584,Paint Set for toys — synthetic catalog item.,/images/products/paint-set-584.jpg,7,31.0,2025-10-03
+135,Balloon 3544,balloon-3544,Balloon for toys — synthetic catalog item.,/images/products/balloon-3544.jpg,7,44.29,2025-10-03
+136,Guitar Toy 4988,guitar-toy-4988,Guitar Toy for toys — synthetic catalog item.,/images/products/guitar-toy-4988.jpg,7,3.04,2025-10-03
+137,Puzzle 8921,puzzle-8921,Puzzle for toys — synthetic catalog item.,/images/products/puzzle-8921.jpg,7,42.85,2025-10-03
+138,Doll 8555,doll-8555,Doll for toys — synthetic catalog item.,/images/products/doll-8555.jpg,7,21.98,2025-10-03
+139,Blocks 4523,blocks-4523,Blocks for toys — synthetic catalog item.,/images/products/blocks-4523.jpg,7,26.79,2025-10-03
+140,Car 6846,car-6846,Car for toys — synthetic catalog item.,/images/products/car-6846.jpg,7,15.54,2025-10-03
+141,Board Game 792,board-game-792,Board Game for toys — synthetic catalog item.,/images/products/board-game-792.jpg,7,3.07,2025-10-03
+142,Plush 5037,plush-5037,Plush for toys — synthetic catalog item.,/images/products/plush-5037.jpg,7,33.64,2025-10-03
+143,Robot 7215,robot-7215,Robot for toys — synthetic catalog item.,/images/products/robot-7215.jpg,7,14.94,2025-10-03
+144,Paint Set 9831,paint-set-9831,Paint Set for toys — synthetic catalog item.,/images/products/paint-set-9831.jpg,7,4.79,2025-10-03
+145,Balloon 847,balloon-847,Balloon for toys — synthetic catalog item.,/images/products/balloon-847.jpg,7,15.37,2025-10-03
+146,Guitar Toy 6405,guitar-toy-6405,Guitar Toy for toys — synthetic catalog item.,/images/products/guitar-toy-6405.jpg,7,5.52,2025-10-03
+147,Puzzle 8596,puzzle-8596,Puzzle for toys — synthetic catalog item.,/images/products/puzzle-8596.jpg,7,5.13,2025-10-03
+148,Coffee 4752,coffee-4752,Coffee for food — synthetic catalog item.,/images/products/coffee-4752.jpg,8,41.09,2025-10-03
+149,Chocolate 413,chocolate-413,Chocolate for food — synthetic catalog item.,/images/products/chocolate-413.jpg,8,32.13,2025-10-03
+150,Tea 4885,tea-4885,Tea for food — synthetic catalog item.,/images/products/tea-4885.jpg,8,3.1,2025-10-03
+151,Honey 187,honey-187,Honey for food — synthetic catalog item.,/images/products/honey-187.jpg,8,45.91,2025-10-03
+152,Olive Oil 932,olive-oil-932,Olive Oil for food — synthetic catalog item.,/images/products/olive-oil-932.jpg,8,9.95,2025-10-03
+153,Pasta 3043,pasta-3043,Pasta for food — synthetic catalog item.,/images/products/pasta-3043.jpg,8,2.88,2025-10-03
+154,Rice 7776,rice-7776,Rice for food — synthetic catalog item.,/images/products/rice-7776.jpg,8,4.79,2025-10-03
+155,Spice Set 3357,spice-set-3357,Spice Set for food — synthetic catalog item.,/images/products/spice-set-3357.jpg,8,3.07,2025-10-03
+156,Granola 9112,granola-9112,Granola for food — synthetic catalog item.,/images/products/granola-9112.jpg,8,14.53,2025-10-03
+157,Juice 2703,juice-2703,Juice for food — synthetic catalog item.,/images/products/juice-2703.jpg,8,6.07,2025-10-03
+158,Coffee 2848,coffee-2848,Coffee for food — synthetic catalog item.,/images/products/coffee-2848.jpg,8,2.4,2025-10-03
+159,Chocolate 8950,chocolate-8950,Chocolate for food — synthetic catalog item.,/images/products/chocolate-8950.jpg,8,2.39,2025-10-03
+160,Tea 6833,tea-6833,Tea for food — synthetic catalog item.,/images/products/tea-6833.jpg,8,6.9,2025-10-03
+161,Honey 4819,honey-4819,Honey for food — synthetic catalog item.,/images/products/honey-4819.jpg,8,72.3,2025-10-03
+162,Olive Oil 5394,olive-oil-5394,Olive Oil for food — synthetic catalog item.,/images/products/olive-oil-5394.jpg,8,46.39,2025-10-03
+163,Pasta 5241,pasta-5241,Pasta for food — synthetic catalog item.,/images/products/pasta-5241.jpg,8,40.27,2025-10-03
+164,Rice 4918,rice-4918,Rice for food — synthetic catalog item.,/images/products/rice-4918.jpg,8,7.22,2025-10-03
+165,Spice Set 8706,spice-set-8706,Spice Set for food — synthetic catalog item.,/images/products/spice-set-8706.jpg,8,4.29,2025-10-03
+166,Granola 430,granola-430,Granola for food — synthetic catalog item.,/images/products/granola-430.jpg,8,2.46,2025-10-03
+167,Juice 852,juice-852,Juice for food — synthetic catalog item.,/images/products/juice-852.jpg,8,14.24,2025-10-03
+168,Coffee 3286,coffee-3286,Coffee for food — synthetic catalog item.,/images/products/coffee-3286.jpg,8,7.13,2025-10-03
+169,Sofa 3374,sofa-3374,Sofa for furniture — synthetic catalog item.,/images/products/sofa-3374.jpg,9,218.27,2025-10-03
+170,Bed 5319,bed-5319,Bed for furniture — synthetic catalog item.,/images/products/bed-5319.jpg,9,83.35,2025-10-03
+171,Desk 2085,desk-2085,Desk for furniture — synthetic catalog item.,/images/products/desk-2085.jpg,9,148.65,2025-10-03
+172,Shelf 8537,shelf-8537,Shelf for furniture — synthetic catalog item.,/images/products/shelf-8537.jpg,9,66.56,2025-10-03
+173,Armchair 6587,armchair-6587,Armchair for furniture — synthetic catalog item.,/images/products/armchair-6587.jpg,9,299.78,2025-10-03
+174,Dresser 5612,dresser-5612,Dresser for furniture — synthetic catalog item.,/images/products/dresser-5612.jpg,9,314.3,2025-10-03
+175,Stool 5975,stool-5975,Stool for furniture — synthetic catalog item.,/images/products/stool-5975.jpg,9,154.15,2025-10-03
+176,Wardrobe 7236,wardrobe-7236,Wardrobe for furniture — synthetic catalog item.,/images/products/wardrobe-7236.jpg,9,60.37,2025-10-03
+177,Nightstand 4462,nightstand-4462,Nightstand for furniture — synthetic catalog item.,/images/products/nightstand-4462.jpg,9,378.78,2025-10-03
+178,Coffee Table 9328,coffee-table-9328,Coffee Table for furniture — synthetic catalog item.,/images/products/coffee-table-9328.jpg,9,50.14,2025-10-03
+179,Sofa 8231,sofa-8231,Sofa for furniture — synthetic catalog item.,/images/products/sofa-8231.jpg,9,147.08,2025-10-03
+180,Bed 2116,bed-2116,Bed for furniture — synthetic catalog item.,/images/products/bed-2116.jpg,9,319.34,2025-10-03
+181,Desk 3000,desk-3000,Desk for furniture — synthetic catalog item.,/images/products/desk-3000.jpg,9,76.55,2025-10-03
+182,Shelf 9876,shelf-9876,Shelf for furniture — synthetic catalog item.,/images/products/shelf-9876.jpg,9,481.29,2025-10-03
+183,Armchair 7141,armchair-7141,Armchair for furniture — synthetic catalog item.,/images/products/armchair-7141.jpg,9,135.33,2025-10-03
+184,Dresser 9303,dresser-9303,Dresser for furniture — synthetic catalog item.,/images/products/dresser-9303.jpg,9,476.1,2025-10-03
+185,Stool 6760,stool-6760,Stool for furniture — synthetic catalog item.,/images/products/stool-6760.jpg,9,154.56,2025-10-03
+186,Wardrobe 1671,wardrobe-1671,Wardrobe for furniture — synthetic catalog item.,/images/products/wardrobe-1671.jpg,9,95.32,2025-10-03
+187,Nightstand 3060,nightstand-3060,Nightstand for furniture — synthetic catalog item.,/images/products/nightstand-3060.jpg,9,92.15,2025-10-03
+188,Coffee Table 3833,coffee-table-3833,Coffee Table for furniture — synthetic catalog item.,/images/products/coffee-table-3833.jpg,9,634.23,2025-10-03
+189,Sofa 5107,sofa-5107,Sofa for furniture — synthetic catalog item.,/images/products/sofa-5107.jpg,9,678.67,2025-10-03
+190,Engine Oil 5679,engine-oil-5679,Engine Oil for automotive — synthetic catalog item.,/images/products/engine-oil-5679.jpg,10,25.17,2025-10-03
+191,Wiper 1021,wiper-1021,Wiper for automotive — synthetic catalog item.,/images/products/wiper-1021.jpg,10,20.76,2025-10-03
+192,Battery 3377,battery-3377,Battery for automotive — synthetic catalog item.,/images/products/battery-3377.jpg,10,14.58,2025-10-03
+193,Tire 1222,tire-1222,Tire for automotive — synthetic catalog item.,/images/products/tire-1222.jpg,10,242.08,2025-10-03
+194,Floor Mat 7083,floor-mat-7083,Floor Mat for automotive — synthetic catalog item.,/images/products/floor-mat-7083.jpg,10,11.02,2025-10-03
+195,LED Light 5822,led-light-5822,LED Light for automotive — synthetic catalog item.,/images/products/led-light-5822.jpg,10,6.44,2025-10-03
+196,Cover 464,cover-464,Cover for automotive — synthetic catalog item.,/images/products/cover-464.jpg,10,6.03,2025-10-03
+197,Charger 6722,charger-6722,Charger for automotive — synthetic catalog item.,/images/products/charger-6722.jpg,10,144.65,2025-10-03
+198,Holder 4942,holder-4942,Holder for automotive — synthetic catalog item.,/images/products/holder-4942.jpg,10,22.34,2025-10-03
+199,Cleaner 3575,cleaner-3575,Cleaner for automotive — synthetic catalog item.,/images/products/cleaner-3575.jpg,10,249.89,2025-10-03
+200,Engine Oil 4098,engine-oil-4098,Engine Oil for automotive — synthetic catalog item.,/images/products/engine-oil-4098.jpg,10,278.19,2025-10-03
+201,Wiper 2389,wiper-2389,Wiper for automotive — synthetic catalog item.,/images/products/wiper-2389.jpg,10,15.12,2025-10-03
+202,Battery 941,battery-941,Battery for automotive — synthetic catalog item.,/images/products/battery-941.jpg,10,373.56,2025-10-03
+203,Tire 7878,tire-7878,Tire for automotive — synthetic catalog item.,/images/products/tire-7878.jpg,10,267.99,2025-10-03
+204,Floor Mat 7981,floor-mat-7981,Floor Mat for automotive — synthetic catalog item.,/images/products/floor-mat-7981.jpg,10,169.17,2025-10-03
+205,LED Light 6240,led-light-6240,LED Light for automotive — synthetic catalog item.,/images/products/led-light-6240.jpg,10,50.01,2025-10-03
+206,Cover 4235,cover-4235,Cover for automotive — synthetic catalog item.,/images/products/cover-4235.jpg,10,108.97,2025-10-03
+207,Charger 6899,charger-6899,Charger for automotive — synthetic catalog item.,/images/products/charger-6899.jpg,10,58.38,2025-10-03
+208,Holder 7047,holder-7047,Holder for automotive — synthetic catalog item.,/images/products/holder-7047.jpg,10,5.17,2025-10-03
+209,Cleaner 8592,cleaner-8592,Cleaner for automotive — synthetic catalog item.,/images/products/cleaner-8592.jpg,10,22.72,2025-10-03
+210,Engine Oil 9692,engine-oil-9692,Engine Oil for automotive — synthetic catalog item.,/images/products/engine-oil-9692.jpg,10,6.31,2025-10-03
+211,Guitar 6721,guitar-6721,Guitar for music — synthetic catalog item.,/images/products/guitar-6721.jpg,11,64.63,2025-10-03
+212,Keyboard 6417,keyboard-6417,Keyboard for music — synthetic catalog item.,/images/products/keyboard-6417.jpg,11,79.19,2025-10-03
+213,Microphone 5757,microphone-5757,Microphone for music — synthetic catalog item.,/images/products/microphone-5757.jpg,11,11.74,2025-10-03
+214,Headphones 7905,headphones-7905,Headphones for music — synthetic catalog item.,/images/products/headphones-7905.jpg,11,249.37,2025-10-03
+215,Strings 8527,strings-8527,Strings for music — synthetic catalog item.,/images/products/strings-8527.jpg,11,19.93,2025-10-03
+216,Drum Sticks 7457,drum-sticks-7457,Drum Sticks for music — synthetic catalog item.,/images/products/drum-sticks-7457.jpg,11,70.77,2025-10-03
+217,Amp 1497,amp-1497,Amp for music — synthetic catalog item.,/images/products/amp-1497.jpg,11,40.27,2025-10-03
+218,Pedal 9137,pedal-9137,Pedal for music — synthetic catalog item.,/images/products/pedal-9137.jpg,11,111.23,2025-10-03
+219,Stand 9171,stand-9171,Stand for music — synthetic catalog item.,/images/products/stand-9171.jpg,11,181.63,2025-10-03
+220,Metronome 7381,metronome-7381,Metronome for music — synthetic catalog item.,/images/products/metronome-7381.jpg,11,49.97,2025-10-03
+221,Guitar 228,guitar-228,Guitar for music — synthetic catalog item.,/images/products/guitar-228.jpg,11,63.7,2025-10-03
+222,Keyboard 6314,keyboard-6314,Keyboard for music — synthetic catalog item.,/images/products/keyboard-6314.jpg,11,44.86,2025-10-03
+223,Microphone 1091,microphone-1091,Microphone for music — synthetic catalog item.,/images/products/microphone-1091.jpg,11,42.31,2025-10-03
+224,Headphones 2106,headphones-2106,Headphones for music — synthetic catalog item.,/images/products/headphones-2106.jpg,11,37.17,2025-10-03
+225,Strings 2570,strings-2570,Strings for music — synthetic catalog item.,/images/products/strings-2570.jpg,11,9.02,2025-10-03
+226,Drum Sticks 2199,drum-sticks-2199,Drum Sticks for music — synthetic catalog item.,/images/products/drum-sticks-2199.jpg,11,53.2,2025-10-03
+227,Amp 9862,amp-9862,Amp for music — synthetic catalog item.,/images/products/amp-9862.jpg,11,261.01,2025-10-03
+228,Pedal 5951,pedal-5951,Pedal for music — synthetic catalog item.,/images/products/pedal-5951.jpg,11,67.1,2025-10-03
+229,Stand 8561,stand-8561,Stand for music — synthetic catalog item.,/images/products/stand-8561.jpg,11,8.07,2025-10-03
+230,Metronome 3935,metronome-3935,Metronome for music — synthetic catalog item.,/images/products/metronome-3935.jpg,11,11.14,2025-10-03
+231,Guitar 8134,guitar-8134,Guitar for music — synthetic catalog item.,/images/products/guitar-8134.jpg,11,40.9,2025-10-03
+232,Hammer 2585,hammer-2585,Hammer for tools — synthetic catalog item.,/images/products/hammer-2585.jpg,12,8.17,2025-10-03
+233,Drill 6788,drill-6788,Drill for tools — synthetic catalog item.,/images/products/drill-6788.jpg,12,4.42,2025-10-03
+234,Screwdriver 8674,screwdriver-8674,Screwdriver for tools — synthetic catalog item.,/images/products/screwdriver-8674.jpg,12,47.04,2025-10-03
+235,Wrench 4526,wrench-4526,Wrench for tools — synthetic catalog item.,/images/products/wrench-4526.jpg,12,14.62,2025-10-03
+236,Saw 6974,saw-6974,Saw for tools — synthetic catalog item.,/images/products/saw-6974.jpg,12,42.25,2025-10-03
+237,Level 7086,level-7086,Level for tools — synthetic catalog item.,/images/products/level-7086.jpg,12,105.59,2025-10-03
+238,Tape Measure 7693,tape-measure-7693,Tape Measure for tools — synthetic catalog item.,/images/products/tape-measure-7693.jpg,12,8.44,2025-10-03
+239,Pliers 3823,pliers-3823,Pliers for tools — synthetic catalog item.,/images/products/pliers-3823.jpg,12,180.32,2025-10-03
+240,Ladder 7306,ladder-7306,Ladder for tools — synthetic catalog item.,/images/products/ladder-7306.jpg,12,5.91,2025-10-03
+241,Glue Gun 7122,glue-gun-7122,Glue Gun for tools — synthetic catalog item.,/images/products/glue-gun-7122.jpg,12,156.8,2025-10-03
+242,Hammer 3520,hammer-3520,Hammer for tools — synthetic catalog item.,/images/products/hammer-3520.jpg,12,10.28,2025-10-03
+243,Drill 7801,drill-7801,Drill for tools — synthetic catalog item.,/images/products/drill-7801.jpg,12,180.67,2025-10-03
+244,Screwdriver 1979,screwdriver-1979,Screwdriver for tools — synthetic catalog item.,/images/products/screwdriver-1979.jpg,12,73.52,2025-10-03
+245,Wrench 4654,wrench-4654,Wrench for tools — synthetic catalog item.,/images/products/wrench-4654.jpg,12,204.01,2025-10-03
+246,Saw 3782,saw-3782,Saw for tools — synthetic catalog item.,/images/products/saw-3782.jpg,12,131.31,2025-10-03
+247,Level 6433,level-6433,Level for tools — synthetic catalog item.,/images/products/level-6433.jpg,12,120.39,2025-10-03
+248,Tape Measure 5693,tape-measure-5693,Tape Measure for tools — synthetic catalog item.,/images/products/tape-measure-5693.jpg,12,47.3,2025-10-03
+249,Pliers 3032,pliers-3032,Pliers for tools — synthetic catalog item.,/images/products/pliers-3032.jpg,12,13.76,2025-10-03
+250,Ladder 5802,ladder-5802,Ladder for tools — synthetic catalog item.,/images/products/ladder-5802.jpg,12,50.3,2025-10-03
+251,Glue Gun 2903,glue-gun-2903,Glue Gun for tools — synthetic catalog item.,/images/products/glue-gun-2903.jpg,12,87.33,2025-10-03
+252,Hammer 270,hammer-270,Hammer for tools — synthetic catalog item.,/images/products/hammer-270.jpg,12,115.03,2025-10-03

@@ -1,0 +1,53 @@
+query,method,rank,product_id,name,category_id,score
+smartphone,keyword,1,2,Smartphone Compact 854,1,1.0
+smartphone,keyword,2,1,Smartphone Compact 686,1,1.0
+smartphone,tfidf,1,1,Smartphone Compact 686,1,0.4071
+smartphone,tfidf,2,2,Smartphone Compact 854,1,0.3996
+smartphone,embedding,1,2,Smartphone Compact 854,1,0.6093
+smartphone,embedding,2,1,Smartphone Compact 686,1,0.5925
+smartphone,embedding,3,7,Tablet Compact 853,1,0.4498
+something to listen to music with,keyword,1,231,Studio Headphones Classic 686,11,1.0
+something to listen to music with,keyword,2,223,Ukulele Premium 117,11,1.0
+something to listen to music with,keyword,3,224,Ukulele Essential 759,11,1.0
+something to listen to music with,tfidf,1,227,Music Stand Everyday 471,11,0.4665
+something to listen to music with,tfidf,2,228,Music Stand Pro 759,11,0.4526
+something to listen to music with,tfidf,3,224,Ukulele Essential 759,11,0.1779
+something to listen to music with,embedding,1,227,Music Stand Everyday 471,11,0.4427
+something to listen to music with,embedding,2,217,Studio Headphones Essential 159,11,0.3885
+something to listen to music with,embedding,3,231,Studio Headphones Classic 686,11,0.3824
+a book to read before bed,keyword,1,52,Fantasy Pro 681,3,1.0
+a book to read before bed,keyword,2,177,Bed Frame Eco 577,9,1.0
+a book to read before bed,keyword,3,178,Bed Frame Essential 340,9,1.0
+a book to read before bed,tfidf,1,177,Bed Frame Eco 577,9,0.3467
+a book to read before bed,tfidf,2,178,Bed Frame Essential 340,9,0.3433
+a book to read before bed,tfidf,3,58,Children's Book Deluxe 173,3,0.2965
+a book to read before bed,embedding,1,60,Poetry Everyday 604,3,0.3908
+a book to read before bed,embedding,2,46,Thriller Premium 108,3,0.3854
+a book to read before bed,embedding,3,51,Fantasy Premium 823,3,0.3843
+fitness and training gear,keyword,1,80,Fitness Band Eco 108,4,2.0
+fitness and training gear,keyword,2,81,Fitness Band Deluxe 954,4,2.0
+fitness and training gear,keyword,3,19,Smartwatch Premium 103,1,1.0
+fitness and training gear,tfidf,1,80,Fitness Band Eco 108,4,0.3418
+fitness and training gear,tfidf,2,81,Fitness Band Deluxe 954,4,0.3403
+fitness and training gear,tfidf,3,20,Smartwatch Everyday 615,1,0.1386
+fitness and training gear,embedding,1,71,Bicycle Everyday 242,4,0.477
+fitness and training gear,embedding,2,84,Bicycle Eco 162,4,0.429
+fitness and training gear,embedding,3,70,Bicycle Compact 781,4,0.4074
+home cooking essentials,keyword,1,90,Table Lamp Eco 643,5,1.0
+home cooking essentials,keyword,2,85,Blender Classic 334,5,1.0
+home cooking essentials,keyword,3,93,Towel Set Eco 365,5,1.0
+home cooking essentials,tfidf,1,162,Spice Set Pro 698,8,0.1925
+home cooking essentials,tfidf,2,163,Spice Set Premium 106,8,0.187
+home cooking essentials,tfidf,3,173,Desk Eco 120,9,0.0891
+home cooking essentials,embedding,1,48,Cookbook Essential 136,3,0.5446
+home cooking essentials,embedding,2,153,Dark Chocolate Essential 370,8,0.4586
+home cooking essentials,embedding,3,163,Spice Set Premium 106,8,0.4216
+wireless earbuds for travel,keyword,1,6,Headphones Compact 103,1,1.0
+wireless earbuds for travel,keyword,2,13,Mouse Deluxe 406,1,1.0
+wireless earbuds for travel,keyword,3,55,Guide Everyday 453,3,1.0
+wireless earbuds for travel,tfidf,1,55,Guide Everyday 453,3,0.2028
+wireless earbuds for travel,tfidf,2,56,Guide Eco 397,3,0.2021
+wireless earbuds for travel,tfidf,3,14,Mouse Eco 475,1,0.1569
+wireless earbuds for travel,embedding,1,6,Headphones Compact 103,1,0.5089
+wireless earbuds for travel,embedding,2,5,Headphones Deluxe 350,1,0.4548
+wireless earbuds for travel,embedding,3,16,Speaker Eco 174,1,0.3169

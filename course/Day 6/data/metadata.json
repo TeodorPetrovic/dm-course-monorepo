@@ -1,0 +1,54 @@
+{
+  "dataset": "dm_interaction_matrix_v1",
+  "description": "Seeded implicit-feedback interaction matrix (sessions x products) built from Day 1 events. Value = aggregated event weight per (session, product) using aggregation='max' and weights view=1 / add_to_cart=3 / purchase=5. These weights are ASSUMPTIONS, not truths — weight-sensitivity experiment tests them (DAY-BRIEFS Day 6).",
+  "source": "derived",
+  "derived_from": {
+    "events": "Day 1/data/events.csv",
+    "products": "Day 1/data/products.csv",
+    "module": "app.data.generate_interactions",
+    "function": "generate_interactions",
+    "matrix_builder": "app.recommenders.collaborative.build_interaction_matrix"
+  },
+  "parameters": {
+    "aggregation": "max",
+    "level": "session",
+    "weights": {
+      "product_view": 1.0,
+      "add_to_cart": 3.0,
+      "purchase": 5.0
+    }
+  },
+  "columns": [
+    "session_id",
+    "product_id",
+    "value"
+  ],
+  "counts": {
+    "sessions": 15360,
+    "products_total": 252,
+    "products_with_interactions": 252,
+    "nnz": 90761,
+    "density": 0.023448,
+    "total_value": 99163.0,
+    "top_by_value": [
+      90,
+      184,
+      110,
+      12,
+      49
+    ],
+    "sessions_with_2_plus_products": 13763
+  },
+  "fields": {
+    "session_id": "str, user_session (Day 1 kolona) — red interaction matrice",
+    "product_id": "int, stabilan ID proizvoda (kolona matrice)",
+    "value": "float, agregirana težina interakcije za (sesija, proizvod) — aggregation=max nad težinama događaja {'product_view': 1.0, 'add_to_cart': 3.0, 'purchase': 5.0}"
+  },
+  "created": "2026-08-19",
+  "reproducibility_note": "No wall-clock timestamp is recorded here: the generator is byte-for-byte reproducible, so the sidecar must not change between runs. Regenerate with the same seed to reproduce all files.",
+  "manifest": {
+    "sha256": {
+      "interactions.csv": "f48740190a325fbfeda071fa2ef6b5f60324e7a164031816edd31aefc5c3297e"
+    }
+  }
+}

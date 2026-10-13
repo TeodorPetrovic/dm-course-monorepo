@@ -1,0 +1,54 @@
+{
+  "dataset": "dm_ai_comparison_v1",
+  "description": "Template-vs-LLM SEO poređenje (Day 11): za uzorak proizvoda generiše template SEO (rule/heuristic baseline) i LLM SEO (preko AIProvider-a) i proverava oba kroz iste provere (Google dužine, obavezna polja, product facts). Validnost ovde meri STRUKTURU i ograničenja, NE istinitost teksta.",
+  "source": "derived",
+  "derived_from": {
+    "products": "Day 5/data/products_text.csv",
+    "module": "app.data.generate_ai_comparison",
+    "function": "build_comparison",
+    "templates": "app.services.templates",
+    "ai_service": "app.services.ai"
+  },
+  "provider_requested": "demo",
+  "provider_used": "demo",
+  "provider_note": "demo = scripted teaching double (deterministički, offline, NIJE pravi LLM). Varijante demo:valid (prolazi), demo:length_fail (predugačak naslov), demo:facts_fail (naziv se ne pojavljuje) — izabrane po poziciji u uzorku da pokažu šta validacija hvata. local/external = pravi provider; ako nije dostupan koristi se demo (provider_used to beleži).",
+  "parameters": {
+    "sample": 6,
+    "title_max": 60,
+    "desc_max": 155,
+    "required_fields": [
+      "seo_title",
+      "seo_description",
+      "keywords"
+    ]
+  },
+  "columns": {
+    "product_id": "int, stabilan ID proizvoda",
+    "name": "str, naziv proizvoda",
+    "method": "template | llm",
+    "source": "ko je generisao red: template | demo | local | external | '<name> (invalid)'",
+    "seo_title": "str, generisani SEO naslov",
+    "seo_description": "str, generisani SEO opis",
+    "keywords": "str, ključne reči spojene sa ' | '",
+    "title_len": "int, len(seo_title)",
+    "desc_len": "int, len(seo_description)",
+    "title_ok": "bool, title_len <= 60",
+    "desc_ok": "bool, desc_len <= 155",
+    "fields_ok": "bool, sva obavezna polja prisutna",
+    "facts_ok": "bool, naziv/kategorija se pojavljuju u tekstu",
+    "valid": "bool, sve provere prolaze"
+  },
+  "summary": {
+    "rows": 12,
+    "template_valid": 6,
+    "llm_valid": 2,
+    "title_over_60": 2,
+    "desc_over_155": 0,
+    "facts_missing": 2
+  },
+  "manifest": {
+    "sha256": {
+      "comparison.csv": "55197f8f0400f1d9f25b682a58d917166f13877f51bcb1dc9806971e77809336"
+    }
+  }
+}

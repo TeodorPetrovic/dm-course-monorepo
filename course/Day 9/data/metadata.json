@@ -1,0 +1,91 @@
+{
+  "dataset": "dm_session_feedback_v1",
+  "description": "Simulated experiment-ready log for the popular-vs-personalized CTR comparison. impressions.csv logs k impressions per algorithm per sampled session with a DETERMINISTIC simulated click (seed 42). The SAME click model is used for both algorithms (relevant_base if the product is in the session's top-2 categories, else base, times a position factor), so the CTR difference comes only from which products each algorithm ranks where. Data collection for an A/B experiment, not a significance test.",
+  "source": "derived",
+  "derived_from": {
+    "events": "Day 1/data/events.csv",
+    "products": "Day 5/data/products_text.csv",
+    "module": "app.data.generate_session",
+    "function": "generate_session",
+    "recommender_module": "app.recommenders.session",
+    "recommend_function": "recommend_for_session",
+    "ctr_function": "app.recommenders.session.recommendation_ctr"
+  },
+  "parameters": {
+    "seed": 42,
+    "n_sessions": 200,
+    "k": 5,
+    "min_session_product_events": 2,
+    "recency_decay": 0.8,
+    "session_top_n": 2,
+    "click_model": {
+      "relevant_base": 0.06,
+      "base": 0.02,
+      "position_factors": [
+        1.0,
+        0.6,
+        0.4,
+        0.3,
+        0.2
+      ]
+    },
+    "sampling": "deterministic rng.choice over sessions with >= min_session_product_events product events (no replacement)"
+  },
+  "click_model_note": "Clicks are SIMULATED with the documented click_model — this is not real user behavior. The point is the LOGGING MECHANISM (algorithm, position, clicked) and the CTR math, not a true A/B outcome.",
+  "columns": {
+    "impressions.csv": {
+      "session_id": "str, sesija (Day 1 kolona) — jedinica eksperimenta",
+      "algorithm": "str, popular ili personalized (impression se loguje pod algoritmom)",
+      "position": "int, pozicija preporuke (1=prva) — position-bias",
+      "product_id": "int, stabilan ID proizvoda",
+      "name": "str, naziv proizvoda (katalog)",
+      "category_id": "int, kategorija proizvoda",
+      "session_top_category": "bool, da li je proizvod u top-2 kategorijama sesije",
+      "clicked": "int, 0/1 — SIMULIRAN klik (seed 42, klik-model u metadata.click_model)"
+    },
+    "ctr.csv": {
+      "level": "str, algorithm ili position (nivo agregacije)",
+      "group": "str, vrednost (npr. popular / personalized / position_1)",
+      "impressions": "int, broj impresija",
+      "clicks": "int, broj klikova",
+      "ctr": "float, clicks/impressions (0 ako nema impresija)"
+    },
+    "comparison.csv": {
+      "algorithm": "str, popular ili personalized",
+      "impressions": "int, broj impresija",
+      "clicks": "int, broj klikova",
+      "ctr": "float, click-through rate"
+    }
+  },
+  "counts": {
+    "n_sessions": 200,
+    "n_impressions": 2000,
+    "n_popular_impressions": 1000,
+    "n_personalized_impressions": 1000,
+    "n_clicks": 33,
+    "n_catalog": 252
+  },
+  "comparison": [
+    {
+      "algorithm": "popular",
+      "impressions": 1000,
+      "clicks": 11,
+      "ctr": 0.011
+    },
+    {
+      "algorithm": "personalized",
+      "impressions": 1000,
+      "clicks": 22,
+      "ctr": 0.022
+    }
+  ],
+  "created": "2026-08-19",
+  "reproducibility_note": "No wall-clock timestamp is recorded here: the generator is byte-for-byte reproducible, so the sidecar must not change between runs. Regenerate with the same seed to reproduce all files.",
+  "manifest": {
+    "sha256": {
+      "impressions.csv": "07c40173f17f77ecb692471763ef26a1e0d9f94c52a8c7f9130708cd6ec59c47",
+      "ctr.csv": "387101ad0982becfe3fd827508e2438993b400815aa46bd9edc28fb9a9200a38",
+      "comparison.csv": "3a0eccceb666d808e43da0ecdab18f611d6bc1ea8e040af27cc13dcb66bbfe22"
+    }
+  }
+}

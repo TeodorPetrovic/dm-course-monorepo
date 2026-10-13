@@ -1,0 +1,151 @@
+{
+  "dataset": "dm_platform_v1",
+  "description": "Integrated Marketing Platform capstone snapshot (Day 12). module-registry.json = manifest arhitekture (klasa + fallback + available status svakog modula). homepage-snapshot.json = stvarni integrisani payload (profil + preporuke + AI sadržaj + evaluacija summary) za demo korisnike/sesije. Reference, ne duplira: izvori su Day 1–11 seeded podaci.",
+  "source": "derived",
+  "derived_from": {
+    "events": "Day 1/data/events.csv",
+    "products": "Day 5/data/products_text.csv",
+    "interactions": "Day 6/data/interactions.csv",
+    "embeddings": "Day 10/data/embeddings.npz",
+    "models": "app/models/ (segment + conversion, runtime)",
+    "service": "app.services.platform.IntegratedPlatformService"
+  },
+  "parameters": {
+    "users": [
+      395,
+      1465
+    ],
+    "sessions": [
+      "session_005246",
+      "session_001403"
+    ],
+    "limit": 5
+  },
+  "counts": {
+    "n_modules": 18,
+    "n_available": 17,
+    "n_unavailable": 1,
+    "n_snapshots": 2
+  },
+  "hero_source_note": "hero['source'] == 'template' znači da LLM nije bio dostupan na ovom okruženju (fail-safe) — ne da je template 'pravi' odgovor. Uzorak ovog pokretanja: ['template', 'template'].",
+  "summary": {
+    "modules": [
+      {
+        "id": "events",
+        "class": "data pipeline",
+        "available": true,
+        "fallback": "— (sve kasnije zavisi od ovoga)"
+      },
+      {
+        "id": "rfm",
+        "class": "rule / heuristic",
+        "available": true,
+        "fallback": "korisnik bez istorije -> bucket izostavljen (no_history)"
+      },
+      {
+        "id": "kmeans_segmentation",
+        "class": "ML (prediction / learned representation)",
+        "available": true,
+        "fallback": "netreniran model -> unsegmented (untrained_model); bez istorije -> unsegmented (no_history)"
+      },
+      {
+        "id": "majority_baseline",
+        "class": "statistical",
+        "available": true,
+        "fallback": "— (baseline uvek postoji)"
+      },
+      {
+        "id": "conversion_model",
+        "class": "ML (prediction / learned representation)",
+        "available": true,
+        "fallback": "netreniran model -> base_rate (untrained_model); bez istorije -> base_rate (no_history)"
+      },
+      {
+        "id": "rule_targeting",
+        "class": "rule / heuristic",
+        "available": true,
+        "fallback": "— (pravila uvek rade)"
+      },
+      {
+        "id": "ml_targeting",
+        "class": "ML (prediction / learned representation)",
+        "available": true,
+        "fallback": "netrenirani modeli -> rule-based publika (untrained_model)"
+      },
+      {
+        "id": "popularity",
+        "class": "statistical",
+        "available": true,
+        "fallback": "— (baseline uvek radi)"
+      },
+      {
+        "id": "content_tfidf",
+        "class": "statistical",
+        "available": true,
+        "fallback": "cold-start -> popularity (no_signal)"
+      },
+      {
+        "id": "template_text",
+        "class": "rule / heuristic",
+        "available": true,
+        "fallback": "— (deterministički baseline)"
+      },
+      {
+        "id": "collaborative",
+        "class": "statistical",
+        "available": true,
+        "fallback": "cold-start -> popularity (unknown_product / no_interactions)"
+      },
+      {
+        "id": "evaluation",
+        "class": "statistical / evaluation protocol",
+        "available": true,
+        "fallback": "nema fajlova -> 503 (koji generator da pokrene)"
+      },
+      {
+        "id": "hybrid",
+        "class": "rule / heuristic",
+        "available": true,
+        "fallback": "nepoznat korisnik -> popularity (unknown_user); merge težine su heuristika, ne naučen odgovor"
+      },
+      {
+        "id": "session",
+        "class": "rule / heuristic",
+        "available": true,
+        "fallback": "sesija bez signala -> popularity (no_session_signal)"
+      },
+      {
+        "id": "ctr",
+        "class": "statistical",
+        "available": true,
+        "fallback": "0 impresija -> ctr=0.0 (zero-division)"
+      },
+      {
+        "id": "embeddings",
+        "class": "ML (prediction / learned representation)",
+        "available": true,
+        "fallback": "embedder nedostupan -> keyword; proizvod bez embeddinga -> popularity (no_embedding)"
+      },
+      {
+        "id": "generative_ai",
+        "class": "generative AI",
+        "available": false,
+        "fallback": "provider nedostupan / nevalidan output -> template (model_unavailable / invalid_llm_output)"
+      },
+      {
+        "id": "seo_template",
+        "class": "rule / heuristic",
+        "available": true,
+        "fallback": "— (struktura garantovana kodom)"
+      }
+    ]
+  },
+  "created": "2026-08-19",
+  "reproducibility_note": "Deterministički za dati environment: isti seeded podaci + isti demo korisnici + isti AI_PROVIDER -> isti fajlovi. Hero source zavisi od toga da li je LLM konfigurisan (local/external).",
+  "manifest": {
+    "sha256": {
+      "module-registry.json": "b85a2d5f67d603b23811a74ba5aa8ed72c04fc590c0c9f8008b267bd85bd9745",
+      "homepage-snapshot.json": "050eee77e2c6fb8ef307b154cea8a550320179c15097d899108983f815186f0b"
+    }
+  }
+}

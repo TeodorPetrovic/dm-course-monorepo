@@ -1,0 +1,181 @@
+{
+  "dataset": "dm_semantic_v1",
+  "description": "Dense product embedding store (Day 10) + keyword-vs-TFIDF-vs-embedding comparison. embeddings.npz holds the n_products x dim matrix aligned with products_text.csv, plus the embedder descriptor. comparison.csv runs known queries through keyword_search (token overlap), TF-IDF (Day 5 build_tfidf_matrix) and semantic_search (embedding, brute-force NN) and records top-k hits per method.",
+  "source": "derived",
+  "derived_from": {
+    "products": "Day 5/data/products_text.csv",
+    "module": "app.data.generate_embeddings",
+    "function": "generate_embeddings",
+    "embedding_module": "app.recommenders.embeddings"
+  },
+  "embedder": {
+    "name": "sentence-transformers:sentence-transformers/all-MiniLM-L6-v2",
+    "params": {}
+  },
+  "embedder_note": "ST = sentence-transformers (naučen, semantički); hash = deterministički fallback (bag-of-words + seeded random projection, bez modela). Query i produkti moraju da budu u ISTOM prostoru — servis čita descriptor iz store-a i kodiramo upit istim embedderom.",
+  "parameters": {
+    "top_k": 3,
+    "queries": [
+      "smartphone",
+      "something to listen to music with",
+      "a book to read before bed",
+      "fitness and training gear",
+      "home cooking essentials",
+      "wireless earbuds for travel"
+    ],
+    "hash_dim": 64,
+    "hash_seed": 42
+  },
+  "columns": {
+    "embeddings.npz": {
+      "matrix": "float, (252 x 384) — L2 normalizovani dense embedding reda po products_text.csv",
+      "product_ids": "int, stabilni ID-evi proizvoda (isti redosled kao matrix)",
+      "embedder_name": "str, naziv embeddera (npr. sentence-transformers:... ili hash)",
+      "embedder_params": "str, JSON parametri embeddera (npr. embedding_dim, seed)"
+    },
+    "comparison.csv": {
+      "query": "str, upit (poznat, iz --queries)",
+      "method": "str, keyword | tfidf | embedding",
+      "rank": "int, 1=prvi pogodak",
+      "product_id": "int, pogodak",
+      "name": "str, naziv proizvoda",
+      "category_id": "int, kategorija",
+      "score": "float, skor metode (overlap count / kosinusna sličnost)"
+    }
+  },
+  "counts": {
+    "n_products": 252,
+    "dim": 384,
+    "n_queries": 6,
+    "n_comparison_rows": 52
+  },
+  "summary": [
+    {
+      "query": "smartphone",
+      "top": {
+        "keyword": [
+          "Smartphone Compact 854",
+          "Smartphone Compact 686"
+        ],
+        "tfidf": [
+          "Smartphone Compact 686",
+          "Smartphone Compact 854"
+        ],
+        "embedding": [
+          "Smartphone Compact 854",
+          "Smartphone Compact 686",
+          "Tablet Compact 853"
+        ]
+      }
+    },
+    {
+      "query": "something to listen to music with",
+      "top": {
+        "keyword": [
+          "Studio Headphones Classic 686",
+          "Ukulele Premium 117",
+          "Ukulele Essential 759"
+        ],
+        "tfidf": [
+          "Music Stand Everyday 471",
+          "Music Stand Pro 759",
+          "Ukulele Essential 759"
+        ],
+        "embedding": [
+          "Music Stand Everyday 471",
+          "Studio Headphones Essential 159",
+          "Studio Headphones Classic 686"
+        ]
+      }
+    },
+    {
+      "query": "a book to read before bed",
+      "top": {
+        "keyword": [
+          "Fantasy Pro 681",
+          "Bed Frame Eco 577",
+          "Bed Frame Essential 340"
+        ],
+        "tfidf": [
+          "Bed Frame Eco 577",
+          "Bed Frame Essential 340",
+          "Children's Book Deluxe 173"
+        ],
+        "embedding": [
+          "Poetry Everyday 604",
+          "Thriller Premium 108",
+          "Fantasy Premium 823"
+        ]
+      }
+    },
+    {
+      "query": "fitness and training gear",
+      "top": {
+        "keyword": [
+          "Fitness Band Eco 108",
+          "Fitness Band Deluxe 954",
+          "Smartwatch Premium 103"
+        ],
+        "tfidf": [
+          "Fitness Band Eco 108",
+          "Fitness Band Deluxe 954",
+          "Smartwatch Everyday 615"
+        ],
+        "embedding": [
+          "Bicycle Everyday 242",
+          "Bicycle Eco 162",
+          "Bicycle Compact 781"
+        ]
+      }
+    },
+    {
+      "query": "home cooking essentials",
+      "top": {
+        "keyword": [
+          "Table Lamp Eco 643",
+          "Blender Classic 334",
+          "Towel Set Eco 365"
+        ],
+        "tfidf": [
+          "Spice Set Pro 698",
+          "Spice Set Premium 106",
+          "Desk Eco 120"
+        ],
+        "embedding": [
+          "Cookbook Essential 136",
+          "Dark Chocolate Essential 370",
+          "Spice Set Premium 106"
+        ]
+      }
+    },
+    {
+      "query": "wireless earbuds for travel",
+      "top": {
+        "keyword": [
+          "Headphones Compact 103",
+          "Mouse Deluxe 406",
+          "Guide Everyday 453"
+        ],
+        "tfidf": [
+          "Guide Everyday 453",
+          "Guide Eco 397",
+          "Mouse Eco 475"
+        ],
+        "embedding": [
+          "Headphones Compact 103",
+          "Headphones Deluxe 350",
+          "Speaker Eco 174"
+        ]
+      }
+    }
+  ],
+  "created": "2026-08-19",
+  "reproducibility_note": "No wall-clock timestamp is recorded: regeneration with the same embedder and inputs reproduces the store byte-for-byte. ST values are deterministic for a given model; hash values are seeded.",
+  "manifest": {
+    "sha256": {
+      "embeddings.npz": "b2cd3275aaf7442fb566405788b41ec23416028776d4772fa368e25f112e6fef",
+      "embeddings.json": "e4a9d9b66d03a5966bef05dd4be38b92bf0556096ee59f3aa0c94b156b4af607",
+      "comparison.csv": "9f26d1c886ff7462b5538cdbe070e0a0c912ad5e9d147201ef03e50df8edafcb"
+    }
+  }
+}

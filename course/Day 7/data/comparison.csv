@@ -1,0 +1,5 @@
+method,precision_at_k,recall_at_k,hit_rate_at_k,ndcg_at_k,catalog_coverage
+popularity,0.081841,0.078593,0.335355,0.096795,0.02381
+category,0.244595,0.297802,0.674634,0.345375,0.285714
+content,0.068641,0.073318,0.278987,0.093596,1.0
+collaborative,0.239386,0.289999,0.668926,0.335239,0.722222

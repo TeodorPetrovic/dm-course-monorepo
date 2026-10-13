@@ -1,0 +1,60 @@
+{
+  "snapshots": [
+    {
+      "user_id": 395,
+      "session_id": "session_005246",
+      "hero": {
+        "content": "Welcome back. Cilj: Recommend products for segment segment_2. Stvoreno za publiku: segment_2. Iskoristite priliku dok traje ponuda!",
+        "kind": "campaign_copy",
+        "source": "template",
+        "fallback": true,
+        "fallback_reason": "model_unavailable",
+        "module_class": "generative AI"
+      },
+      "recommendations": [
+        50,
+        52,
+        127,
+        133,
+        90
+      ],
+      "evaluation_summary": {
+        "available": true,
+        "overall": {
+          "impressions": 61530,
+          "clicks": 1427,
+          "ctr": 0.0232
+        },
+        "module_class": "statistical"
+      }
+    },
+    {
+      "user_id": 1465,
+      "session_id": "session_001403",
+      "hero": {
+        "content": "Welcome back. Cilj: Recommend products for segment segment_3. Stvoreno za publiku: segment_3. Iskoristite priliku dok traje ponuda!",
+        "kind": "campaign_copy",
+        "source": "template",
+        "fallback": true,
+        "fallback_reason": "model_unavailable",
+        "module_class": "generative AI"
+      },
+      "recommendations": [
+        30,
+        41,
+        110,
+        76,
+        111
+      ],
+      "evaluation_summary": {
+        "available": true,
+        "overall": {
+          "impressions": 61530,
+          "clicks": 1427,
+          "ctr": 0.0232
+        },
+        "module_class": "statistical"
+      }
+    }
+  ]
+}
