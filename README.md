@@ -28,8 +28,9 @@ apps/frontend/   Nuxt 4 prodavnica/CMS (Bun/Nitro); /ml/** proxy -> API :3001; M
 course/Day N/    po danu: data/ (generisani CSV/JSON + README), examples/ (demo skripte), lab/ (starter, rešenje, testovi)
 course/dm-ml ->  symlink na ../apps/api, da komande iz lekcija (`cd dm-ml`, `dm-ml/.venv/bin/python ...`) rade doslovno
 lessons/         12 lekcija (Markdown)
+teaching/        planovi časova po danu + procena (starter/rešenje preko TEACH blokova u kodu)
 db/              lokalna MariaDB (port 3307): šema, seed iz Day 1 CSV-ova, start/load skripte
-scripts/         setup, regenerisanje podataka, provere (run_all, check_commands), frontend smoke, DeepSeek live check
+scripts/         teach.sh (nastava), setup, regenerisanje podataka, provere (run_all, check_commands), frontend smoke, DeepSeek live check
 ```
 
 Arhitektura: `generator (seed 42) -> course/Day N/data -> dm-ml servisi (trening na snapshot-u) -> FastAPI :3001 <- Nuxt :3000 (+ MariaDB :3307 za katalog/događaje)`.
@@ -60,6 +61,11 @@ apps/api/.venv/bin/python scripts/smoke_frontend.py     # očekivano: 42/42 PASS
 
 Labovi (iz `course/`): `cd "Day 3/lab" && ../../dm-ml/.venv/bin/pytest -q test_lab.py` (tvoj `starter.py`),
 `LAB_MODULE=reference_solutions ...` za referentno rešenje.
+
+## Nastava uživo (12 × 2 × 45 min)
+
+`teaching/README.md`: procena po danu, planovi minut po minut (`teaching/day-NN/PLAN.md`) i `scripts/teach.sh`
+(`prepare`, `start NN` = starter sa TODO blokovima tog dana, `solution NN` = fallback, `verify`, `check`).
 
 ## AI režimi (Day 11): demo vs DeepSeek
 
